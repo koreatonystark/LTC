@@ -1,7 +1,8 @@
-const CACHE = 'anseong-ltc-v1';
+const CACHE = 'ltc-v1';
+const BASE = 'https://koreatonystark.github.io/LTC/';
 const FILES = [
-  './index.html',
-  './manifest.json'
+  BASE + 'index.html',
+  BASE + 'manifest.json'
 ];
 
 self.addEventListener('install', e => {
