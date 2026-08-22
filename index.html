@@ -1,0 +1,2571 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="안성 장기요양">
+<meta name="theme-color" content="#0a5c44">
+<link rel="manifest" href="manifest.json">
+<title>안성 장기요양 가이드 2026</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f4f2ee;--s1:#eeebe5;--s2:#e4e0d8;
+  --bd:#d5d0c8;--bd2:#b8b3a8;
+  --tx:#191815;--t2:#52504a;--t3:#888480;
+  --T:#0a5c44;--TL:#daf2ea;
+  --B:#104078;--BL:#ddeaf8;
+  --C:#7a2610;--CL:#f8e9e3;
+  --A:#6a3a06;--AL:#f8e8cc;
+  --G:#264a08;--GL:#e4f0d4;
+  --P:#3c3288;--PL:#e8e6fc;
+  --R:#7a1a1a;--RL:#fce8e8;
+  --OR:#7a4a08;--ORL:#fdf0dc;
+}
+body{font-family:-apple-system,BlinkMacSystemFont,'Noto Sans KR',sans-serif;background:var(--bg);color:var(--tx);font-size:16px;line-height:1.7}
+.hdr{background:#fff;border-bottom:2px solid var(--bd);padding:18px 20px 14px;position:sticky;top:0;z-index:300}
+.h1{font-size:18px;font-weight:900}
+.h2{font-size:13px;color:var(--t3);margin-top:2px}
+.htabs{display:grid;grid-template-columns:1fr 1fr 1fr;border-radius:10px;overflow:hidden;border:2px solid var(--bd2);margin-top:12px}
+.ht{padding:12px 6px;text-align:center;font-size:15px;font-weight:800;cursor:pointer;background:var(--s1);color:var(--t2);border:none;line-height:1.35;transition:all .18s}
+.ht.aba{background:var(--A);color:#fff}
+.ht.abt{background:var(--T);color:#fff}
+.main{max-width:860px;margin:0 auto;padding:20px 16px 80px}
+.ps{display:none}.ps.vis{display:block}
+.sh{font-size:13px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:var(--t3);border-bottom:2px solid var(--bd);padding-bottom:7px;margin:24px 0 12px}
+/* card */
+.card{background:#fff;border:1.5px solid var(--bd);border-radius:14px;margin-bottom:14px;overflow:hidden}
+.card.key{border-color:var(--T);border-width:2px}
+.card.urg{border-color:var(--R);border-width:2px}
+/* card header */
+.chead{display:flex;align-items:stretch;cursor:pointer;user-select:none}
+.tbadge{min-width:60px;max-width:60px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px 4px;gap:6px;flex-shrink:0;border-right:1.5px solid var(--bd)}
+.tday{font-size:13px;font-weight:900;text-align:center;line-height:1.25}
+.tstatus{font-size:10px;font-weight:800;text-align:center;padding:2px 5px;border-radius:4px;white-space:nowrap}
+.ccol{flex:1;padding:13px 14px}
+.cmeta{font-size:12px;color:var(--t3);margin-bottom:4px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.cmsep{color:var(--bd2)}
+.ctitle{font-size:16px;font-weight:900;color:var(--tx)}
+.csub{font-size:13px;color:var(--t3);margin-top:3px;line-height:1.5}
+.tico-r{font-size:22px;display:flex;align-items:center;padding:0 6px;flex-shrink:0;opacity:.7}
+.chv{display:flex;align-items:center;padding:0 12px;font-size:22px;color:var(--t3);flex-shrink:0;transition:transform .2s}
+.chv.op{transform:rotate(180deg)}
+/* body */
+.cbody{display:none;border-top:1.5px solid var(--bd)}
+.cbody.op{display:block}
+.itabs{display:flex;border-bottom:1.5px solid var(--bd);background:var(--s1);overflow-x:auto;scrollbar-width:none}
+.itabs::-webkit-scrollbar{display:none}
+.it{padding:10px 16px;font-size:13px;font-weight:700;color:var(--t3);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;background:none;border-top:none;border-left:none;border-right:none}
+.it.ac{color:var(--T);border-bottom-color:var(--T);background:#fff}
+.ip{display:none;padding:18px}.ip.ac{display:block}
+/* badges */
+.b{display:inline-block;font-size:12px;font-weight:700;padding:3px 9px;border-radius:6px}
+.bt{background:var(--TL);color:var(--T)}.bb{background:var(--BL);color:var(--B)}
+.bc{background:var(--CL);color:var(--C)}.ba{background:var(--AL);color:var(--A)}
+.bg{background:var(--GL);color:var(--G)}.bp{background:var(--PL);color:var(--P)}
+.br{background:var(--RL);color:var(--R)}.bo{background:var(--ORL);color:var(--OR)}
+.bgr{background:var(--s2);color:var(--t2)}
+/* grids */
+.ig{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.ig3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px}
+.ig{grid-template-columns:1fr}.ig3{grid-template-columns:1fr 1fr}
+.ic{background:var(--s1);border-radius:8px;padding:11px 13px}
+.il{font-size:11px;color:var(--t3);font-weight:700;text-transform:uppercase;margin-bottom:4px}
+.iv{font-size:15px;font-weight:900;color:var(--tx)}
+.iv.em{color:var(--T)}.iv.wn{color:var(--A)}.iv.rd{color:var(--R)}
+.is{font-size:12px;color:var(--t2);margin-top:2px}
+/* step list */
+.sl{list-style:none}
+.si{display:flex;gap:11px;padding:10px 0;border-bottom:1px solid var(--bd)}
+.si:last-child{border-bottom:none;padding-bottom:0}
+.sico{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;margin-top:2px}
+.sb{flex:1}
+.sh2{font-size:15px;font-weight:800}
+.sd{font-size:13px;color:var(--t2);margin-top:3px;line-height:1.65}
+.stip{display:inline-block;font-size:12px;color:var(--T);background:var(--TL);padding:4px 9px;border-radius:5px;margin-top:5px}
+.wtip{display:inline-block;font-size:12px;color:var(--A);background:var(--AL);padding:4px 9px;border-radius:5px;margin-top:5px}
+/* table */
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin:8px 0}
+.tbl th{text-align:left;padding:9px 11px;background:var(--s1);color:var(--t2);font-weight:800;border-bottom:1.5px solid var(--bd)}
+.tbl td{padding:10px 11px;border-bottom:1px solid var(--bd);vertical-align:top;line-height:1.6}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:var(--s1)}
+.em2{color:var(--T);font-weight:700}.wn2{color:var(--A);font-weight:700}.rd2{color:var(--R);font-weight:700}
+/* cost block */
+.cblk{background:var(--s1);border-radius:9px;overflow:hidden;margin:10px 0}
+.cr{display:flex;justify-content:space-between;align-items:center;padding:10px 13px;border-bottom:1px solid var(--bd);font-size:14px;gap:8px}
+.cr:last-child{border-bottom:none}
+.crl{color:var(--t2);flex:1}
+.crv{font-weight:900;text-align:right;white-space:nowrap}
+.crv.em{color:var(--T)}.crv.wn{color:var(--A)}.crv.rd{color:var(--R)}
+/* alerts */
+.hl{background:var(--TL);border-left:4px solid var(--T);border-radius:0 8px 8px 0;padding:12px 15px;margin:10px 0;font-size:14px;color:var(--T);line-height:1.7}
+.wn3{background:var(--AL);border-left:4px solid var(--A);border-radius:0 8px 8px 0;padding:12px 15px;margin:10px 0;font-size:14px;color:var(--A);line-height:1.7}
+.al{background:var(--CL);border-left:4px solid var(--C);border-radius:0 8px 8px 0;padding:12px 15px;margin:10px 0;font-size:14px;color:var(--C);line-height:1.7}
+.nb{background:var(--BL);border-left:4px solid var(--B);border-radius:0 8px 8px 0;padding:12px 15px;margin:10px 0;font-size:14px;color:var(--B);line-height:1.7}
+/* phone grid */
+.pg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.pg{grid-template-columns:1fr}
+.pc{background:var(--s1);border:1.5px solid var(--bd);border-radius:10px;padding:11px 14px}
+.pn{font-size:12px;color:var(--t3);font-weight:700;margin-bottom:4px}
+.pp{font-size:18px;font-weight:900;color:var(--B)}
+.pa{font-size:12px;color:var(--t3);margin-top:3px}
+.pnt{font-size:12px;color:var(--T);font-weight:700;margin-top:4px}
+/* not-applicable — 해당 없는 조건부 혜택 */
+.na{font-size:11px;color:#999;font-weight:400;font-style:italic;display:inline}
+.na-row{opacity:.6}
+.na-row td,.na-row .crl,.na-row .crv{color:#777 !important;font-size:12px !important;font-weight:400 !important}
+.na-row strong{font-weight:500 !important;color:#777 !important}
+td.na-row{color:#777 !important;font-size:12px !important}
+/* compare */
+.cmp{background:#fff;border:1.5px solid var(--bd);border-radius:14px;margin-bottom:20px;overflow:hidden}
+.cmp-hdr{display:grid;grid-template-columns:1fr 1fr;border-bottom:1.5px solid var(--bd)}
+.cmp-col{padding:13px 14px;text-align:center}
+.cmp-col:first-child{border-right:1.5px solid var(--bd);background:var(--AL)}
+.cmp-col:last-child{background:var(--TL)}
+.cmp-ct{font-size:16px;font-weight:900}
+.cmp-cs{font-size:12px;color:var(--t3);margin-top:2px}
+.cmp-row{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--bd)}
+.cmp-row:last-child{border-bottom:none}
+.cmp-cell{padding:11px 13px;font-size:13px;line-height:1.6}
+.cmp-cell:first-child{border-right:1px solid var(--bd);color:var(--t2)}
+.cmp-cell:last-child{color:var(--T);font-weight:700}
+.cmp-cell strong{display:block;font-size:14px;font-weight:900;color:var(--tx);margin-bottom:2px}
+
+
+/* ===== Mobile-first comfort tuning for calculators ===== */
+@media (min-width:0px){
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+  body{font-size:17px;line-height:1.65}
+  .hdr{position:relative;padding:16px 12px 12px}
+  .h1{font-size:20px;line-height:1.35;letter-spacing:-.02em}
+  .h2{font-size:14px;line-height:1.55;margin-top:6px}
+  .htabs{margin-top:12px;border-radius:11px}
+  .ht{min-width:0;padding:11px 4px;font-size:13px;line-height:1.35;word-break:keep-all}
+  .ht span{font-size:11px !important;line-height:1.3}
+  .main{padding:14px 10px 64px;max-width:none}
+  .sh{font-size:14px;letter-spacing:0;margin:20px 0 10px}
+  .hl,.wn3,.al,.nb{font-size:14px;padding:11px 12px}
+
+  /* Calculator intro: compact, readable */
+  #ps-calc>.hl{margin:0 0 12px !important}
+  #ps-calc>div[style*="border:2px solid var(--T)"]:not(#ltc-calc){padding:14px 12px !important;border-radius:12px !important}
+  #ps-calc>div[style*="border:2px solid var(--T)"]:not(#ltc-calc)>div:first-child{font-size:16px !important;line-height:1.45}
+  #ps-calc>div[style*="border:2px solid var(--T)"]:not(#ltc-calc)>div:nth-child(2){font-size:14px !important;line-height:1.65 !important}
+  #ps-calc>div[style*="border:2px solid var(--T)"]:not(#ltc-calc)>div:nth-child(3){gap:8px !important;margin-bottom:4px !important}
+  #ps-calc>div[style*="border:2px solid var(--T)"]:not(#ltc-calc)>div:nth-child(3)>div{padding:11px 10px !important;min-width:0}
+  #ps-calc>div[style*="border:2px solid var(--T)"]:not(#ltc-calc)>div:nth-child(3)>div>div:nth-child(1){font-size:12px !important}
+  #ps-calc>div[style*="border:2px solid var(--T)"]:not(#ltc-calc)>div:nth-child(3)>div>div:nth-child(2){font-size:19px !important;white-space:nowrap}
+  #ps-calc>div[style*="border:2px solid var(--T)"]:not(#ltc-calc)>div:nth-child(3)>div>div:nth-child(3){font-size:12px !important}
+  #ps-calc>div[style*="border:2px solid var(--T)"]:not(#ltc-calc)>div:nth-child(3)>div>div:nth-child(3)>div{display:block !important;padding:5px 0 !important}
+  #ps-calc>div[style*="border:2px solid var(--T)"]:not(#ltc-calc)>div:nth-child(3)>div>div:nth-child(3)>div strong{display:block;margin-top:1px;font-size:13px}
+
+  /* Main home-care calculator */
+  #ltc-calc{padding:14px 11px !important;border-radius:12px !important;margin-bottom:14px !important;overflow:hidden}
+  #ltc-calc>div:first-child{font-size:18px !important;line-height:1.4}
+  #ltc-calc>div:nth-child(2){font-size:13px !important;line-height:1.55;margin-bottom:12px !important}
+  #ltc-calc>div:nth-child(3){gap:7px !important;margin-bottom:10px !important}
+  #g1,#g2{padding:10px 6px !important;font-size:13px !important;line-height:1.35;min-height:48px}
+  #ltc-mbtn{min-height:42px;padding:8px 13px !important;font-size:13px !important}
+
+  /* Simple calculator table -> mobile cards */
+  #ltc-s>div{overflow:visible !important}
+  #ltc-s table{min-width:0 !important;width:100% !important;display:block !important;font-size:14px !important}
+  #ltc-s colgroup,#ltc-s table>tbody>tr:first-child{display:none !important}
+  #ltc-s tbody{display:block !important;width:100%}
+  #ltc-s tr{display:grid !important;grid-template-columns:1fr 1fr;gap:0 10px;width:100%;padding:12px 3px;border-bottom:1.5px solid var(--bd)}
+  #ltc-s tr:last-child{border-bottom:none}
+  #ltc-s td{display:block !important;border:0 !important;padding:5px 4px !important;min-width:0;text-align:left !important;font-size:14px !important}
+  #ltc-s td:first-child{grid-column:1/-1;padding:0 4px 9px !important}
+  #ltc-s td:first-child>div:first-child{font-size:17px;font-weight:900 !important}
+  #ltc-s td:first-child>div:last-child{font-size:13px !important;line-height:1.45;margin-top:3px !important}
+  #ltc-s td:nth-child(n+2)::before{display:block;font-size:11px;line-height:1.2;color:var(--t3);font-weight:700;margin-bottom:4px}
+  #ltc-s td:nth-child(2)::before{content:'1회 수가'}
+  #ltc-s td:nth-child(3)::before{content:'월 횟수'}
+  #ltc-s td:nth-child(4)::before{content:'수가 합계'}
+  #ltc-s td:nth-child(5)::before{content:'본인부담'}
+  #ltc-s td:nth-child(2),#ltc-s td:nth-child(4){padding-left:4px !important}
+  #ltc-s td:nth-child(3),#ltc-s td:nth-child(5){padding-right:4px !important;text-align:right !important}
+  #ltc-s td:nth-child(3)>div:first-child{justify-content:flex-end !important}
+  #ltc-s td:nth-child(3)>div:last-child{text-align:right;font-size:11px !important}
+  #ltc-s td:nth-child(4),#ltc-s td:nth-child(5){font-weight:800 !important;font-size:15px !important}
+  #ltc-s button,#wc-calc button{width:38px !important;height:38px !important;font-size:18px !important;border-radius:8px !important;touch-action:manipulation}
+  #ltc-s [id$="-n"]{font-size:18px !important;min-width:30px !important}
+
+  /* Detailed rows: allow wrapping rather than clipping */
+  #ltc-d>div{padding:10px !important}
+  #ltc-d [id$="-dr"]>div{display:grid !important;grid-template-columns:1fr auto auto auto;gap:6px !important;padding:8px !important}
+  #ltc-d [id$="-dr"]>div>span:first-child{min-width:0 !important;font-size:13px !important}
+  #ltc-d [id$="-dr"]>div>span:nth-child(2){grid-column:1/2;min-width:0 !important;font-size:11px !important}
+  #ltc-d [id$="-dr"]>div>span:last-child{grid-column:1/-1;margin-left:0 !important;text-align:right;font-size:11px !important}
+  #ltc-d button{width:36px !important;height:36px !important;font-size:17px !important}
+
+  /* Dynamic result blocks */
+  #ltc-r{font-size:14px}
+  #ltc-r table{font-size:13px !important;table-layout:fixed;width:100% !important}
+  #ltc-r td{padding:7px 5px !important;overflow-wrap:anywhere}
+  #ltc-r td:last-child{width:36%;white-space:normal !important}
+  #ltc-r div[onclick]{padding:11px 9px !important;gap:8px;align-items:flex-start !important}
+  #ltc-r div[onclick]>div:first-child{font-size:14px !important;min-width:0}
+  #ltc-r div[onclick]>div:last-child{gap:6px !important;flex-wrap:wrap;justify-content:flex-end;text-align:right}
+
+  /* Welfare equipment calculator */
+  #wc-calc{padding:14px 11px !important;margin-top:14px !important;border-radius:12px !important;overflow:hidden}
+  #wc-calc>div:first-child{font-size:18px !important;line-height:1.4}
+  #wc-calc>div:nth-child(2){font-size:13px !important;line-height:1.55}
+  #wc-calc>div:nth-child(3){overflow:visible !important}
+  #wc-calc table{min-width:0 !important;width:100% !important;display:block !important;font-size:14px !important}
+  #wc-calc colgroup,#wc-calc table>tbody>tr:first-child{display:none !important}
+  #wc-calc tbody{display:block !important;width:100%}
+  #wc-calc tr{display:grid !important;grid-template-columns:1fr 1fr;gap:0 10px;width:100%;padding:12px 3px;border-bottom:1.5px solid var(--bd)}
+  #wc-calc tr:last-child{border-bottom:none}
+  #wc-calc td{display:block !important;border:0 !important;padding:5px 4px !important;min-width:0;text-align:left !important;font-size:14px !important}
+  #wc-calc td:first-child{grid-column:1/-1;padding:0 4px 8px !important}
+  #wc-calc td:first-child>div:first-child{font-size:17px;font-weight:900 !important}
+  #wc-calc td:first-child>div:last-child{font-size:13px !important;line-height:1.4}
+  #wc-calc td:nth-child(n+2)::before{display:block;font-size:11px;line-height:1.2;color:var(--t3);font-weight:700;margin-bottom:4px}
+  #wc-calc td:nth-child(2)::before{content:none}
+  #wc-calc td:nth-child(3)::before{content:'급여 수가'}
+  #wc-calc td:nth-child(4)::before{content:'수량 / 기간'}
+  #wc-calc td:nth-child(5)::before{content:'수가 합계'}
+  #wc-calc td:nth-child(6)::before{content:'본인부담'}
+  #wc-calc td:nth-child(4)>div:first-child{justify-content:flex-start !important}
+  #wc-calc td:nth-child(5),#wc-calc td:nth-child(6){font-size:15px !important;font-weight:800 !important}
+  #wc-calc [id$="-n"]{font-size:18px !important;min-width:30px !important}
+  #wc-result table{display:table !important;table-layout:fixed;font-size:13px !important}
+  #wc-result tbody{display:table-row-group !important}
+  #wc-result tr{display:table-row !important;padding:0;border:0}
+  #wc-result td{display:table-cell !important;padding:7px 8px !important;border-bottom:1px solid var(--bd) !important;font-size:13px !important}
+  #wc-result td:last-child{text-align:right !important;width:38%}
+
+  /* General touch/readability improvements */
+  button{min-height:40px}
+  .card{border-radius:12px}
+  .ctitle{font-size:17px}
+  .csub{font-size:14px}
+  .ip{padding:14px 12px}
+}
+
+@media (max-width:380px){
+  .h1{font-size:18px}
+  .ht{font-size:12px;padding:10px 3px}
+  .ht span{font-size:10px !important}
+  #ps-calc>div[style*="border:2px solid var(--T)"]:not(#ltc-calc)>div:nth-child(3){grid-template-columns:1fr !important}
+  #ltc-s tr,#wc-calc tr{grid-template-columns:1fr 1fr}
+  #g1,#g2{font-size:12px !important}
+}
+
+
+/* ===== 2026-08 mobile calculator simplification ===== */
+.ltc-compact-summary{display:none}
+@media(min-width:0px){
+  #ltc-calc{border:none !important;background:transparent !important;padding:0 !important;overflow:visible !important}
+  #ltc-calc>div:first-child{font-size:19px !important;padding:0 2px;margin-bottom:3px !important}
+  #ltc-calc>div:nth-child(2){font-size:12.5px !important;padding:0 2px;margin-bottom:12px !important}
+
+  /* grade selector */
+  #ltc-calc>div:nth-child(3){gap:8px !important;margin-bottom:12px !important}
+  #g1,#g2{min-height:48px !important;padding:9px 6px !important;border-radius:10px !important;font-size:14px !important;line-height:1.25 !important}
+
+  /* top summary like a mobile finance card */
+  .ltc-compact-summary{display:block;background:#fff;border:1.5px solid var(--bd);border-radius:14px;padding:14px 15px;margin:0 0 12px}
+  .ltc-sum-top{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:end}
+  .ltc-sum-cell{min-width:0}
+  .ltc-sum-label{font-size:12px;color:var(--t2);font-weight:800;margin-bottom:2px}
+  .ltc-sum-value{font-size:25px;line-height:1.12;font-weight:950;letter-spacing:-.6px;white-space:nowrap}
+  #ltc-sum-own{color:var(--R)}
+  .ltc-sum-divider{border-top:1px solid var(--bd);margin:12px 0 10px}
+  .ltc-sum-limit{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:6px}
+  .ltc-sum-limit-l{font-size:13px;color:var(--t2);font-weight:750}
+  #ltc-sum-limit{font-weight:900;color:var(--tx);margin-left:4px}
+  #ltc-sum-pct{font-size:22px;font-weight:950;color:var(--T);white-space:nowrap}
+  .ltc-sum-track{height:13px;border-radius:999px;background:var(--s2);overflow:hidden}
+  #ltc-sum-bar{height:100%;width:0;border-radius:999px;background:var(--T);transition:width .2s}
+
+  /* mode button */
+  #ltc-calc>div:nth-child(5){margin:2px 0 10px !important}
+  #ltc-mbtn{min-height:42px !important;padding:8px 13px !important;border-radius:9px !important;font-size:13px !important}
+
+  /* simple service table -> stacked service cards */
+  #ltc-s>div{overflow:visible !important}
+  #ltc-s table{display:block !important;min-width:0 !important;width:100% !important;border-collapse:separate !important;font-size:14px !important}
+  #ltc-s tbody{display:block !important}
+  #ltc-s tr:first-child{display:none !important}
+  #ltc-s tr:not(:first-child){display:grid !important;grid-template-columns:minmax(0,1fr) minmax(126px,.92fr);grid-template-areas:'title title' 'control rate' 'control total' 'control own';column-gap:10px;row-gap:0;background:#fff;border:1.5px solid var(--bd);border-radius:14px;padding:13px 13px 12px;margin:0 0 10px;overflow:hidden}
+  #ltc-s td{border:0 !important;padding:0 !important;min-width:0 !important;width:auto !important;text-align:left !important}
+  #ltc-s td:nth-child(1){grid-area:title;padding-bottom:10px !important;border-bottom:1px solid var(--bd) !important;margin-bottom:10px}
+  #ltc-s td:nth-child(1)>div:first-child{font-size:18px !important;font-weight:900 !important;line-height:1.3}
+  #ltc-s td:nth-child(1)>div:first-child span{font-size:12px !important;padding:3px 7px !important;border-radius:7px !important;vertical-align:2px}
+  #ltc-s td:nth-child(1)>div:nth-child(2){font-size:13px !important;line-height:1.45;margin-top:4px !important;color:var(--t2) !important}
+  #ltc-s td:nth-child(2){grid-area:rate;align-self:start;text-align:right !important;font-size:12px !important;color:var(--t3) !important;padding-top:1px !important}
+  #ltc-s td:nth-child(2)::before{content:'1회 ';font-weight:700;color:var(--t3)}
+  #ltc-s td:nth-child(3){grid-area:control;align-self:center}
+  #ltc-s td:nth-child(3)>div:first-child{justify-content:flex-start !important;gap:8px !important}
+  #ltc-s td:nth-child(3) button{width:46px !important;height:46px !important;border-radius:9px !important;font-size:23px !important;background:#fff !important;border:1.5px solid var(--bd2) !important}
+  #ltc-s td:nth-child(3) span[id$='-n']{font-size:24px !important;min-width:36px !important}
+  #ltc-s td:nth-child(3)>div:last-child{font-size:12px !important;margin:4px 0 0 54px !important;color:var(--t3) !important;text-align:center;width:36px}
+  #ltc-s td:nth-child(4){grid-area:total;text-align:right !important;font-size:18px !important;font-weight:900 !important;line-height:1.35;padding-top:3px !important;white-space:nowrap}
+  #ltc-s td:nth-child(4)::before{content:'월 수가 ';display:inline;font-size:11px;font-weight:600;color:var(--t3);margin-right:3px}
+  #ltc-s td:nth-child(5){grid-area:own;text-align:right !important;font-size:17px !important;font-weight:900 !important;line-height:1.35;color:var(--R) !important;white-space:normal !important}
+  #ltc-s td:nth-child(5)::before{content:'본인부담 ';font-size:12px;font-weight:700;color:var(--C);margin-right:3px}
+
+  /* detailed rows -> one clean horizontal row */
+  #ltc-d>div{padding:12px 10px !important;border-radius:12px !important;margin-bottom:10px !important}
+  #ltc-d>div>div:first-child{font-size:16px !important;margin-bottom:9px !important}
+  #vy-dr>div,#vn-dr>div,#vb-dr>div{display:grid !important;grid-template-columns:minmax(74px,1fr) minmax(82px,1fr) 44px 30px 44px !important;align-items:center !important;gap:5px !important;padding:9px 8px !important;border-radius:9px !important;margin-bottom:6px !important}
+  #vy-dr>div>span:nth-child(1),#vn-dr>div>span:nth-child(1),#vb-dr>div>span:nth-child(1){font-size:16px !important;font-weight:900 !important;min-width:0 !important;white-space:nowrap}
+  #vy-dr>div>span:nth-child(2),#vn-dr>div>span:nth-child(2),#vb-dr>div>span:nth-child(2){font-size:13px !important;min-width:0 !important;color:var(--t3) !important;text-align:left}
+  #vy-dr>div>button,#vn-dr>div>button,#vb-dr>div>button{width:44px !important;height:44px !important;border-radius:8px !important;font-size:20px !important}
+  #vy-dr>div>span:nth-child(4),#vn-dr>div>span:nth-child(4),#vb-dr>div>span:nth-child(4){font-size:19px !important;min-width:0 !important;text-align:center}
+  #vy-dr>div>span:last-child,#vn-dr>div>span:last-child,#vb-dr>div>span:last-child{display:none !important}
+
+  /* old duplicate gauge/result: summary above now carries primary numbers */
+  #ltc-calc>#ltc-d + div{display:none !important}
+  #ltc-r{display:none !important}
+
+  /* calculator sections breathe, but don't waste width */
+  #ps-calc .main{padding-left:10px !important;padding-right:10px !important}
+}
+@media(max-width:380px){
+  .ltc-sum-value{font-size:22px}
+  #ltc-s tr:not(:first-child){grid-template-columns:minmax(0,1fr) minmax(112px,.9fr);padding:12px 10px}
+  #ltc-s td:nth-child(3) button{width:42px !important;height:42px !important}
+  #vy-dr>div,#vn-dr>div,#vb-dr>div{grid-template-columns:minmax(66px,1fr) minmax(72px,1fr) 40px 26px 40px !important;gap:4px !important;padding:8px 6px !important}
+  #vy-dr>div>button,#vn-dr>div>button,#vb-dr>div>button{width:40px !important;height:40px !important}
+}
+
+
+
+/* ===== Mobile-only shell / stable layout ===== */
+html{background:#e9e7e2;overflow-x:hidden}
+body{
+  width:100%;
+  max-width:480px;
+  margin:0 auto;
+  min-height:100%;
+  background:var(--bg);
+  overflow-x:hidden;
+  box-shadow:0 0 0 1px rgba(0,0,0,.04);
+}
+.hdr{
+  width:100%;
+  max-width:480px;
+  margin:0 auto;
+  position:sticky;
+  top:0;
+  z-index:300;
+  padding:14px 12px 10px;
+  background:#fff;
+}
+.h1{font-size:19px;line-height:1.35;word-break:keep-all}
+.h2{font-size:13px;line-height:1.55;word-break:keep-all}
+.htabs{grid-template-columns:repeat(3,minmax(0,1fr));width:100%}
+.ht{min-width:0;padding:10px 3px;font-size:12.5px;line-height:1.3;word-break:keep-all;overflow-wrap:normal}
+.ht span{font-size:10.5px !important}
+.main{width:100%;max-width:480px;margin:0 auto;padding:12px 10px 70px;overflow:hidden}
+.card,.cmp,#ltc-calc,#wc-calc{max-width:100%}
+.chead{min-width:0}.ccol{min-width:0}.ctitle,.csub,.sd,.iv,.is{overflow-wrap:anywhere}
+.ip{overflow:hidden}
+.tbl{table-layout:fixed;width:100%}
+.tbl th,.tbl td{overflow-wrap:anywhere;word-break:keep-all}
+
+/* compact intro cards */
+#ps-calc>div[style*="border:2px solid var(--T)"]:not(#ltc-calc){margin-left:0 !important;margin-right:0 !important}
+
+/* calculator: no layout dependence on wide viewport */
+#ltc-calc,#wc-calc{width:100% !important;box-sizing:border-box}
+#ltc-s,#ltc-d,#wc-calc>div{max-width:100%}
+#ltc-s table,#wc-calc table{max-width:100% !important}
+#ltc-s tr:not(:first-child){
+  grid-template-columns:minmax(0,1fr) minmax(118px,.88fr) !important;
+}
+#ltc-s td:nth-child(2),#ltc-s td:nth-child(4),#ltc-s td:nth-child(5){min-width:0 !important}
+#ltc-s td:nth-child(4),#ltc-s td:nth-child(5){white-space:normal !important;overflow-wrap:anywhere}
+#ltc-s td:nth-child(3)>div:first-child{flex-wrap:nowrap !important}
+
+/* welfare equipment cards, always mobile */
+#wc-calc tr{grid-template-columns:minmax(0,1fr) minmax(120px,.9fr) !important}
+#wc-calc td:nth-child(1){grid-column:1/-1 !important}
+#wc-calc td:nth-child(2),#wc-calc td:nth-child(3){min-width:0 !important}
+#wc-calc td:nth-child(4){min-width:0 !important}
+#wc-calc td:nth-child(5),#wc-calc td:nth-child(6){white-space:normal !important;overflow-wrap:anywhere}
+
+/* detailed rows: fixed mobile grid */
+#vy-dr>div,#vn-dr>div,#vb-dr>div{
+  grid-template-columns:minmax(68px,1fr) minmax(74px,.95fr) 42px 28px 42px !important;
+  width:100%;
+}
+
+/* summary values shrink safely instead of overflowing */
+.ltc-sum-value{font-size:clamp(21px,7vw,27px) !important;white-space:nowrap}
+.ltc-sum-top{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+
+/* common mobile forms / buttons */
+button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+input,select,textarea{max-width:100%;font-size:16px}
+
+@media(max-width:360px){
+  body{max-width:none}
+  .main{padding-left:7px;padding-right:7px}
+  .hdr{padding-left:9px;padding-right:9px}
+  .h1{font-size:17px}
+  .h2{font-size:12px}
+  .ht{font-size:11.5px;padding:9px 2px}
+  .ht span{font-size:9.5px !important}
+  #ltc-s tr:not(:first-child),#wc-calc tr{grid-template-columns:minmax(0,1fr) minmax(106px,.85fr) !important;padding-left:10px !important;padding-right:10px !important}
+  #ltc-s td:nth-child(3) button{width:40px !important;height:40px !important}
+  #vy-dr>div,#vn-dr>div,#vb-dr>div{grid-template-columns:minmax(62px,1fr) minmax(68px,.9fr) 38px 24px 38px !important;gap:3px !important}
+  #vy-dr>div>button,#vn-dr>div>button,#vb-dr>div>button{width:38px !important;height:38px !important}
+}
+
+
+
+/* ===== Mobile-first rebuild 2026-08-21 ===== */
+:root{--mobile-max:520px}
+html{background:#e9e7e2!important}
+body{max-width:var(--mobile-max)!important;margin:0 auto!important;background:#f7f6f2!important;font-size:16px!important;line-height:1.6!important;box-shadow:0 0 0 1px rgba(0,0,0,.05)!important}
+.hdr{max-width:var(--mobile-max)!important;padding:13px 12px 10px!important}
+.h1{font-size:20px!important;line-height:1.35!important;letter-spacing:-.35px!important}
+.h2{font-size:13px!important;line-height:1.55!important;margin-top:5px!important}
+.htabs{margin-top:11px!important;border-width:1.5px!important;border-radius:12px!important}
+.ht{min-height:66px!important;padding:8px 4px!important;font-size:13px!important;line-height:1.3!important}
+.ht span{font-size:10px!important}
+.main{max-width:var(--mobile-max)!important;padding:12px 10px 64px!important}
+.sh{font-size:14px!important;margin:20px 0 10px!important;padding-bottom:6px!important}
+.card{margin-bottom:10px!important;border-radius:13px!important}
+.chead{align-items:stretch!important}
+.tbadge{min-width:55px!important;max-width:55px!important;padding:10px 3px!important}
+.tday{font-size:12px!important}.tstatus{font-size:9px!important}
+.ccol{padding:11px 10px!important;min-width:0!important}
+.cmeta{font-size:11px!important;gap:4px!important}.ctitle{font-size:16px!important;line-height:1.4!important}.csub{font-size:13px!important;line-height:1.55!important}
+.tico-r{display:none!important}.chv{padding:0 9px!important;font-size:19px!important}
+.itabs{gap:0!important}.it{padding:10px 12px!important;font-size:12.5px!important}
+.ip{padding:13px 11px!important}
+.ig,.ig3{grid-template-columns:1fr!important;gap:8px!important}.ic{padding:10px 11px!important}.iv{font-size:15px!important}
+.pg{grid-template-columns:1fr!important;gap:8px!important}.pc{padding:10px 12px!important}.pp{font-size:17px!important}
+.cmp-hdr,.cmp-row{grid-template-columns:1fr 1fr!important}.cmp-col{padding:10px 8px!important}.cmp-cell{padding:9px 8px!important;font-size:12.5px!important}
+.tbl{display:block!important;width:100%!important;overflow-x:auto!important;-webkit-overflow-scrolling:touch!important;table-layout:auto!important;font-size:13px!important}
+.tbl th,.tbl td{padding:8px 9px!important;min-width:95px!important}
+.cblk .cr{padding:9px 11px!important;font-size:13px!important;align-items:flex-start!important}.crv{white-space:normal!important;max-width:48%!important}
+.hl,.wn3,.al,.nb{padding:10px 11px!important;font-size:13px!important;line-height:1.6!important}
+
+/* calculator sections */
+#ps-calc>.hl{margin:0 0 12px!important}
+#ps-calc>div[style*="border:2px solid var(--T)"]:not(#ltc-calc){padding:13px 11px!important;border-radius:13px!important}
+#ps-calc>div[style*="border:2px solid var(--T)"]:not(#ltc-calc)>div:nth-child(3){grid-template-columns:1fr!important;gap:8px!important}
+#ltc-calc,#wc-calc{border:0!important;background:transparent!important;padding:0!important;margin-bottom:18px!important;overflow:visible!important}
+#ltc-calc>div:first-child,#wc-calc>div:first-child{font-size:19px!important;line-height:1.35!important;margin:0 2px 4px!important}
+#ltc-calc>div:nth-child(2),#wc-calc>div:nth-child(2){font-size:12.5px!important;line-height:1.5!important;margin:0 2px 12px!important}
+#ltc-calc>div:nth-child(3){gap:7px!important;margin-bottom:10px!important}
+#g1,#g2{min-height:48px!important;padding:7px 5px!important;font-size:13.5px!important;line-height:1.25!important;border-radius:10px!important}
+.ltc-compact-summary{padding:13px 14px!important;border-radius:13px!important;margin-bottom:10px!important}
+.ltc-sum-label{font-size:11.5px!important}.ltc-sum-value{font-size:24px!important;letter-spacing:-.7px!important}.ltc-sum-limit-l{font-size:12.5px!important}#ltc-sum-pct{font-size:21px!important}.ltc-sum-track{height:12px!important}
+#ltc-mbtn{min-height:42px!important;padding:7px 12px!important;font-size:13px!important;border-radius:9px!important}
+
+/* true mobile calculator cards */
+.m-service-list,.m-welfare-list{display:grid;gap:9px;width:100%}
+.m-service-card,.m-welfare-card{background:#fff;border:1.5px solid var(--bd);border-radius:14px;padding:12px;overflow:hidden}
+.m-service-head,.m-welfare-head{display:flex;justify-content:space-between;align-items:flex-start;gap:9px;padding-bottom:9px;border-bottom:1px solid var(--bd)}
+.m-service-head>div:first-child,.m-welfare-head>div:first-child{min-width:0;flex:1}
+.m-service-title{font-size:18px;font-weight:900;line-height:1.35;letter-spacing:-.2px}
+.m-service-desc{font-size:12.5px;color:var(--t3);line-height:1.4;margin-top:3px}.m-service-desc.m-free{color:var(--T)}.m-service-desc.m-free span{color:#999}
+.m-badge{display:inline-block;font-size:11px;font-weight:800;padding:2px 6px;border-radius:6px;vertical-align:2px;white-space:nowrap}.m-badge-green{background:var(--TL);color:var(--T)}.m-badge-blue{background:var(--BL);color:var(--B)}.m-badge-olive{background:var(--GL);color:var(--G)}
+.m-unit{flex:0 0 auto;font-size:11.5px;color:var(--t3);font-weight:700;white-space:nowrap;padding-top:4px}
+.m-service-body,.m-welfare-body{display:grid;grid-template-columns:minmax(138px,.9fr) minmax(0,1.15fr);gap:10px;align-items:end;padding-top:10px}
+.m-mini-label{font-size:10.5px;color:var(--t3);font-weight:700;text-align:center;margin-bottom:4px}
+.m-counter{display:grid;grid-template-columns:44px 1fr 44px;align-items:center;gap:6px}
+.m-counter button{width:44px;height:44px;min-height:44px;border:1.5px solid var(--bd2);border-radius:9px;background:#fff;color:var(--tx);font-size:22px;font-weight:800;line-height:1;cursor:pointer}
+.m-counter span{font-size:22px;font-weight:950;text-align:center;min-width:28px}
+.m-frequency{text-align:center;font-size:11px;color:var(--t3);margin-top:3px}
+.m-costs{display:grid;gap:5px;min-width:0;text-align:right}.m-costs>div{min-width:0}.m-costs span{display:block;font-size:10.5px;color:var(--t3);line-height:1.2}.m-costs strong{display:block;font-size:17px;line-height:1.25;font-weight:900;white-space:normal;overflow-wrap:anywhere}.m-costs .own span{color:var(--C)}.m-costs .own strong{color:var(--R)}
+
+/* detailed calculator */
+#ltc-d>div{padding:11px 9px!important;border-radius:12px!important;margin-bottom:9px!important}
+#ltc-d>div>div:first-child{font-size:15px!important;margin-bottom:8px!important}
+#vy-dr>div,#vn-dr>div,#vb-dr>div{display:grid!important;grid-template-columns:minmax(72px,1fr) minmax(78px,1fr) 40px 28px 40px!important;gap:4px!important;padding:8px 7px!important;margin-bottom:5px!important;border-radius:9px!important}
+#vy-dr>div>span:nth-child(1),#vn-dr>div>span:nth-child(1),#vb-dr>div>span:nth-child(1){font-size:15px!important;min-width:0!important}
+#vy-dr>div>span:nth-child(2),#vn-dr>div>span:nth-child(2),#vb-dr>div>span:nth-child(2){font-size:12px!important;min-width:0!important}
+#vy-dr>div>button,#vn-dr>div>button,#vb-dr>div>button{width:40px!important;height:40px!important;min-height:40px!important}
+#vy-dr>div>span:nth-child(4),#vn-dr>div>span:nth-child(4),#vb-dr>div>span:nth-child(4){font-size:18px!important}
+
+#wc-calc{border-top:2px solid var(--bd)!important;padding-top:16px!important;margin-top:18px!important}
+#wc-calc>div:first-child{color:var(--G)!important}
+#wc-calc>div[style*="margin-top:12px"]{margin-top:10px!important}
+#wc-result{font-size:13px!important}
+#wc-result table{display:table!important;width:100%!important;table-layout:fixed!important}
+#wc-result td{padding:7px 8px!important;font-size:12.5px!important}
+
+@media(max-width:380px){
+  .main{padding-left:7px!important;padding-right:7px!important}.hdr{padding-left:9px!important;padding-right:9px!important}.h1{font-size:18px!important}.h2{font-size:12px!important}.ht{font-size:11.5px!important;min-height:62px!important}.ht span{font-size:9px!important}
+  .m-service-body,.m-welfare-body{grid-template-columns:126px minmax(0,1fr);gap:7px}.m-counter{grid-template-columns:40px 1fr 40px;gap:4px}.m-counter button{width:40px;height:40px;min-height:40px}.m-counter span{font-size:20px}.m-costs strong{font-size:15.5px}.m-service-title{font-size:17px}.m-unit{font-size:10.5px}
+  #vy-dr>div,#vn-dr>div,#vb-dr>div{grid-template-columns:minmax(64px,1fr) minmax(68px,1fr) 36px 24px 36px!important;gap:3px!important;padding:7px 5px!important}#vy-dr>div>button,#vn-dr>div>button,#vb-dr>div>button{width:36px!important;height:36px!important;min-height:36px!important}
+}
+
+
+/* === reference-matched mobile calculator layout === */
+#ltc-calc{padding:0!important;background:transparent!important;border:0!important}
+.ltc-compact-summary{background:#fff!important;border:1.5px solid var(--bd)!important;border-radius:16px!important;padding:16px 15px!important;margin:12px 0 12px!important}
+.ltc-sum-top{display:grid!important;grid-template-columns:72px 1fr 1fr!important;align-items:center!important;gap:10px!important}
+.ltc-sum-icon{width:60px;height:60px;border-radius:14px;background:var(--TL);display:flex;align-items:center;justify-content:center;font-size:34px;color:var(--T)}
+.ltc-sum-cell{min-width:0!important}
+.ltc-sum-label{font-size:13px!important;color:var(--t2)!important;font-weight:750!important;margin-bottom:2px!important}
+.ltc-sum-value{font-size:29px!important;font-weight:950!important;line-height:1.05!important;letter-spacing:-1px!important;white-space:nowrap!important}
+.ltc-sum-cell:last-child .ltc-sum-value{color:var(--R)!important}
+.ltc-sum-divider{height:1px!important;background:var(--bd)!important;margin:14px 0 11px!important}
+.ltc-sum-limit{display:flex!important;align-items:end!important;justify-content:space-between!important;gap:8px!important}
+.ltc-sum-limit-l{font-size:13px!important;color:var(--tx)!important;font-weight:700!important}
+#ltc-sum-limit{font-size:16px!important;font-weight:900!important;margin-left:5px!important}
+#ltc-sum-pct{font-size:25px!important;font-weight:950!important;line-height:1!important}
+.ltc-sum-track{height:14px!important;background:var(--s2)!important;border-radius:999px!important;overflow:hidden!important;margin-top:7px!important}
+#ltc-sum-bar{height:100%;border-radius:999px;transition:width .2s}
+
+.m-service-list{display:grid!important;gap:10px!important}
+.m-service-card{border:1.5px solid var(--bd)!important;border-radius:16px!important;padding:14px!important;background:#fff!important}
+.m-service-head{display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:10px!important;padding:0 0 12px!important;border-bottom:1px solid var(--bd)!important}
+.m-service-icon{width:34px;height:34px;flex:0 0 34px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:var(--TL);font-size:19px}
+.m-service-main{display:flex;align-items:center;gap:7px;flex-wrap:wrap;min-width:0;flex:1}
+.m-service-title{font-size:20px!important;font-weight:950!important;line-height:1.15!important;white-space:nowrap}
+.m-service-desc{font-size:13px!important;margin:0!important;color:var(--t2)!important;line-height:1.3!important}
+.m-service-desc.m-free{color:var(--T)!important;flex-basis:100%}
+.m-service-desc.m-free span{color:#999}
+.m-badge{font-size:12px!important;padding:3px 7px!important;border-radius:7px!important;vertical-align:0!important}
+.m-unit{display:none!important}
+.m-service-body{display:flex!important;justify-content:space-between!important;align-items:end!important;gap:12px!important;padding-top:12px!important}
+.m-counter-wrap{flex:0 0 180px!important;min-width:0!important}
+.m-mini-label{display:none!important}
+.m-counter{display:grid!important;grid-template-columns:48px 1fr 48px!important;gap:9px!important;align-items:center!important}
+.m-counter button{width:48px!important;height:48px!important;border:1.5px solid var(--bd2)!important;border-radius:10px!important;background:#fff!important;font-size:23px!important}
+.m-counter span{font-size:24px!important;font-weight:950!important}
+.m-frequency{font-size:11px!important;margin-top:4px!important;text-align:center!important}
+.m-costs{flex:1!important;display:block!important;text-align:right!important;min-width:0!important}
+.m-costs .rate-line{font-size:12px;color:var(--t2);margin-bottom:1px;white-space:nowrap}
+.m-costs>div span{display:inline!important;font-size:11px!important;margin-right:4px!important}
+.m-costs>div strong{display:inline!important;font-size:19px!important;white-space:nowrap!important}
+.m-costs .own{margin-top:2px!important}
+.m-costs .own strong{font-size:19px!important;color:var(--R)!important}
+
+/* detailed mode reference layout */
+#ltc-d>div{padding:14px!important;border-radius:14px!important}
+#ltc-d>div>div:first-child{font-size:16px!important;font-weight:900!important;margin-bottom:10px!important}
+#vy-dr>div,#vn-dr>div,#vb-dr>div{display:grid!important;grid-template-columns:minmax(92px,1.1fr) minmax(92px,1fr) 48px 34px 48px!important;align-items:center!important;gap:7px!important;background:#fff!important;border-radius:10px!important;padding:10px!important;margin-bottom:7px!important}
+#vy-dr>div>span:nth-child(1),#vn-dr>div>span:nth-child(1),#vb-dr>div>span:nth-child(1){font-size:18px!important;font-weight:950!important;white-space:nowrap!important}
+#vy-dr>div>span:nth-child(2),#vn-dr>div>span:nth-child(2),#vb-dr>div>span:nth-child(2){font-size:14px!important;color:var(--t3)!important;white-space:nowrap!important}
+#vy-dr>div>button,#vn-dr>div>button,#vb-dr>div>button{width:48px!important;height:48px!important;border-radius:9px!important;font-size:21px!important}
+#vy-dr>div>span:nth-child(4),#vn-dr>div>span:nth-child(4),#vb-dr>div>span:nth-child(4){font-size:20px!important;font-weight:950!important;text-align:center!important}
+#vy-dr>div>span:last-child,#vn-dr>div>span:last-child,#vb-dr>div>span:last-child{display:none!important}
+
+@media(max-width:420px){
+  .ltc-sum-top{grid-template-columns:60px 1fr 1fr!important;gap:7px!important}.ltc-sum-icon{width:52px;height:52px;font-size:29px}.ltc-sum-value{font-size:25px!important}.ltc-sum-label{font-size:12px!important}
+  .m-service-title{font-size:18px!important}.m-service-head{gap:8px!important}.m-service-icon{width:32px;height:32px;flex-basis:32px}.m-service-body{gap:8px!important}.m-counter-wrap{flex-basis:155px!important}.m-counter{grid-template-columns:44px 1fr 44px!important;gap:6px!important}.m-counter button{width:44px!important;height:44px!important}.m-counter span{font-size:22px!important}.m-costs>div strong,.m-costs .own strong{font-size:17px!important}
+  #vy-dr>div,#vn-dr>div,#vb-dr>div{grid-template-columns:minmax(78px,1fr) minmax(82px,1fr) 44px 28px 44px!important;gap:4px!important;padding:9px 7px!important}#vy-dr>div>span:nth-child(1),#vn-dr>div>span:nth-child(1),#vb-dr>div>span:nth-child(1){font-size:16px!important}#vy-dr>div>span:nth-child(2),#vn-dr>div>span:nth-child(2),#vb-dr>div>span:nth-child(2){font-size:12px!important}#vy-dr>div>button,#vn-dr>div>button,#vb-dr>div>button{width:44px!important;height:44px!important}
+}
+@media(max-width:360px){
+ .m-service-body{display:grid!important;grid-template-columns:1fr!important}.m-counter-wrap{width:100%!important;max-width:none!important;flex-basis:auto!important}.m-costs{text-align:right!important}.m-costs .rate-line{display:inline-block;margin-right:8px}.ltc-sum-icon{display:none}.ltc-sum-top{grid-template-columns:1fr 1fr!important}.ltc-sum-value{font-size:23px!important}
+}
+
+/* === compact three-zone mobile service cards === */
+.m-service-list{display:grid!important;gap:9px!important}
+.m-service-card{background:#fff!important;border:1.5px solid var(--bd)!important;border-radius:14px!important;padding:11px 12px!important;overflow:hidden!important}
+.m-service-headline{display:flex!important;align-items:center!important;gap:6px!important;min-width:0!important;white-space:nowrap!important;padding:0 0 9px!important;border-bottom:1px solid var(--bd)!important}
+.m-service-headline>strong{font-size:16px!important;font-weight:900!important;line-height:1.2!important;flex:0 0 auto!important}
+.m-service-headline .m-badge{font-size:10.5px!important;padding:2px 6px!important;flex:0 0 auto!important}
+.m-inline-desc{font-size:11.5px!important;color:var(--t3)!important;overflow:hidden!important;text-overflow:ellipsis!important;min-width:0!important}
+.m-inline-desc.m-free{color:var(--T)!important}
+.m-service-zones{display:grid!important;grid-template-columns:minmax(118px,.9fr) minmax(112px,1fr) minmax(112px,1fr)!important;gap:0!important;align-items:stretch!important;padding-top:9px!important}
+.m-zone{min-width:0!important;display:flex!important;flex-direction:column!important;justify-content:center!important;padding:1px 9px!important}
+.m-zone+.m-zone{border-left:1px solid var(--bd)!important}
+.m-zone-counter{padding-left:0!important}
+.m-zone-own{padding-right:0!important;text-align:right!important;color:var(--C)!important}
+.m-zone-fee{text-align:right!important}
+.m-zone-fee .m-rate{font-size:10.5px!important;color:var(--t3)!important;line-height:1.2!important;margin-bottom:2px!important;white-space:nowrap!important}
+.m-zone-fee strong,.m-zone-own strong{font-size:15.5px!important;line-height:1.2!important;font-weight:900!important;white-space:nowrap!important;letter-spacing:-.2px!important}
+.m-zone-own>div{font-size:10.5px!important;line-height:1.2!important;margin-bottom:2px!important;white-space:nowrap!important}
+.m-zone-own strong{color:var(--R)!important}
+.m-service-zones .m-counter{display:grid!important;grid-template-columns:38px 1fr 38px!important;gap:4px!important;align-items:center!important}
+.m-service-zones .m-counter button{width:38px!important;height:38px!important;min-height:38px!important;border-radius:8px!important;font-size:20px!important}
+.m-service-zones .m-counter span{font-size:20px!important;font-weight:900!important;text-align:center!important}
+.m-frequency{display:none!important}
+@media(max-width:390px){
+ .m-service-card{padding:10px!important}
+ .m-service-headline{gap:5px!important}
+ .m-service-headline>strong{font-size:15.5px!important}.m-inline-desc{font-size:10.5px!important}.m-service-headline .m-badge{font-size:10px!important;padding:2px 5px!important}
+ .m-service-zones{grid-template-columns:minmax(105px,.9fr) minmax(99px,1fr) minmax(101px,1fr)!important}
+ .m-zone{padding-left:6px!important;padding-right:6px!important}.m-zone-counter{padding-left:0!important}.m-zone-own{padding-right:0!important}
+ .m-zone-fee strong,.m-zone-own strong{font-size:14px!important}.m-zone-fee .m-rate,.m-zone-own>div{font-size:9.5px!important}
+ .m-service-zones .m-counter{grid-template-columns:34px 1fr 34px!important;gap:3px!important}.m-service-zones .m-counter button{width:34px!important;height:36px!important;min-height:36px!important}.m-service-zones .m-counter span{font-size:18px!important}
+}
+@media(max-width:345px){
+ .m-service-zones{grid-template-columns:1fr 1fr!important;row-gap:8px!important}
+ .m-zone-counter{grid-column:1!important}.m-zone-fee{grid-column:2!important}.m-zone-own{grid-column:1 / -1!important;border-left:0!important;border-top:1px solid var(--bd)!important;padding:8px 0 0!important;display:grid!important;grid-template-columns:1fr auto!important;align-items:center!important;text-align:right!important}
+ .m-zone-own>div{text-align:left!important;margin:0!important}.m-zone-own strong{font-size:16px!important}
+}
+
+/* 서비스 카드 하부 상세 아코디언 */
+.service-detail-accordion{
+  margin:0 10px 10px;
+  padding:10px;
+  border-top:1px solid var(--bd);
+  border-radius:0 0 12px 12px;
+  background:var(--s1);
+}
+.detail-inline-title{
+  display:flex;align-items:center;justify-content:space-between;gap:6px;
+  margin-bottom:8px;font-size:13px;font-weight:900;color:var(--T);
+}
+.detail-inline-title span{font-size:10px;font-weight:700;color:var(--T);text-align:right}
+.service-detail-accordion .detail-row{
+  display:grid!important;
+  grid-template-columns:minmax(76px,1fr) minmax(82px,1fr) auto!important;
+  align-items:center!important;gap:6px!important;
+  padding:8px 9px!important;margin-bottom:6px!important;
+  background:#fff!important;border:1px solid var(--bd)!important;border-radius:9px!important;
+}
+.service-detail-accordion .detail-label{font-size:14px!important;font-weight:900!important;white-space:nowrap}
+.service-detail-accordion .detail-rate{font-size:12px!important;color:var(--t3)!important;white-space:nowrap}
+.service-detail-accordion .detail-stepper{display:grid!important;grid-template-columns:38px 26px 38px!important;align-items:center!important;gap:3px!important}
+.service-detail-accordion .detail-stepper button{width:38px!important;height:38px!important;min-height:38px!important;padding:0!important;border-radius:8px!important;font-size:19px!important}
+.service-detail-accordion .detail-stepper span{font-size:17px!important;font-weight:900!important;text-align:center!important}
+.service-detail-accordion .detail-subtotal{padding:4px 2px 0;text-align:right;font-size:12px;color:var(--t2)}
+.service-detail-accordion .detail-subtotal b{font-size:14px;color:var(--T)}
+.m-service-list.detail-mode .m-zone-counter .m-counter button{visibility:hidden;pointer-events:none}
+.m-service-list.detail-mode .m-zone-counter .m-counter span:before{content:'총 ';font-size:10px;color:var(--t3);font-weight:700;margin-right:2px}
+.m-service-list.detail-mode .m-zone-counter .m-counter span:after{content:'회';font-size:10px;color:var(--t3);font-weight:700;margin-left:2px}
+@media(max-width:380px){
+  .service-detail-accordion{margin-left:7px;margin-right:7px;padding:8px 6px}
+  .service-detail-accordion .detail-row{grid-template-columns:minmax(68px,1fr) minmax(72px,.9fr) auto!important;gap:4px!important;padding:7px 6px!important}
+  .service-detail-accordion .detail-label{font-size:13px!important}
+  .service-detail-accordion .detail-rate{font-size:11px!important}
+  .service-detail-accordion .detail-stepper{grid-template-columns:34px 22px 34px!important}
+  .service-detail-accordion .detail-stepper button{width:34px!important;height:34px!important;min-height:34px!important}
+}
+
+/* === final mobile calculator refinements === */
+.limit-primary{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-bottom:10px}
+.limit-primary-value{font-size:28px;font-weight:950;color:var(--T);line-height:1.05;letter-spacing:-.5px}
+.limit-remaining{text-align:right;min-width:0}.limit-remaining span{display:block;font-size:10.5px;color:var(--t3)}.limit-remaining strong{font-size:15px;color:var(--G);white-space:nowrap}
+.usage-row{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);margin:0 -2px 9px}
+.usage-row>div{padding:8px 6px}.usage-row>div+div{border-left:1px solid var(--bd);text-align:right}.usage-row span{display:block;font-size:10.5px;color:var(--t3)}.usage-row strong{font-size:16px;font-weight:900;white-space:nowrap}.usage-row>div:last-child strong{color:var(--R)}
+#ltc-sum-remain,#ltc-sum-own{font-size:20px!important;line-height:1.2}
+.usage-meta{font-size:11px!important;margin-bottom:5px!important}
+.service-rule{font-size:10.5px;line-height:1.45;color:var(--t3);background:var(--s1);border-radius:7px;padding:6px 8px;margin-top:8px}
+.compact-welfare{display:grid!important;gap:9px!important}.compact-welfare-card{border:1.5px solid var(--bd)!important;border-radius:14px!important;padding:11px 12px!important;background:#fff!important;overflow:hidden!important}
+.m-welfare-line{display:flex;align-items:center;gap:6px;min-width:0;white-space:nowrap;padding-bottom:9px;border-bottom:1px solid var(--bd)}.m-welfare-line>strong{font-size:15.5px;font-weight:900;flex:0 0 auto}.m-welfare-line .m-inline-desc{font-size:10.5px!important}
+.m-welfare-zones{display:grid;grid-template-columns:minmax(105px,.9fr) minmax(99px,1fr) minmax(101px,1fr);align-items:stretch;padding-top:9px}.m-welfare-zones .m-zone-counter{padding-left:0!important}.m-welfare-zones .m-zone-own{padding-right:0!important}.m-welfare-zones .m-counter{display:grid!important;grid-template-columns:34px 1fr 34px!important;gap:3px!important}.m-welfare-zones .m-counter button{width:34px!important;height:36px!important;min-height:36px!important;border-radius:8px!important;font-size:19px!important}.m-welfare-zones .m-counter span{font-size:18px!important;font-weight:900!important;text-align:center}.m-welfare-zones .m-zone-fee strong,.m-welfare-zones .m-zone-own strong{font-size:14px!important}.m-welfare-zones .m-rate,.m-welfare-zones .m-zone-own>div{font-size:9.5px!important}
+.wc-summary{background:var(--GL);border-radius:11px;padding:11px 12px;margin-bottom:10px}.wc-limit-main{display:flex;justify-content:space-between;align-items:baseline;gap:8px}.wc-limit-main span{font-size:11px;font-weight:800;color:var(--G)}.wc-limit-main strong{font-size:21px;color:var(--G);white-space:nowrap}.wc-summary-sub{display:grid;grid-template-columns:1fr 1fr;margin-top:8px;padding-top:8px;border-top:1px solid rgba(0,0,0,.08)}.wc-summary-sub>div:last-child{text-align:right}.wc-summary-sub span{display:block;font-size:10px;color:var(--t3)}.wc-summary-sub strong{font-size:14px;white-space:nowrap}.wc-summary-sub>div:last-child strong{color:var(--R)}
+@media(max-width:350px){.m-welfare-zones{grid-template-columns:1fr 1fr;row-gap:7px}.m-welfare-zones .m-zone-own{grid-column:1/-1;border-left:0!important;border-top:1px solid var(--bd);padding:7px 0 0!important;display:grid!important;grid-template-columns:1fr auto;text-align:right}.m-welfare-zones .m-zone-own>div{text-align:left}.limit-primary{align-items:flex-start;flex-direction:column;gap:4px}.limit-remaining{text-align:left}}
+
+
+/* mobile quick actions: phone / map / site */
+a.phone-link{color:inherit;text-decoration:none;font-weight:inherit;border-bottom:1px dashed currentColor;touch-action:manipulation}
+a.phone-link:active{opacity:.65}
+.map-actions{display:inline-flex;gap:4px;vertical-align:middle;margin-left:5px;white-space:nowrap}
+.map-link{display:inline-flex;align-items:center;justify-content:center;min-height:25px;padding:2px 7px;border-radius:6px;border:1px solid var(--bd2);background:#fff;color:var(--t2);font-size:10px;font-weight:800;line-height:1.2;text-decoration:none}
+.map-link.naver{border-color:#b8dfc4;color:#087c42;background:#f1fbf4}
+.map-link.google{border-color:#c8d6f0;color:#2854a0;background:#f4f7fd}
+a.site-link{color:var(--B);font-weight:800;text-decoration:underline;text-underline-offset:2px}
+@media(max-width:380px){.map-actions{display:flex;margin:5px 0 0;gap:5px}.map-link{font-size:10px;min-height:27px;padding:3px 8px}}
+</style>
+<style id="detail-mobile-redesign">
+/* 상세 계산: 예시 이미지처럼 간결한 모바일 전용 행 */
+.detail-calc{margin-top:10px}
+.detail-group{border-radius:14px;padding:14px;margin-bottom:12px}
+.detail-care{background:#dff4ec}.detail-nurse{background:#e8f0fb}.detail-bath{background:#edf5df}
+.detail-title{font-size:16px;font-weight:900;line-height:1.35;margin-bottom:10px}
+.detail-care .detail-title{color:var(--T)}.detail-nurse .detail-title{color:var(--B)}.detail-bath .detail-title{color:var(--G)}
+.detail-title span{display:block;font-size:11px;font-weight:700;color:var(--T);margin-top:3px}
+.detail-rows{display:grid;gap:8px}
+.detail-row{display:grid!important;grid-template-columns:minmax(88px,1.15fr) minmax(92px,1fr) auto!important;align-items:center!important;gap:8px!important;background:#fff!important;border:1px solid rgba(0,0,0,.04)!important;border-radius:10px!important;padding:12px!important;margin:0!important;min-width:0!important}
+.detail-label{font-size:19px;font-weight:900;line-height:1.1;white-space:nowrap;min-width:0}
+.detail-rate{font-size:14px;color:var(--t3);white-space:nowrap;min-width:0}
+.detail-stepper{display:grid;grid-template-columns:44px 32px 44px;align-items:center;gap:5px}
+.detail-stepper button{width:44px!important;height:44px!important;border-radius:8px!important;border:1.5px solid var(--bd2)!important;background:#fff!important;font-size:22px!important;font-weight:900!important;line-height:1!important;color:var(--tx)!important;cursor:pointer!important;padding:0!important}
+.detail-stepper span{font-size:19px!important;font-weight:900!important;text-align:center!important;min-width:0!important;color:var(--tx)!important}
+.detail-subtotal{font-size:12px;font-weight:700;text-align:right;margin-top:9px;opacity:.85}
+.detail-subtotal b{font-size:15px;margin-left:5px}
+@media(max-width:390px){
+  .detail-group{padding:11px}
+  .detail-row{grid-template-columns:minmax(76px,1fr) minmax(80px,.95fr) auto!important;gap:5px!important;padding:10px 8px!important}
+  .detail-label{font-size:17px}.detail-rate{font-size:12px}
+  .detail-stepper{grid-template-columns:40px 26px 40px;gap:3px}
+  .detail-stepper button{width:40px!important;height:40px!important;font-size:20px!important}
+  .detail-stepper span{font-size:18px!important}
+}
+@media(max-width:350px){
+  .detail-row{grid-template-columns:1fr auto!important}
+  .detail-rate{grid-column:1;font-size:12px}
+  .detail-stepper{grid-column:2;grid-row:1 / span 2}
+}
+
+/* 상세계산 기본 선택(★) */
+.preferred-row{outline:2px solid rgba(10,92,68,.18);background:#fffdf7!important}
+.preferred-mark{display:inline-flex;align-items:center;justify-content:center;margin-left:3px;color:#b56a00;font-size:15px;font-weight:900;vertical-align:1px}
+
+/* v4 mobile polish */
+.ht{font-size:14.5px!important;font-weight:900!important;line-height:1.28!important;padding:9px 4px!important}
+.ht span{font-size:11.5px!important;line-height:1.25!important;font-weight:700!important}
+.cmp-hdr,.cmp-row{grid-template-columns:minmax(0,38%) minmax(0,62%)!important}
+.cmp-col{padding:11px 7px!important}
+.cmp-ct{font-size:14px!important;line-height:1.3!important}
+.cmp-cs{font-size:11px!important;line-height:1.3!important}
+.cmp-cell{padding:10px 8px!important;font-size:12.5px!important;line-height:1.55!important;word-break:keep-all!important;overflow-wrap:anywhere!important}
+.cmp-cell:first-child{font-size:12px!important}
+.cmp-cell strong{font-size:13px!important;line-height:1.35!important;margin-bottom:3px!important}
+#wc-calc{margin-top:34px!important;padding-top:24px!important;border-top:3px solid var(--bd)!important;position:relative!important}
+#wc-calc::before{content:'연간 별도 한도';position:absolute;top:-13px;left:0;background:#f7f6f2;padding:0 9px 0 2px;color:var(--t3);font-size:11px;font-weight:800;letter-spacing:.02em}
+@media(max-width:380px){
+  .ht{font-size:13.5px!important}.ht span{font-size:10.5px!important}
+  .cmp-hdr,.cmp-row{grid-template-columns:minmax(0,36%) minmax(0,64%)!important}
+  .cmp-cell{padding:9px 6px!important;font-size:12px!important}
+  .cmp-cell:first-child{font-size:11.5px!important}
+}
+</style>
+<style>
+/* v6: clearly separate welfare-equipment calculator from monthly home-care calculator */
+#wc-calc{
+  margin-top:34px !important;
+  padding:17px 14px 16px !important;
+  background:linear-gradient(180deg,#f7fbf4 0%,#ffffff 28%) !important;
+  border:2px solid var(--G) !important;
+  border-radius:16px !important;
+  box-shadow:0 0 0 5px rgba(38,74,8,.055) !important;
+  position:relative;
+}
+#wc-calc::before{
+  content:'재가급여와 별도 · 연간 한도';
+  position:static !important;
+  top:auto !important;left:auto !important;
+  display:inline-block;
+  margin:-31px 0 12px 2px;
+  padding:4px 9px;
+  border-radius:999px;
+  background:var(--GL);
+  color:var(--G);
+  font-size:11.5px;
+  font-weight:900;
+  line-height:1.25;
+}
+#wc-calc > div:first-child{font-size:17px !important;line-height:1.3 !important;margin-bottom:5px !important}
+@media(max-width:390px){
+  #wc-calc{margin-top:30px !important;padding:15px 11px 14px !important}
+  #wc-calc::before{margin-top:-28px;font-size:10.5px}
+}
+</style>
+</head>
+<body>
+<div class="hdr">
+<div class="h1">장기요양 지원 가이드 — 안성 2026</div>
+
+<div class="htabs">
+<button class="ht aba" onclick="showP('before')">📋 등급 확정 전<br/><span style="font-size:12px;font-weight:600;opacity:.85">신청 · 심사 · 대기</span></button>
+<button class="ht" onclick="showP('after')">✅ 등급 확정 후<br/><span style="font-size:12px;font-weight:600;opacity:.85">판정 다음날부터 이용</span></button>
+<button class="ht" onclick="showP('calc')">🧮 장기요양 계산기<br/><span style="font-size:12px;font-weight:600;opacity:.85">재가급여 · 복지용구</span></button>
+</div>
+</div>
+<div class="main">
+<!-- ══════ BEFORE ══════ -->
+<div class="ps vis" id="ps-before">
+<div class="availability-box">
+<div class="availability-title">이용 가능 시점</div>
+<div class="availability-row">
+<span class="availability-label">등급 인정 후</span>
+<div class="availability-items">
+<span class="b bb">장기요양 방문요양</span>
+<span class="b bb">방문간호</span>
+<span class="b bb">복지용구 급여</span>
+<span class="b bb">방문목욕</span>
+</div>
+</div>
+<div class="availability-row">
+<span class="availability-label">등급 없이 가능</span>
+<div class="availability-items">
+<span class="b bt">건강보험 일차의료 방문진료</span>
+<span class="b bt">통합돌봄 신청</span>
+<span class="b bt">치매안심센터</span>
+</div>
+</div>
+<div class="availability-row">
+<span class="availability-label">상시 가능</span>
+<div class="availability-items">
+<span class="b bg">누구나돌봄</span>
+<span class="b bg">긴급복지</span>
+<span class="b bg">이동지원</span>
+<span class="b bo">기초연금·복지자격 확인</span>
+</div>
+</div>
+<div class="availability-note">⏱ 등급 결정 원칙 30일, 최대 60일 — 아래 순서로 공백 기간을 메우세요.</div>
+</div>
+<div class="sh">🔴 Day 0 — 오늘 동시에 시작할 3가지</div>
+<!-- ── b0: 장기요양 신청 ── -->
+<div class="card urg">
+<div class="chead" onclick="tog('b0')">
+<div class="tbadge" style="background:var(--RL);border-right-color:var(--R)">
+<div class="tday" style="color:var(--R)">Day 0</div>
+<div class="tstatus" style="background:var(--R);color:#fff">등급무관</div>
+</div>
+<div class="ccol">
+<div class="cmeta"><span style="color:var(--R);font-weight:800">최우선 · 오늘 즉시</span><span class="cmsep">·</span><span>모든 급여의 전제조건</span></div>
+<div class="ctitle">① 장기요양인정 신청</div>
+<div class="csub">장기요양 방문요양·방문간호·복지용구 급여 이용의 전제 — <a aria-label="1577-1000 전화 걸기" class="phone-link" href="tel:15771000">1577-1000</a>으로 신청 방법 확인 후 접수</div>
+</div>
+<div class="tico-r">🏁</div><div class="chv" id="hv-b0">⌄</div>
+</div>
+<div class="cbody" id="bd-b0">
+<div class="itabs">
+<button class="it ac" onclick="tab('b0',0)">비용·소요기간</button>
+<button class="it" onclick="tab('b0',1)">방문조사 핵심</button>
+<button class="it" onclick="tab('b0',2)">기관·신청방법</button>
+</div>
+<div class="ip ac" id="ip-b0-0">
+<div class="ig3">
+<div class="ic"><div class="il">신청 비용</div><div class="iv em">무료</div></div>
+<div class="ic"><div class="il">소견서 발급비</div><div class="iv wn">약 1~3만원</div><div class="is">경기도의료원 안성병원</div></div>
+<div class="ic"><div class="il">등급 결정까지</div><div class="iv">원칙 30일<br/><span style="font-size:11px;color:var(--t3)">최대 60일</span></div></div>
+</div>
+<div class="nb">📌 <strong>원칙 30일 이내</strong> 결정. 의사소견서 제출 지연·정밀조사 필요 시 공단 통지 후 최대 30일 연장 가능 → 실제 최대 60일. 소견서를 빨리 제출할수록 공백 기간 단축됩니다.</div>
+<table class="tbl">
+<tr><th>단계</th><th>소요 기간</th><th>내용</th></tr>
+<tr><td>신청 접수</td><td><strong style="color:var(--T)">당일</strong></td><td><a aria-label="1577-1000 전화 걸기" class="phone-link" href="tel:15771000">1577-1000</a> 문의 → 방문·우편·팩스·온라인 중 선택 접수</td></tr>
+<tr><td>공단 방문조사</td><td><strong>접수 후 7~14일</strong></td><td>공단 직원 자택 방문 · 90개 항목 조사</td></tr>
+<tr><td>의사소견서 제출</td><td><strong>공단 안내 기한</strong></td><td>조사와 병행 가능 · 소견서 발급비 약 1~3만원</td></tr>
+<tr><td>등급판정위원회</td><td><strong>조사 후 14~30일</strong></td><td>1~5등급 또는 등급외 결정</td></tr>
+<tr><td>결과 통보</td><td><strong style="color:var(--T)">원칙 30일, 최대 60일</strong></td><td>우편 통보 — 판정 다음날부터 서비스 이용 가능</td></tr>
+</table>
+<div class="hl">📌 등급 대기 중(30~60일)에도 통합돌봄·치매안심센터·보건소·이동지원은 즉시 이용 가능합니다.</div>
+</div>
+<div class="ip" id="ip-b0-1">
+<div class="al">⚠️ 방문조사 점수가 등급을 결정합니다. <strong>조사 당일 "가장 안 좋은 평소 상태"를 그대로 보여주세요.</strong> 잠시 의식이 차려지거나 움직임이 있어도, 보호자가 24시간 중증 와상 상태임을 강하게 진술해야 합니다.</div>
+<ul class="sl">
+<li class="si"><div class="sico" style="background:var(--RL)">🚫</div><div class="sb"><div class="sh2">이동 완전 불가 — 직접 보여줄 것</div><div class="sd">침대에서 혼자 일어나기, 침대↔휠체어, 보행 전혀 불가. "조금은 할 수 있어요"라고 말하지 말 것.</div></div></li>
+<li class="si"><div class="sico" style="background:var(--CL)">🩺</div><div class="sb"><div class="sh2">NG tube · Foley 실물 확인시키기</div><div class="sd">튜브 실물을 조사원이 눈으로 확인하게 해야 서류보다 강하게 반영됩니다.</div></div></li>
+<li class="si"><div class="sico" style="background:var(--AL)">🧠</div><div class="sb"><div class="sh2">치매 인지 상태 그대로</div><div class="sd">조사원 질문에 대답 못해도 그대로 둘 것. 가족이 대신 대답하지 말 것.</div></div></li>
+<li class="si"><div class="sico" style="background:var(--RL)">🔄</div><div class="sb"><div class="sh2">2시간마다 체위변경 타인 도움 필요</div><div class="sd">"혼자는 전혀 안 됩니다. 야간에도 2시간마다 가족이 체위변경합니다." — 구체적으로 진술.</div></div></li>
+<li class="si"><div class="sico" style="background:var(--RL)">🛏</div><div class="sb"><div class="sh2">세면·옷입기·목욕·배설 전적 도움</div><div class="sd">기저귀 사용 여부, 욕창 또는 욕창 고위험, 야간 돌봄 필요, 24시간 가족 간병 사실을 구체적으로 설명.</div></div></li>
+</ul>
+<div class="hl">소견서 작성 시 의사에게 "NG tube feeding, Foley catheter 유치, 완전 와상, 치매"를 명시하고, 방문간호지시서도 동시 발급 가능 여부를 함께 문의하세요.</div>
+</div>
+<div class="ip" id="ip-b0-2">
+<div class="ig">
+<div class="ic"><div class="il">기관</div><div class="iv">국민건강보험공단 안성지사</div><div class="is"><span class="address-action">안성시 대학로 12<span class="map-actions"><a class="map-link naver" href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%95%88%EC%84%B1%EC%8B%9C%20%EB%8C%80%ED%95%99%EB%A1%9C%2012" rel="noopener" target="_blank">네이버</a><a class="map-link google" href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%95%88%EC%84%B1%EC%8B%9C%20%EB%8C%80%ED%95%99%EB%A1%9C%2012" rel="noopener" target="_blank">구글</a></span></span></div></div>
+<div class="ic"><div class="il">전화 (평일 09~18시)</div><div class="iv em">☎ <a aria-label="1577-1000 전화 걸기" class="phone-link" href="tel:15771000">1577-1000</a></div><div class="is">신청 방법·일정 확인 후 접수</div></div>
+</div>
+<table class="tbl">
+<tr><th>준비 서류</th><th>내용</th></tr>
+<tr><td><strong>장기요양인정 신청서</strong></td><td>공단 양식 — 현장 작성 가능</td></tr>
+<tr><td><strong>보호자 신분증</strong></td><td>대리 신청 필수</td></tr>
+<tr><td><strong>가족관계증명서</strong></td><td>대리 신청 시 (주민센터 무료 발급)</td></tr>
+<tr><td><strong>의사소견서</strong></td><td>65세 이상은 나중 제출 가능<br/><span class="rd2">반드시 포함: NG tube feeding, Foley catheter 유치, 완전 와상, 치매 진단명</span><br/>경기도의료원 안성병원 ☎ <a aria-label="031-8046-5000 전화 걸기" class="phone-link" href="tel:03180465000">031-8046-5000</a> 발급 권장</td></tr>
+</table>
+</div>
+</div>
+</div>
+<!-- ── b_통합: 통합돌봄+읍면동 ── -->
+<div class="card key">
+<div class="chead" onclick="tog('bx')">
+<div class="tbadge" style="background:var(--TL);border-right-color:var(--T)">
+<div class="tday" style="color:var(--T)">Day 0</div>
+<div class="tstatus" style="background:var(--R);color:#fff">등급무관</div>
+</div>
+<div class="ccol">
+<div class="cmeta"><span style="color:var(--T);font-weight:800">장기요양 신청과 동시에 · 2026.3.27 시행</span></div>
+<div class="ctitle">② 안성시 의료·요양 통합돌봄 신청 — 안성3동 행정복지센터</div>
+<div class="csub">등급 대기 중에도 방문진료·방문건강관리·보조기기·긴급돌봄·복지자격을 한 창구에서 연계 — 이 환자의 가장 중요한 공백 해결책</div>
+<div class="cbadges"><span class="b bt">2026 법률 시행</span><span class="b bt">등급 대기 중 가능</span><span class="b bt">재택의료센터 포함</span></div>
+</div>
+<div class="tico-r">🏛</div><div class="chv" id="hv-bx">⌄</div>
+</div>
+<div class="cbody" id="bd-bx">
+<div class="itabs">
+<button class="it ac" onclick="tab('bx',0)">서비스·대상</button>
+<button class="it" onclick="tab('bx',1)">재택의료센터 참여기관</button>
+<button class="it" onclick="tab('bx',2)">기초생활·복지자격 확인</button>
+<button class="it" onclick="tab('bx',3)">기관·신청방법</button>
+</div>
+<div class="ip ac" id="ip-bx-0">
+<div class="hl">2026년 3월 27일부터 「의료·요양 등 지역 돌봄의 통합지원에 관한 법률」이 전국 시행됐고, 안성시는 읍면동 창구 중심의 통합돌봄 체계를 가동 중입니다. <strong>이 환자는 전형적인 대상</strong>입니다.</div>
+<div class="ig">
+<div class="ic"><div class="il">대상</div><div class="iv">65세 이상</div><div class="is">일상생활 유지 어려운 자<br/>등급 신청 중도 포함</div></div>
+<div class="ic"><div class="il">비용</div><div class="iv em">무료 연계</div><div class="is">개별 서비스 본인부담 별도</div></div>
+</div>
+<table class="tbl">
+<tr><th>연계 가능 서비스</th><th>내용</th></tr>
+<tr><td><strong>재택의료센터</strong></td><td>의사 월 1회, 간호사 월 2회 다학제 팀 방문 — NG tube·Foley·욕창·만성질환 통합 관리</td></tr>
+<tr><td><strong>방문건강관리</strong></td><td>보건소 간호사 방문 — 활력징후·욕창 체크·지역자원 연계</td></tr>
+<tr><td><strong>보조기기 임시 대여</strong></td><td>휠체어·워커·목발 등 한 달 무료 — 등급 전 임시 활용</td></tr>
+<tr><td><strong>긴급돌봄 연계</strong></td><td>보호자 위기 시 돌봄자원 긴급 연결</td></tr>
+<tr><td><strong>퇴원환자 일상복귀 지원</strong></td><td>입원 후 귀가 시 통합돌봄 즉시 연계</td></tr>
+<tr><td><strong>다제약물 관리</strong></td><td>복잡한 투약 정리·부작용 모니터링</td></tr>
+</table>
+</div>
+<div class="ip" id="ip-bx-1">
+<div class="hl">아래 기관들이 안성시 재택의료센터 참여기관으로 확인됩니다. 등급 확정 후 연계 가능 여부를 직접 문의하세요.</div>
+<table class="tbl">
+<tr><th>기관명</th><th>특이사항</th></tr>
+<tr><td><strong>경기도의료원 안성병원</strong></td><td>완전 와상·NG tube·Foley 환자 적합 — 방문간호지시서 발급 가능 · ☎ <a aria-label="031-8046-5000 전화 걸기" class="phone-link" href="tel:03180465000">031-8046-5000</a></td></tr>
+<tr><td><strong>서안성의원</strong></td><td>통합돌봄 참여 확인 — 구체적 서비스 범위 직접 문의</td></tr>
+<tr><td><strong>안성농민의원</strong></td><td>통합돌봄 참여 확인 — 구체적 서비스 범위 직접 문의</td></tr>
+<tr><td><strong>꿈사랑의원</strong></td><td>통합돌봄 참여 확인 — 구체적 서비스 범위 직접 문의</td></tr>
+</table>
+<div class="wn3">⚠️ 기관 목록·참여 범위는 변동 가능합니다. 안성3동 행정복지센터 또는 안성시 보건소에 최신 현황 확인 요청.</div>
+</div>
+<div class="ip" id="ip-bx-2">
+<div class="nb">📌 NG tube/Foley 와상 환자는 의료비가 지속적으로 발생합니다. 장기요양비 절감보다 <strong>의료급여·본인부담 감경 자격 여부가 전체 비용에 훨씬 큰 영향</strong>을 줄 수 있습니다. 읍면동 방문 시 반드시 함께 확인하세요.</div>
+<table class="tbl">
+<tr><th>확인 항목</th><th>내용</th></tr>
+<tr><td><strong>기초생활보장</strong></td><td>생계·의료·주거·교육급여 대상 여부</td></tr>
+<tr><td><strong>의료급여 (1·2종)</strong></td><td>건강보험 대신 의료급여 적용 시 의료비 대폭 감소</td></tr>
+<tr class="na-row"><td><strong>차상위 본인부담경감</strong> <span class="na">※ 차상위 해당자만</span></td><td>기초 비해당이라도 차상위 조건 충족 시 의료비 감면</td></tr>
+<tr><td><strong>장기요양 본인부담 감경</strong></td><td>15% → 6~9% 또는 면제 — 등급 후 읍면동 신청</td></tr>
+<tr><td><strong>기초연금</strong></td><td>단독 소득인정액 월 247만원 이하 시 최대 월 34만원</td></tr>
+<tr class="na-row"><td><strong>에너지바우처</strong> <span class="na">※ 기초수급·차상위 해당자만</span></td><td>기초수급·차상위 + 65세 이상 포함 가구 — 연 약 20~30만원</td></tr>
+<tr class="na-row"><td><strong>통신비 감면</strong> <span class="na">※ 기초수급·차상위 해당자만</span></td><td>기초수급·차상위 — 월 최대 26,000원</td></tr>
+</table>
+</div>
+<div class="ip" id="ip-bx-3">
+<div class="ig">
+<div class="ic"><div class="il">신청 창구</div><div class="iv">안성3동 행정복지센터</div><div class="is"><span class="address-action">경기도 안성시 고수2로 17<span class="map-actions"><a class="map-link naver" href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%95%88%EC%84%B1%EC%8B%9C%20%EA%B3%A0%EC%88%982%EB%A1%9C%2017" rel="noopener" target="_blank">네이버</a><a class="map-link google" href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%95%88%EC%84%B1%EC%8B%9C%20%EA%B3%A0%EC%88%982%EB%A1%9C%2017" rel="noopener" target="_blank">구글</a></span></span> (당왕동)<br/>대표 <a aria-label="031-678-4050 전화 걸기" class="phone-link" href="tel:0316784050">031-678-4050</a></div><div class="is">찾아가는 보건복지팀 연결 요청</div></div>
+<div class="ic"><div class="il">안성시 보건소</div><div class="iv em">☎ <a aria-label="031-678-5768 전화 걸기" class="phone-link" href="tel:0316785768">031-678-5768</a></div><div class="is"><span class="address-action">강변로74번길 16<span class="map-actions"><a class="map-link naver" href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%95%88%EC%84%B1%EC%8B%9C%20%EA%B0%95%EB%B3%80%EB%A1%9C74%EB%B2%88%EA%B8%B8%2016" rel="noopener" target="_blank">네이버</a><a class="map-link google" href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%95%88%EC%84%B1%EC%8B%9C%20%EA%B0%95%EB%B3%80%EB%A1%9C74%EB%B2%88%EA%B8%B8%2016" rel="noopener" target="_blank">구글</a></span></span> (도기동)<br/><span style="font-weight:800;color:var(--T)">방문건강관리 안성3동 담당:</span><br/>☎ <a aria-label="031-678-5748 전화 걸기" class="phone-link" href="tel:0316785748">031-678-5748</a></div></div>
+</div>
+<ul class="sl">
+<li class="si">
+<div class="sico" style="background:var(--TL)">①</div>
+<div class="sb">
+<div class="sh2">안성3동 행정복지센터 방문 또는 전화</div>
+<div class="sd">"안성시 의료·요양 통합돌봄 신청하겠습니다. 85세 치매 완전 와상, NG tube, Foley, 가족 간병 한계 상황입니다. 찾아가는 보건복지팀 연결과 기초복지자격도 함께 확인해 주세요."</div>
+<span class="stip">보호자 대리·전화 신청 가능</span>
+</div>
+</li>
+<li class="si">
+<div class="sico" style="background:var(--TL)">②</div>
+<div class="sb">
+<div class="sh2">안성시 보건소 통합돌봄 연계 요청</div>
+<div class="sd">☎ <a aria-label="031-678-5768 전화 걸기" class="phone-link" href="tel:0316785768">031-678-5768</a> → "방문건강관리·통합돌봄 연계 요청"<br/>치매안심센터(같은 블록)에서도 대리 신청 가능</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- ── b1: 치매안심센터 ── -->
+<div class="card">
+<div class="chead" onclick="tog('b1')">
+<div class="tbadge" style="background:var(--AL);border-right-color:var(--A)">
+<div class="tday" style="color:var(--A)">Day 0</div>
+<div class="tstatus" style="background:var(--R);color:#fff">등급무관</div>
+</div>
+<div class="ccol">
+<div class="cmeta"><span style="color:var(--A);font-weight:800">장기요양 신청 당일 동시 · 무료</span></div>
+<div class="ctitle">③ 안성시 치매안심센터 등록</div>
+<div class="csub">조호물품(기저귀 등) · 치매치료비 월 최대 3만원 · 사례관리 · 보호자 상담 · 찾아가는 등록서비스(경기도의료원 안성병원 연계, 2026.6~)</div>
+</div>
+<div class="tico-r">🧠</div><div class="chv" id="hv-b1">⌄</div>
+</div>
+<div class="cbody" id="bd-b1">
+<div class="itabs">
+<button class="it ac" onclick="tab('b1',0)">받을 수 있는 것</button>
+<button class="it" onclick="tab('b1',1)">치매가족 휴식지원</button>
+<button class="it" onclick="tab('b1',2)">치매치료비 지원</button>
+<button class="it" onclick="tab('b1',3)">기관·신청방법</button>
+</div>
+<div class="ip ac" id="ip-b1-0">
+<table class="tbl">
+<tr><th>지원 항목</th><th>내용</th><th>비고</th></tr>
+<tr><td><strong>조호물품 지원</strong></td><td>기저귀·방수매트·욕창예방쿠션 등 — 등록 후 지원 대상·품목 확인</td><td class="em2">무료 (예산 소진 전)</td></tr>
+<tr><td><strong>치매 사례관리</strong></td><td>전담 사례관리사 — 상황 파악·서비스 연계·장기요양 신청 지원</td><td class="em2">무료</td></tr>
+<tr><td><strong>찾아가는 등록서비스</strong></td><td>경기도의료원 안성병원과 협력, 치매 진단자 가정 방문 등록 (2026.6~)</td><td class="em2">무료</td></tr>
+<tr><td><strong>가족 상담·교육</strong></td><td>돌봄 기법, 번아웃 예방, 간호 교육 연계</td><td class="em2">무료</td></tr>
+<tr><td><strong>배회감지기·인식표</strong></td><td>실종 예방 기기 지원 (치매 환자)</td><td class="em2">무료</td></tr>
+</table>
+<div class="wn3">⚠️ 조호물품은 보호자가 센터(<span class="address-action">강변로74번길 18<span class="map-actions"><a class="map-link naver" href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%95%88%EC%84%B1%EC%8B%9C%20%EA%B0%95%EB%B3%80%EB%A1%9C74%EB%B2%88%EA%B8%B8%2018" rel="noopener" target="_blank">네이버</a><a class="map-link google" href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%95%88%EC%84%B1%EC%8B%9C%20%EA%B0%95%EB%B3%80%EB%A1%9C74%EB%B2%88%EA%B8%B8%2018" rel="noopener" target="_blank">구글</a></span></span>)를 방문하여 수령하는 경우가 많습니다. 대리 수령 시 보호자 신분증·가족관계증명서·치매 진단 관련 서류 지참 후 사전 확인하세요.</div>
+</div>
+<div class="ip" id="ip-b1-1">
+<div class="wn3">⚠️ 치매가족휴가제는 치매안심센터 등록 후 대상 조건·비용·이용 가능 여부를 반드시 확인하세요. 등급 유무, 이용기관의 중증 의료처치 수용 가능 여부에 따라 실제 이용 방법이 달라집니다.</div>
+<table class="tbl">
+<tr><th>항목</th><th>내용</th></tr>
+<tr><td>치매가족 휴식지원</td><td>단기보호·종일방문요양·가족상담 등 — 치매안심센터에서 현재 가능한 형태 확인 필요</td></tr>
+<tr><td>장기요양 가족휴가제</td><td>등급 보유 후 이용 — 연 12일 단기보호 + 연 24회 종일방문요양 (월 한도액 외 별도, 2026 확대)</td></tr>
+<tr><td>NG tube·Foley 환자 주의</td><td>단기보호시설 거부 가능 — "중증 의료기기 보유 환자" 사전 고지 필수. 종일방문요양(12시간)이 더 현실적.</td></tr>
+</table>
+</div>
+<div class="ip" id="ip-b1-2">
+<table class="tbl">
+<tr><th>항목</th><th>내용</th></tr>
+<tr><td>대상</td><td>만 60세 이상 치매 진단자 · 중위소득 140% 이하<br/><span style="font-size:12px;color:var(--t3)">2026 기준: 1인 약 335만원 / 2인 약 551만원 / 3인 약 704만원 이하</span></td></tr>
+<tr><td>지원 내용</td><td>치매 치료약제비(도네페질·메만틴 등) <span class="em2">월 최대 3만원</span></td></tr>
+<tr><td>준비 서류</td><td>진단서, 처방전, 영수증, 통장사본, 소득 확인 서류</td></tr>
+</table>
+</div>
+<div class="ip" id="ip-b1-3">
+<div class="ig">
+<div class="ic"><div class="il">주소</div><div class="iv"><span class="address-action">강변로74번길 18<span class="map-actions"><a class="map-link naver" href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%95%88%EC%84%B1%EC%8B%9C%20%EA%B0%95%EB%B3%80%EB%A1%9C74%EB%B2%88%EA%B8%B8%2018" rel="noopener" target="_blank">네이버</a><a class="map-link google" href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%95%88%EC%84%B1%EC%8B%9C%20%EA%B0%95%EB%B3%80%EB%A1%9C74%EB%B2%88%EA%B8%B8%2018" rel="noopener" target="_blank">구글</a></span></span></div><div class="is">도기동 — 보건소(16번길 16) 바로 옆</div></div>
+<div class="ic"><div class="il">전화</div><div class="iv em">☎ <a aria-label="031-678-3004~3012 전화 걸기" class="phone-link" href="tel:0316783004">031-678-3004~3012</a></div><div class="is">평일 09:00~17:00</div></div>
+</div>
+<ul class="sl">
+<li class="si">
+<div class="sico" style="background:var(--AL)">📞</div>
+<div class="sb">
+<div class="sh2"><a aria-label="031-678-3004~3012 전화 걸기" class="phone-link" href="tel:0316783004">031-678-3004~3012</a> 전화 후 방문</div>
+<div class="sd">"치매 환자 등록 및 조호물품 신청하려 합니다. 85세 치매, 완전 와상, NG tube, Foley 유지 중, 가족이 간병 중입니다. 조호물품과 사례관리 연계 요청합니다."</div>
+<span class="stip">치매 진단서 없어도 일단 접수 가능 — 센터에서 안내</span>
+</div>
+</li>
+</ul>
+<div class="hl">치매안심센터와 안성시 보건소가 같은 블록 — 한 번 방문으로 두 곳 모두 처리 가능.</div>
+</div>
+</div>
+</div>
+<div class="sh">🟡 Day 1~7 — 등급 전 추가 연계</div>
+<!-- ── b2: 이동지원 ── -->
+<div class="card">
+<div class="chead" onclick="tog('b2')">
+<div class="tbadge" style="background:var(--ORL);border-right-color:var(--OR)">
+<div class="tday" style="color:var(--OR)">Day 0~</div>
+<div class="tstatus" style="background:var(--R);color:#fff">등급무관</div>
+</div>
+<div class="ccol">
+<div class="cmeta"><span style="color:var(--OR);font-weight:800">사전 등록 필요 · 안성시시설관리공단 운영</span></div>
+<div class="ctitle">안성시 교통약자 이동지원</div>
+<div class="csub">특별교통수단(리프트 차량, 365일 24시간) · 임차택시 · 병원 진료·복지시설 이동 지원</div>
+</div>
+<div class="tico-r">🚐</div><div class="chv" id="hv-b2">⌄</div>
+</div>
+<div class="cbody" id="bd-b2">
+<div class="itabs">
+<button class="it ac" onclick="tab('b2',0)">비용·운행 범위</button>
+<button class="it" onclick="tab('b2',1)">기관·신청방법</button>
+</div>
+<div class="ip ac" id="ip-b2-0">
+<table class="tbl">
+<tr><th>종류</th><th>대상</th><th>운행 범위</th><th>요금</th></tr>
+<tr><td><strong>특별교통수단</strong><br/>(리프트 차량)</td><td>65세 이상 대중교통 이용 어려운 분 · 보행상 중증장애인</td><td>관내·광역(경기·서울·인천)·인접(천안·음성·진천)</td><td>기본 1,500원/10km<br/>추가 100원/5km</td></tr>
+<tr><td><strong>임차택시</strong></td><td>비휠체어 교통약자 · 보행 불편 고령자</td><td>안성시 관내</td><td>일반 택시 수준</td></tr>
+</table>
+<div class="al">⚠️ 완전 와상 + NG tube + Foley 환자는 리프트 차량 예약 시 "와상 환자, 의료기기 보유" 반드시 사전 고지. 예약 경쟁이 치열하므로 <strong>응급 이동 대비 사설 구급차 연락처도 미리 확보</strong>해 두세요.</div>
+<div class="nb">📌 최신 요금은 <a class="site-link" href="https://www.anseong.go.kr" rel="noopener" target="_blank">anseong.go.kr</a> 또는 안성시시설관리공단(<a aria-label="031-677-6655 전화 걸기" class="phone-link" href="tel:0316776655">031-677-6655</a>)에서 확인.</div>
+</div>
+<div class="ip" id="ip-b2-1">
+<div class="ig">
+<div class="ic"><div class="il">특별교통수단 예약</div><div class="iv em">☎ <a aria-label="1666-0420 전화 걸기" class="phone-link" href="tel:16660420">1666-0420</a></div><div class="is">365일 24시간</div></div>
+<div class="ic"><div class="il">임차택시 예약</div><div class="iv em">☎ <a aria-label="031-677-6655 전화 걸기" class="phone-link" href="tel:0316776655">031-677-6655</a></div><div class="is">평일 08:00~18:00</div></div>
+</div>
+<ul class="sl">
+<li class="si">
+<div class="sico" style="background:var(--ORL)">①</div>
+<div class="sb">
+<div class="sh2">이용 자격 심사 신청</div>
+<div class="sd">☎ <a aria-label="031-677-6655 전화 걸기" class="phone-link" href="tel:0316776655">031-677-6655</a> / FAX <a aria-label="031-655-3805 전화 걸기" class="phone-link" href="tel:0316553805">031-655-3805</a> / 이메일 <a class="site-link" href="mailto:6776655@asimc.or.kr">6776655@asimc.or.kr</a><br/>진단서에 <strong>"보행 불가, 대중교통 이용 불가 사유, 와상 필수 이용"</strong> 문구 필요<br/>경기도의료원 안성병원(☎ <a aria-label="031-8046-5000 전화 걸기" class="phone-link" href="tel:03180465000">031-8046-5000</a>)에서 발급 · 약 1~3만원</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- ── b3: 방문진료 (건강보험) ── -->
+<div class="card">
+<div class="chead" onclick="tog('b3')">
+<div class="tbadge" style="background:var(--CL);border-right-color:var(--C)">
+<div class="tday" style="color:var(--C)">Day 3~14</div>
+<div class="tstatus" style="background:var(--R);color:#fff">등급무관</div>
+</div>
+<div class="ccol">
+<div class="cmeta"><span style="color:var(--C);font-weight:800">건강보험 적용 · 등급 없이도 가능</span><span class="cmsep">·</span><span>등급 후 본인부담 15%로 감소</span></div>
+<div class="ctitle">일차의료 방문진료 (의사가 집으로)</div>
+<div class="csub">건강보험 기준 적용 · 본인부담 30% (등급 후 1·2등급 와상 15%) · NG tube·Foley 검토·처방·욕창 평가</div>
+</div>
+<div class="tico-r">👨‍⚕️</div><div class="chv" id="hv-b3">⌄</div>
+</div>
+<div class="cbody" id="bd-b3">
+<div class="itabs">
+<button class="it ac" onclick="tab('b3',0)">비용·내용</button>
+<button class="it" onclick="tab('b3',1)">안성시 재택 의료·재활 서비스 전체</button>
+<button class="it" onclick="tab('b3',2)">기관·연계방법</button>
+</div>
+<div class="ip ac" id="ip-b3-0">
+<div class="cblk">
+<div class="cr"><span class="crl">등급 없을 때 본인부담</span><span class="crv wn">30% — 약 1~3만원/회</span></div>
+<div class="cr"><span class="crl">1·2등급 와상환자 (등급 후)</span><span class="crv em">15% — 약 5,000~1.5만원/회</span></div>
+<div class="cr na-row"><span class="crl">차상위계층 1·2종 <span class="na">※ 차상위 해당자만</span></span><span class="crv">5%</span></div>
+<div class="cr na-row"><span class="crl">의료급여수급자 <span class="na">※ 의료급여 해당자만</span></span><span class="crv">0~5%</span></div>
+</div>
+<table class="tbl">
+<tr><th>제공 내용</th></tr>
+<tr><td>의사 방문 진찰·처방 · NG tube·Foley 검토 · 욕창 평가 및 드레싱 처방 · 방문간호지시서 발급 (소견서 발급 시 동시 요청 권장)</td></tr>
+</table>
+</div>
+<div class="ip" id="ip-b3-1">
+<div class="nb">📌 안성시는 장기요양 재택의료센터 외에도 다양한 방문 의료·재활 서비스를 운영합니다. 아래 서비스들은 모두 <strong>안성3동 통합사례관리 신청 시 한꺼번에 연계 의뢰가 가능</strong>합니다.</div>
+<table class="tbl">
+<tr><th>서비스</th><th>핵심 내용</th><th>비고</th></tr>
+<tr><td><strong>찾아가는 경기도 돌봄의료센터</strong></td><td>경기도의료원 안성병원 다학제팀 — 방문진료 + 방문간호 + 방문재활 + 복지연계 / 등급 없이도 가능</td><td class="em2">안성3동 신청 시 연계 가능</td></tr>
+<tr><td><strong>우리동네 주치의</strong></td><td>서안성의원·안성농민의원 등 — 방문진료·방문간호·방문재활·구강관리 / 장기요양 재택의료와 별개</td><td class="em2">안성시 통합돌봄 특화사업</td></tr>
+<tr><td><strong>맞춤형 운동 (방문 PT·OT)</strong></td><td>물리치료사·작업치료사 가정 방문 — 관절구축 예방·positioning·보호자 handling 교육·욕창예방·침상환경 평가 / 1회 30분·최대 8회·3개월 이내<br/>의사 지시서 필요</td><td>건강보험 1회 14,000원<br/><span class="na">차상위 7,000원 ※ 차상위 해당자만</span><br/><span class="na">의료급여 면제 ※ 의료급여 해당자만</span></td></tr>
+<tr><td><strong>통합방문간호센터</strong></td><td>단독의원 방문진료를 지원하는 간호 연계 — NG tube·Foley·욕창 처치 가능 여부 기관 확인 필요</td><td class="em2">안성시 참여 여부 확인</td></tr>
+<tr><td><strong>건강보험 가정간호</strong></td><td>경기도의료원 안성병원·안성성모병원·서안성의원 — 가정전문간호사 방문 / 장기요양 방문간호와 별개</td><td>건강보험 적용<br/>담당 의사 처방 필요</td></tr>
+<tr><td><strong>누구나돌봄 재활돌봄</strong></td><td>질병·부상 후 독립적 일상생활이 어려운 경우 — 기능유지·보호자 교육 목적 / 중위소득 120% 이하 본인부담 없음 (1인 월 287만원·2인 472만원·3인 603만원 이하)</td><td class="em2">안성3동 <a aria-label="031-678-4057 전화 걸기" class="phone-link" href="tel:0316784057">031-678-4057</a> 확인</td></tr>
+<tr><td><strong>예방 방문구강관리</strong></td><td>보건소 치과위생사 가정 방문 — 구강위생 관리·교육 / NG tube 환자는 흡인성 폐렴 예방 관점에서 중요</td><td class="em2">안성시 보건소 확인</td></tr>
+<tr><td><strong>다제약물 관리</strong></td><td>약사 방문지도 2회 + 전화상담 1회 — 중복처방·과다복용·부작용 점검 / 85세 치매 다약제 환자에게 유용</td><td class="em2">통합돌봄 연계</td></tr>
+<tr><td><strong>재가노인 영양지원</strong></td><td>반찬 주 3회 3개월 — NG tube 환자 본인보다 보호자 가구 식사 부담 완화 목적으로 신청</td><td>소득 따라 0~10,000원</td></tr>
+</table>
+<div class="wn3">⚠️ 서비스 제공 여부·횟수·비용은 개인별 상황과 예산·기관 여건에 따라 달라집니다. 안성3동 통합사례관리 신청 시 "위 서비스 연계를 한꺼번에 의뢰해 달라"고 요청하세요.</div>
+</div>
+<div class="ip" id="ip-b3-2">
+<ul class="sl">
+<li class="si"><div class="sico" style="background:var(--CL)">1</div><div class="sb"><div class="sh2">경기도의료원 안성병원 — 우선 문의</div><div class="sd">☎ <a aria-label="031-8046-5000 전화 걸기" class="phone-link" href="tel:03180465000">031-8046-5000</a> · <span class="address-action">남파로 95<span class="map-actions"><a class="map-link naver" href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%95%88%EC%84%B1%EC%8B%9C%20%EB%82%A8%ED%8C%8C%EB%A1%9C%2095" rel="noopener" target="_blank">네이버</a><a class="map-link google" href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%95%88%EC%84%B1%EC%8B%9C%20%EB%82%A8%ED%8C%8C%EB%A1%9C%2095" rel="noopener" target="_blank">구글</a></span></span> (당왕동)<br/>안성시 재택의료센터 참여기관 — "방문진료 또는 재택의료 가능 여부" 문의<br/>NG tube·Foley·완전 와상·치매 상태 미리 설명</div></div></li>
+<li class="si"><div class="sico" style="background:var(--BL)">2</div><div class="sb"><div class="sh2">읍면동 통합돌봄 연계로 방문진료 연결</div><div class="sd">안성3동 행정복지센터에 "통합돌봄 연계 통해 방문진료 의뢰 요청"</div></div></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- ── 누구나돌봄 + 안성3동 특화 ── -->
+<div class="card key">
+<div class="chead" onclick="tog('bsvc')">
+<div class="tbadge" style="background:var(--GL);border-right-color:var(--G)">
+<div class="tday" style="color:var(--G)">Day 0~</div>
+<div class="tstatus" style="background:var(--R);color:#fff">등급무관</div>
+</div>
+<div class="ccol">
+<div class="cmeta"><span style="color:var(--G);font-weight:800">안성3동 특화 · 장기요양 공백기 핵심</span></div>
+<div class="ctitle">누구나돌봄 + AIP 코디네이터 + 주거환경개선</div>
+<div class="csub">등급 대기 중 돌봄 공백 연결 · 중위소득 120% 이하 무료 · AIP 코디네이터로 기관 간 통합 조정 · 주거 안전시설 개선</div>
+<div class="cbadges"><span class="b bg">등급 없어도 가능</span><span class="b bg">120%이하 무료 (1인 월 287만원 기준)</span><span class="b bt">AIP 코디네이터 무료</span></div>
+</div>
+<div class="tico-r">🧩</div><div class="chv" id="hv-bsvc">⌄</div>
+</div>
+<div class="cbody" id="bd-bsvc">
+<div class="itabs">
+<button class="it ac" onclick="tab('bsvc',0)">누구나돌봄</button>
+<button class="it" onclick="tab('bsvc',1)">AIP 코디네이터</button>
+<button class="it" onclick="tab('bsvc',2)">주거환경개선</button>
+<button class="it" onclick="tab('bsvc',3)">응급안전안심서비스</button>
+<button class="it" onclick="tab('bsvc',4)">기관·신청방법</button>
+</div>
+<div class="ip ac" id="ip-bsvc-0">
+<div class="ig">
+<div class="ic"><div class="il">대상</div><div class="iv">소득·연령 무관</div><div class="is">돌봄 공백·위기 발생 시</div></div>
+<div class="ic"><div class="il">비용</div><div class="iv em">중위소득 120% 이하 무료</div><div class="is">120~150% → 50% 지원<br/><span style="font-size:11px;color:var(--t3)">2026 기준 120%:<br/>1인 약 287만원<br/>2인 약 472만원<br/>3인 약 603만원/월</span></div></div>
+</div>
+<table class="tbl">
+<tr><th>서비스 유형</th><th>내용</th><th>이용 기간</th></tr>
+<tr><td><strong>생활돌봄</strong></td><td>신체활동 보조, 청소, 정리 등 일시적 틈새돌봄</td><td>최대 약 6주</td></tr>
+<tr><td><strong>동행돌봄</strong></td><td>병원·약국·관공서 동행 — 완전 와상 환자 이동 시 리프트 차량 사전 조율 필요</td><td>약 1~2개월</td></tr>
+<tr><td><strong>식사지원</strong></td><td>도시락 배달 — NG tube 환자는 보호자 가구 식사 부담 완화 목적으로 신청</td><td>약 1~2개월</td></tr>
+<tr><td><strong>일시보호</strong></td><td>보호자 긴급 부재 시 단기 보호 시설 연계</td><td>사례별 상이</td></tr>
+<tr><td><strong>통합돌봄 일상생활돌봄</strong></td><td>장기요양 미이용자 대상 가사·식사·일상생활 지원 (하루 3시간·주5일·최대 3개월 참고 — 개인별 지원계획 확인)</td><td>최대 약 3개월</td></tr>
+</table>
+<div class="wn3">⚠️ 완전 와상·NG tube·Foley 환자는 생활돌봄 인력이 의료처치를 대신할 수 없습니다. 방문간호(의료처치)와 누구나돌봄(생활지원) 역할을 명확히 구분하세요.</div>
+<div class="nb">📌 생활돌봄 6주, 동행 1~2개월, 하루 3시간·주5일·3개월 등의 수치는 서비스 유형별 참고 기준이며, <strong>소득·필요도·예산·제공기관 여건에 따라 달라집니다.</strong> 신청 전 안성3동 찾아가는 보건복지팀(☎ <a aria-label="031-678-4057 전화 걸기" class="phone-link" href="tel:0316784057">031-678-4057</a>)에 해당 시점 기준 확인 필요.</div>
+</div>
+<div class="ip" id="ip-bsvc-1">
+<div class="hl">치매+와상+NG tube+Foley+장기요양+방문간호+방문진료+복지용구+이동지원이 동시에 얽혀 있으면 가족 혼자 기관별로 관리하기 매우 어렵습니다. <strong>AIP 코디네이터는 이 모든 서비스를 하나의 지원계획으로 조정</strong>해 주는 무료 사례관리사입니다.</div>
+<div class="cblk">
+<div class="cr"><span class="crl">비용</span><span class="crv em">무료</span></div>
+<div class="cr"><span class="crl">신청 방법</span><span class="crv">안성3동 찾아가는 보건복지팀에 명시적으로 요청</span></div>
+</div>
+<div class="nb">📌 안성3동 <a aria-label="031-678-4057 전화 걸기" class="phone-link" href="tel:0316784057">031-678-4057</a> 전화 시 이렇게 말하세요: <strong>"중증 와상 환자라 여러 기관을 동시에 이용해야 합니다. 통합사례관리 및 AIP 코디네이터 연결이 가능한지 확인해 주세요."</strong></div>
+</div>
+<div class="ip" id="ip-bsvc-2">
+<div class="nb">📌 주거환경개선은 사업마다 대상·한도·중복 여부가 다릅니다. 구매·공사 전에 반드시 담당자 확인 후 진행하세요.</div>
+<table class="tbl">
+<tr><th>사업</th><th>내용</th><th>한도·본인부담</th></tr>
+<tr><td><strong>통합돌봄 주거환경개선</strong><br/>(장기요양 미등급자)</td><td>안전바·단차 해소·이동 안전시설 등<br/>침대 주변·화장실·현관·동선 안전 평가</td><td>100만원 한도 · 본인부담 없음<br/>(안성시 참여 여부 <a aria-label="031-678-4057 전화 걸기" class="phone-link" href="tel:0316784057">031-678-4057</a> 확인)</td></tr>
+<tr><td><strong>낙상예방 재가환경지원</strong><br/>(2026 시범사업 · 등급자)</td><td>안전레일·단차 발판 설치</td><td>생애 100만원 · 본인부담 15%<br/>(안성시 참여 여부 <a aria-label="1577-1000 전화 걸기" class="phone-link" href="tel:15771000">1577-1000</a> 확인)</td></tr>
+<tr><td><strong>누구나돌봄 소규모 수리</strong></td><td>간단한 집수리·보수</td><td>재료비 30만원 한도 · 중위소득 120% 이하 무료 (1인 287만원·2인 472만원 이하)</td></tr>
+</table>
+<div class="wn3">완전 와상 환자 가정은 침대 주변 회전공간, 체위변경 공간, 휠체어 동선, 화장실 접근성, 문턱·미끄럼을 우선 평가받으세요.</div>
+<div class="hl">📌 <strong>공사·구매 전 반드시 먼저 확인:</strong> 주거환경개선 사업은 사업마다 대상·한도·본인부담·중복 제한이 다릅니다. 안성3동 통합돌봄 담당자에게 "어떤 사업으로, 어느 항목까지, 본인부담이 있는지"를 먼저 물어보세요. 개인 비용으로 먼저 계약하거나 구매하면 소급 지원 불가합니다.</div>
+</div>
+<div class="ip" id="ip-bsvc-3">
+<div class="cblk">
+<div class="cr"><span class="crl">내용</span><span class="crv">화재감지기 + 활동감지기 + 응급호출기 설치 → 소방서 연결</span></div>
+<div class="cr"><span class="crl">비용</span><span class="crv em">무료</span></div>
+<div class="cr"><span class="crl">수행기관</span><span class="crv">안성시노인복지관 (☎ <a aria-label="031-674-0794 전화 걸기" class="phone-link" href="tel:0316740794">031-674-0794</a>)</span></div>
+</div>
+<div class="wn3">⚠️ 가족과 동거하는 경우 자동 대상이 아닙니다. "보호자가 외출하는 시간이 있는지, 야간 돌봄 공백이 있는지"를 설명하고 대상 여부를 확인하세요. 중증 치매·완전 와상이라 응급호출기를 직접 누르기 어려울 수 있으므로 활동감지·화재감지 중심 활용이 현실적입니다.</div>
+</div>
+<div class="ip" id="ip-bsvc-4">
+<table class="tbl">
+<tr><th>담당</th><th>연락처</th><th>요청 내용</th></tr>
+<tr><td>찾아가는 보건복지팀 (주무관)</td><td><strong class="em2">☎ <a aria-label="031-678-4057 전화 걸기" class="phone-link" href="tel:0316784057">031-678-4057</a></strong></td><td>누구나돌봄·일상돌봄·AIP 코디네이터·주거환경개선·응급안전서비스</td></tr>
+<tr><td>찾아가는 보건복지팀 (팀장)</td><td>☎ <a aria-label="031-678-4051 전화 걸기" class="phone-link" href="tel:0316784051">031-678-4051</a></td><td>복합사례 상향 요청 시</td></tr>
+<tr><td>안성3동 대표</td><td>☎ <a aria-label="031-678-4050 전화 걸기" class="phone-link" href="tel:0316784050">031-678-4050</a></td><td>부재 시 연결</td></tr>
+<tr><td>안성시노인복지관</td><td>☎ <a aria-label="031-674-0794 전화 걸기" class="phone-link" href="tel:0316740794">031-674-0794</a></td><td>응급안전안심서비스·재가노인 상담</td></tr>
+</table>
+<div class="hl">완전 와상이라 방문 불가 → 전화로 "찾아가는 상담·보호자 대리신청"을 요청하면 됩니다.</div>
+<div class="wn3">⚠️ 담당자 번호·업무분장은 2026년 8월 기준이며 수시로 변경될 수 있습니다. 연결이 안 되면 <a aria-label="031-678-4050 전화 걸기" class="phone-link" href="tel:0316784050">031-678-4050</a>으로 "찾아가는 보건복지팀·통합사례관리 담당자" 연결을 요청하세요.</div>
+</div>
+</div>
+</div>
+<!-- ── b4: 보호자 지원 ── -->
+<div class="card">
+<div class="chead" onclick="tog('b4')">
+<div class="tbadge" style="background:var(--PL);border-right-color:var(--P)">
+<div class="tday" style="color:var(--P)">상시</div>
+<div class="tstatus" style="background:var(--R);color:#fff">등급무관</div>
+</div>
+<div class="ccol">
+<div class="cmeta"><span style="color:var(--P);font-weight:800">보호자 전용 · 언제든</span></div>
+<div class="ctitle">보호자·가족 지원 / 긴급복지</div>
+<div class="csub">간병 번아웃 상담 · 긴급돌봄 · 응급대응계획 — 가족이 무너지면 안 됩니다</div>
+</div>
+<div class="tico-r">🫂</div><div class="chv" id="hv-b4">⌄</div>
+</div>
+<div class="cbody" id="bd-b4">
+<div class="itabs">
+<button class="it ac" onclick="tab('b4',0)">지원 내용</button>
+<button class="it" onclick="tab('b4',1)">응급대응계획</button>
+<button class="it" onclick="tab('b4',2)">기관·연락처</button>
+</div>
+<div class="ip ac" id="ip-b4-0">
+<table class="tbl">
+<tr><th>지원 항목</th><th>내용</th><th>비용</th></tr>
+<tr><td><strong>치매가족 상담·교육</strong></td><td>안성시 치매안심센터 — 번아웃 예방, 돌봄 기술 교육</td><td class="em2">무료</td></tr>
+<tr><td><strong>정신건강 상담</strong></td><td>안성시 보건소 정신건강복지센터 — 간병 스트레스·우울</td><td class="em2">무료</td></tr>
+<tr><td><strong>긴급복지 지원</strong></td><td>보호자 입원·사망 등 위기 시 임시 돌봄 연계 (<a aria-label="129 전화 걸기" class="phone-link" href="tel:129">129</a>)</td><td class="em2">무료</td></tr>
+<tr><td><strong>읍면동 돌봄SOS</strong></td><td>갑작스러운 돌봄 공백 시 사회복지사 긴급 연계</td><td class="em2">무료</td></tr>
+</table>
+</div>
+<div class="ip" id="ip-b4-1">
+<div class="al">⚠️ 아래 증상은 장기요양기관·보건소 연락을 기다리지 말고 즉시 119 또는 경기도의료원 안성병원 응급실로 이동하세요.</div>
+<ul class="sl">
+<li class="si"><div class="sico" style="background:var(--RL)">🆘</div><div class="sb"><div class="sh2">즉시 119 · 응급실 — NG tube 빠짐/막힘으로 영양·수분 공급 불가</div><div class="sd" style="font-size:13px;color:var(--t2);margin-top:3px">튜브가 빠지거나 막힌 경우 <strong style="color:var(--R)">임의로 재삽입하지 마세요.</strong> 즉시 의료기관 지시를 받으세요.</div><div class="sd" style="font-size:13px;color:var(--t2);margin-top:3px">튜브가 빠지거나 막힌 경우 <strong class="rd2">임의로 재삽입하지 마세요.</strong> 즉시 의료기관 지시를 받으세요.</div></div></li>
+<li class="si"><div class="sico" style="background:var(--RL)">🆘</div><div class="sb"><div class="sh2">즉시 119 · 응급실 — Foley 빠짐, 소변 거의 없음, 혈뇨, 심한 하복부 팽만</div></div></li>
+<li class="si"><div class="sico" style="background:var(--RL)">🆘</div><div class="sb"><div class="sh2">즉시 119 · 응급실 — 38도 이상 발열, 청색증, 의식저하, 반복 구토</div></div></li>
+<li class="si"><div class="sico" style="background:var(--RL)">🆘</div><div class="sb"><div class="sh2">즉시 119 · 응급실 — 욕창 부위 악취·검은 조직·고름·급격한 발적 확대</div></div></li>
+</ul>
+<div class="hl">응급 이송 시 챙겨야 할 것: 약 목록, 최근 진단서·퇴원요약지, NG tube·Foley 규격 및 최근 교체일, 알레르기 여부</div>
+</div>
+<div class="ip" id="ip-b4-2">
+<table class="tbl">
+<tr><th>기관</th><th>연락처</th><th>용도</th></tr>
+<tr><td>긴급복지 콜</td><td><strong>☎ <a aria-label="129 전화 걸기" class="phone-link" href="tel:129">129</a></strong></td><td>보호자 위기 상황 즉시</td></tr>
+<tr><td>치매안심센터</td><td><strong>☎ <a aria-label="031-678-3004~3012 전화 걸기" class="phone-link" href="tel:0316783004">031-678-3004~3012</a></strong></td><td>상담·돌봄자원 연계</td></tr>
+<tr><td>안성시 보건소</td><td><strong>☎ <a aria-label="031-678-5768 전화 걸기" class="phone-link" href="tel:0316785768">031-678-5768</a></strong></td><td>정신건강·방문건강관리</td></tr>
+<tr><td>경기도의료원 안성병원 응급실</td><td><strong>☎ <a aria-label="031-8046-5000 전화 걸기" class="phone-link" href="tel:03180465000">031-8046-5000</a></strong></td><td>의료 응급 이송</td></tr>
+<tr><td>치매상담콜센터</td><td><strong>☎ <a aria-label="1899-9988 전화 걸기" class="phone-link" href="tel:18999988">1899-9988</a></strong></td><td>치매 관련 상담 24시간</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sh">📞 오늘 전화할 곳 — Day 0 핵심 연락처</div>
+<div class="pg">
+<div class="pc"><div class="pn">① 장기요양 신청 (최우선)</div><div class="pp"><a aria-label="1577-1000 전화 걸기" class="phone-link" href="tel:15771000">1577-1000</a></div><div class="pa">공단 안성지사 · 평일 09~18시</div><div class="pnt">신청 방법 확인 후 접수</div></div>
+<div class="pc"><div class="pn">② 통합돌봄 · 복지자격</div><div class="pp">안성3동 행정복지센터</div><div class="pa">주소지 관할 행정복지센터</div><div class="pnt">찾아가는 보건복지팀 연결</div></div>
+<div class="pc"><div class="pn">③ 치매안심센터</div><div class="pp"><a aria-label="031-678-3004~3012 전화 걸기" class="phone-link" href="tel:0316783004">031-678-3004~3012</a></div><div class="pa"><span class="address-action">강변로74번길 18<span class="map-actions"><a class="map-link naver" href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%95%88%EC%84%B1%EC%8B%9C%20%EA%B0%95%EB%B3%80%EB%A1%9C74%EB%B2%88%EA%B8%B8%2018" rel="noopener" target="_blank">네이버</a><a class="map-link google" href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%95%88%EC%84%B1%EC%8B%9C%20%EA%B0%95%EB%B3%80%EB%A1%9C74%EB%B2%88%EA%B8%B8%2018" rel="noopener" target="_blank">구글</a></span></span> (도기동)</div><div class="pnt">조호물품·치매치료비·상담</div></div>
+<div class="pc"><div class="pn">④ 방문진료 문의</div><div class="pp"><a aria-label="031-8046-5000 전화 걸기" class="phone-link" href="tel:03180465000">031-8046-5000</a></div><div class="pa">경기도의료원 안성병원</div><div class="pnt"><span class="address-action">남파로 95<span class="map-actions"><a class="map-link naver" href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%95%88%EC%84%B1%EC%8B%9C%20%EB%82%A8%ED%8C%8C%EB%A1%9C%2095" rel="noopener" target="_blank">네이버</a><a class="map-link google" href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%95%88%EC%84%B1%EC%8B%9C%20%EB%82%A8%ED%8C%8C%EB%A1%9C%2095" rel="noopener" target="_blank">구글</a></span></span> (당왕동)</div></div>
+<div class="pc"><div class="pn">⑤ 교통약자 이동 (특별교통수단)</div><div class="pp"><a aria-label="1666-0420 전화 걸기" class="phone-link" href="tel:16660420">1666-0420</a></div><div class="pa">365일 24시간 / 리프트 차량</div><div class="pnt">와상·의료기기 보유 사전 고지</div></div>
+<div class="pc"><div class="pn">⑥ 긴급복지·위기</div><div class="pp"><a aria-label="129 전화 걸기" class="phone-link" href="tel:129">129</a></div><div class="pa">24시간 / 보호자 위기 상황</div><div class="pnt">치매안심센터 <a aria-label="031-678-3004~3012 전화 걸기" class="phone-link" href="tel:0316783004">031-678-3004~3012</a></div></div>
+<div class="pc"><div class="pn">⑦ 안성3동 기초생활·차상위</div><div class="pp"><a aria-label="031-678-4053 전화 걸기" class="phone-link" href="tel:0316784053">031-678-4053</a></div><div class="pa">안성3동 행정복지센터</div><div class="pnt">기초생활·의료급여·차상위 상담</div></div>
+<div class="pc"><div class="pn">⑧ 안성3동 기초연금·노인복지</div><div class="pp"><a aria-label="031-678-4056 전화 걸기" class="phone-link" href="tel:0316784056">031-678-4056</a></div><div class="pa">안성3동 행정복지센터</div><div class="pnt">기초연금·목욕·이미용 지원</div></div>
+</div>
+</div>
+<!-- ══════ AFTER ══════ -->
+<div class="ps" id="ps-after">
+<div class="hl" style="margin-bottom:16px">✅ <strong>등급 판정 다음날부터 아래 서비스를 모두 추가로 이용할 수 있습니다.</strong></div>
+<div class="sh">📊 등급 확정 전 vs 후 — 달라지는 것</div>
+<div class="cmp">
+<div class="cmp-hdr">
+<div class="cmp-col"><div class="cmp-ct" style="color:var(--A)">등급 확정 전</div><div class="cmp-cs">신청 · 심사 · 대기</div></div>
+<div class="cmp-col"><div class="cmp-ct" style="color:var(--T)">등급 확정 후</div><div class="cmp-cs">1·2등급 기준</div></div>
+</div>
+<div class="cmp-row"><div class="cmp-cell"><strong>방문요양</strong>이용 불가</div><div class="cmp-cell"><strong>방문요양</strong>월 한도액 내에서 이용 (1등급 한도 2,512,900원 / 3시간 기준 최대 44회 참고) · 본인부담 약 15~37만원/월</div></div>
+<div class="cmp-row"><div class="cmp-cell"><strong>방문간호</strong>장기요양 급여 불가</div><div class="cmp-cell"><strong>방문간호</strong>월 한도액 내 이용 · <strong>중증 수급자 최초 3회 본인부담 면제(2026)</strong> · 이후 약 4~6만원/월 · 간호지시서 필수</div></div>
+<div class="cmp-row"><div class="cmp-cell"><strong>방문목욕</strong>이용 불가</div><div class="cmp-cell"><strong>방문목욕</strong>이동식 욕조 자택 방문 · 2026 중증 가산 신설 · 약 1~2만원/월</div></div>
+<div class="cmp-row"><div class="cmp-cell"><strong>방문진료</strong>본인부담 30%</div><div class="cmp-cell"><strong>방문진료</strong>1·2등급 와상 15%로 감소</div></div>
+<div class="cmp-row"><div class="cmp-cell"><strong>재택의료센터</strong>이용 불가</div><div class="cmp-cell"><strong>재택의료센터</strong>안성병원 외 4개소 참여 — 의사+간호사+사복사 팀, 방문간호와 별도 이용 가능</div></div>
+<div class="cmp-row"><div class="cmp-cell"><strong>병원동행</strong>이용 불가</div><div class="cmp-cell"><strong>병원동행 시범사업(2026)</strong>안성시 참여 여부 <a aria-label="1577-1000 전화 걸기" class="phone-link" href="tel:15771000">1577-1000</a> 확인 필요 · 완전 와상 환자 수용 가능 여부 사전 확인</div></div>
+<div class="cmp-row"><div class="cmp-cell"><strong>복지용구</strong>이용 불가</div><div class="cmp-cell"><strong>복지용구</strong>연간 160만원 급여 · 전동침대·욕창방지매트 · 선 구입 시 소급 불가</div></div>
+<div class="cmp-row"><div class="cmp-cell"><strong>가족휴가제</strong>치매안심센터 확인 필요</div><div class="cmp-cell"><strong>장기요양 가족휴가제</strong>연 12일 단기보호 + 연 24회 종일방문요양 · 월 한도액 외 별도</div></div>
+<div class="cmp-row"><div class="cmp-cell"><strong>본인부담 감경</strong>신청 불가</div><div class="cmp-cell"><strong>본인부담 감경</strong>15% → 6~9% 또는 면제 · 안성3동 행정복지센터 즉시 신청</div></div>
+</div>
+<div class="sh">🧮 장기요양 비용 계산</div>
+<div style="background:#fff;border:1.5px solid var(--bd);border-radius:14px;padding:16px 18px;margin-bottom:20px">
+<div style="font-size:15px;font-weight:900;margin-bottom:5px">계산기를 별도 화면에서 이용할 수 있습니다.</div>
+<div style="font-size:13px;color:var(--t3);margin-bottom:12px">재가급여 조합과 복지용구 연간 한도를 계산합니다.</div>
+<button onclick="showP('calc')" style="width:100%;padding:12px 14px;border:0;border-radius:9px;background:var(--T);color:#fff;font-size:14px;font-weight:900;cursor:pointer">🧮 장기요양 계산기 열기</button>
+</div>
+<div class="sh">🔵 등급 확정 즉시 — 우선순위 순</div>
+<!-- A: 방문간호 -->
+<div class="card key">
+<div class="chead" onclick="tog('a0')">
+<div class="tbadge" style="background:var(--BL);border-right-color:var(--B)">
+<div class="tday" style="color:var(--B)">등급 후</div>
+<div class="tstatus" style="background:var(--B);color:#fff">등급필요</div>
+<div class="tico">💉</div>
+</div>
+<div class="ccol">
+<div class="cmeta"><span style="color:var(--B);font-weight:800">확정 즉시 · 1순위</span><span class="cmeta-sep">·</span><span>최초 3회 무료</span></div>
+<div class="ctitle">방문간호 — NG tube · Foley · 욕창 전문 처치</div>
+<div class="csub">간호사 주 2회 이상 자택 방문 / 월 최대 8회 / 이후 월 4~6만원 / 간호지시서 필요</div>
+<div class="cbadges"><span class="b bb">간호사 방문</span><span class="b bt">월 최대 8회</span><span class="b bg">최초 3회 무료</span><span class="b ba">간호지시서 필수</span></div>
+</div>
+<div class="tico-right">💉</div><div class="chv" id="hv-a0">⌄</div>
+</div>
+<div class="cbody" id="bd-a0">
+<div class="itabs">
+<button class="it ac" onclick="tab('a0',0)">비용·횟수·자격</button>
+<button class="it" onclick="tab('a0',1)">처치 내용</button>
+<button class="it" onclick="tab('a0',2)">기관·신청방법</button>
+</div>
+<div class="ip ac" id="ip-a0-0">
+<div class="ig">
+<div class="ic"><div class="il">수급 자격</div><div class="iv">1·2등급 수급자</div><div class="is">방문간호지시서 필수</div></div>
+<div class="ic"><div class="il">월 최대 횟수</div><div class="iv em">월 8회</div><div class="is">주 2회 기준 구성</div></div>
+</div>
+<div class="cblk">
+<div class="cr"><span class="crl">2026년 신설 — 최초 3회 본인부담 면제</span><span class="crv em">0원 (처음 3회)</span></div>
+<div class="cr"><span class="crl">이후 일반 본인부담 (15%) 1회당</span><span class="crv">약 5,000~8,000원</span></div>
+<div class="cr"><span class="crl">월 8회 기준 총 본인부담 (일반)</span><span class="crv em">약 4~6만원/월</span></div>
+<div class="cr"><span class="crl">감경 9% 시</span><span class="crv em">약 2.5~3.5만원/월</span></div>
+<div class="cr"><span class="crl">감경 6% 시</span><span class="crv em">약 1.5~2.5만원/월</span></div>
+<div class="cr"><span class="crl">기초수급자</span><span class="crv em">0원</span></div>
+</div>
+<div class="nb">📌 방문간호지시서 유효기간 6개월 — 만료 전 갱신 필수. 지시서 없으면 장기요양 급여 처리 불가.</div>
+</div>
+<div class="ip" id="ip-a0-1">
+<table class="tbl">
+<tr><th>처치 항목</th><th>세부 내용</th><th>빈도</th></tr>
+<tr><td><strong>NG tube 관리</strong></td><td>삽입 상태 확인, feeding 전 잔류량 확인, 교체 준비, 가족 교육</td><td>주 1~2회</td></tr>
+<tr><td><strong>Foley catheter 관리</strong></td><td>소변량·색 모니터링, 상태 확인, 교체, 감염 예방</td><td>주 1~2회</td></tr>
+<tr><td><strong>욕창 처치</strong></td><td>피부 상태 사정, 단계 평가, 드레싱, 체위변경 지도</td><td>매 방문</td></tr>
+<tr><td><strong>활력징후</strong></td><td>혈압·맥박·체온·SpO₂, 의식 수준 평가</td><td>매 방문</td></tr>
+<tr><td><strong>투약 관리</strong></td><td>복약 확인, 가족 투약 교육</td><td>매 방문</td></tr>
+<tr><td><strong>가족 교육</strong></td><td>흡인 예방, 체위변경 기술, 응급 대처법</td><td>정기</td></tr>
+</table>
+</div>
+<div class="ip" id="ip-a0-2">
+<ul class="sl">
+<li class="si">
+<div class="sico" style="background:var(--CL)">①</div>
+<div class="sb">
+<div class="sh2">방문간호지시서 발급 — 경기도의료원 안성병원</div>
+<div class="sd"> · <span class="address-action">안성시 남파로 95<span class="map-actions"><a class="map-link naver" href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%95%88%EC%84%B1%EC%8B%9C%20%EB%82%A8%ED%8C%8C%EB%A1%9C%2095" rel="noopener" target="_blank">네이버</a><a class="map-link google" href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%95%88%EC%84%B1%EC%8B%9C%20%EB%82%A8%ED%8C%8C%EB%A1%9C%2095" rel="noopener" target="_blank">구글</a></span></span> (당왕동)<br/>"방문간호지시서 발급 요청 — NG tube feeding, Foley catheter, 완전 와상, 욕창 위험 포함"</div>
+<span class="stip">발급비: 진찰료 수준 · 당일~수일 내 발급</span>
+</div>
+</li>
+<li class="si">
+<div class="sico" style="background:var(--BL)">②</div>
+<div class="sb">
+<div class="sh2">방문간호 가능 재가기관 선정</div>
+<div class="sd">longtermcare.or.kr → 장기요양기관 찾기 → 안성시 → 급여종류 "방문간호" 선택<br/><strong>NG tube·Foley 처치 경험 있는 기관인지 계약 전 반드시 확인</strong></div>
+</div>
+</li>
+<li class="si">
+<div class="sico" style="background:var(--TL)">③</div>
+<div class="sb">
+<div class="sh2">방문요양과 통합기관 선택 권장</div>
+<div class="sd">한 기관에서 방문간호+방문요양 모두 제공 시 일정 조율 편리 + 통합재가 한도 추가 산정 가능</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- B: 방문요양 -->
+<div class="card key">
+<div class="chead" onclick="tog('a1')">
+<div class="tbadge" style="background:var(--TL);border-right-color:var(--T)">
+<div class="tday" style="color:var(--T)">등급 후</div>
+<div class="tstatus" style="background:var(--T);color:#fff">등급필요</div>
+<div class="tico">🤲</div>
+</div>
+<div class="ccol">
+<div class="cmeta"><span style="color:var(--T);font-weight:800">확정 즉시 · 2순위</span><span class="cmeta-sep">·</span><span>1등급 월 44회 / 2등급 월 40회</span></div>
+<div class="ctitle">방문요양 — 요양보호사 매일 방문</div>
+<div class="csub">체위변경·세면·기저귀·식사 등 일상 돌봄 대행 / 본인부담 약 15~37만원/월</div>
+<div class="cbadges"><span class="b bt">1등급 월 44회</span><span class="b bt">2등급 월 40회</span><span class="b bc">중증 가산 확대</span><span class="b ba">본인부담 15%</span></div>
+</div>
+<div class="tico-right">🤲</div><div class="chv" id="hv-a1">⌄</div>
+</div>
+<div class="cbody" id="bd-a1">
+<div class="itabs">
+<button class="it ac" onclick="tab('a1',0)">비용·횟수·자격</button>
+<button class="it" onclick="tab('a1',1)">제공 내용·주의</button>
+<button class="it" onclick="tab('a1',2)">기관·신청방법</button>
+</div>
+<div class="ip ac" id="ip-a1-0">
+<div class="ig">
+<div class="ic"><div class="il">수급 자격</div><div class="iv">1~5등급 수급자</div><div class="is">별도 지시서 불필요</div></div>
+<div class="ic"><div class="il">월 최대 횟수</div><div class="iv em">1등급 44회<br/>2등급 40회</div><div class="is">3시간 방문 기준 </div></div>
+</div>
+<div class="cblk">
+<div class="cr"><span class="crl">2026년 1등급 월 한도액</span><span class="crv em">2,512,900원</span></div>
+<div class="cr"><span class="crl">2026년 2등급 월 한도액</span><span class="crv em">2,331,200원</span></div>
+<div class="cr"><span class="crl">중증 가산 (2026 확대)</span><span class="crv">시간당 2,000원 · 일 최대 6,000원 추가</span></div>
+<div class="cr"><span class="crl">일반 본인부담 (15%) — 월 최대</span><span class="crv wn">약 37만원</span></div>
+<div class="cr"><span class="crl">감경 9% 시 월 최대</span><span class="crv em">약 22만원</span></div>
+<div class="cr"><span class="crl">감경 6% 시 월 최대</span><span class="crv em">약 15만원</span></div>
+<div class="cr"><span class="crl">기초수급자</span><span class="crv em">0원</span></div>
+</div>
+<div class="nb">📌 방문간호+방문요양 합산이 월 한도액 이내인지 기관이 계산 필수. 한도 초과분은 100% 본인부담.</div>
+</div>
+<div class="ip" id="ip-a1-1">
+<table class="tbl">
+<tr><th>분류</th><th>세부 내용</th></tr>
+<tr><td>신체 돌봄</td><td>기저귀 교환, 체위변경(2시간 주기), 세면, 구강 위생, 옷 갈아입히기, 피부 관리</td></tr>
+<tr><td>배설 지원</td><td>Foley bag 비우기·기록, 기저귀 처리</td></tr>
+<tr><td>환경 지원</td><td>침상 정리, 환기, 청결, 오염물 처리</td></tr>
+<tr><td>이동 보조</td><td>침대 내 자세 조절, 욕창 예방 체위 유지 보조</td></tr>
+</table>
+<div class="al">⚠️ NG tube 실제 주입·확인은 요양보호사 불가 — 반드시 방문간호사 또는 가족이 담당. 완전 와상·의료기기 경험 있는 요양보호사 배정 요청 필수.</div>
+</div>
+<div class="ip" id="ip-a1-2">
+<ul class="sl">
+<li class="si">
+<div class="sico" style="background:var(--TL)">①</div>
+<div class="sb">
+<div class="sh2">재가기관 선정</div>
+<div class="sd">longtermcare.or.kr → 장기요양기관 찾기 → 안성시 → 급여종류 "방문요양" 선택<br/>방문간호와 동일 통합기관 선택 권장</div>
+</div>
+</li>
+<li class="si">
+<div class="sico" style="background:var(--TL)">②</div>
+<div class="sb">
+<div class="sh2">경험 있는 요양보호사 배정 요청</div>
+<div class="sd">계약 시 "완전 와상, NG tube, Foley 환자 경험 있는 요양보호사 배정 요청" 명시<br/>첫 1~2주는 가족이 동석해서 루틴 전달 권장</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- C: 방문목욕 -->
+<div class="card">
+<div class="chead" onclick="tog('a2')">
+<div class="tbadge" style="background:var(--TL);border-right-color:var(--T)">
+<div class="tday" style="color:var(--T)">등급 후</div>
+<div class="tstatus" style="background:var(--T);color:#fff">등급필요</div>
+<div class="tico">🛁</div>
+</div>
+<div class="ccol">
+<div class="cmeta"><span style="color:var(--T);font-weight:800">확정 즉시</span><span class="cmeta-sep">·</span><span>1·2등급 월 8회 · 약 1~2만원/월</span></div>
+<div class="ctitle">방문목욕 — 이동식 목욕 차량 자택 방문</div>
+<div class="csub">2026년 중증 가산 신설 · 완전 와상 환자 가능</div>
+<div class="cbadges"><span class="b bt">1·2등급 월 8회</span><span class="b bc">중증 가산 신설</span><span class="b ba">본인부담 약 1~2만원/월</span></div>
+</div>
+<div class="tico-right">🛁</div><div class="chv" id="hv-a2">⌄</div>
+</div>
+<div class="cbody" id="bd-a2">
+<div class="itabs">
+<button class="it ac" onclick="tab('a2',0)">비용·횟수·자격</button>
+<button class="it" onclick="tab('a2',1)">기관·신청방법</button>
+</div>
+<div class="ip ac" id="ip-a2-0">
+<div class="ig">
+<div class="ic"><div class="il">수급 자격</div><div class="iv">1~5등급 수급자</div></div>
+<div class="ic"><div class="il">월 최대 횟수</div><div class="iv em">1·2등급 월 8회</div></div>
+</div>
+<div class="cblk">
+<div class="cr"><span class="crl">중증 가산 (2026 신설)</span><span class="crv">중증 수급자 추가 가산</span></div>
+<div class="cr"><span class="crl">일반 본인부담 (15%) 1회당</span><span class="crv">약 1,000~2,000원</span></div>
+<div class="cr"><span class="crl">월 8회 기준 총 본인부담 (일반)</span><span class="crv em">약 1~2만원/월</span></div>
+<div class="cr"><span class="crl">감경 6% 시</span><span class="crv em">약 4,000~8,000원/월</span></div>
+<div class="cr"><span class="crl">기초수급자</span><span class="crv em">0원</span></div>
+</div>
+<div class="nb">📌 완전 와상 환자 가능 — 이동식 욕조를 자택에 반입하여 목욕 제공.</div>
+</div>
+<div class="ip" id="ip-a2-1">
+<div class="hl">방문요양 기관 또는 통합재가기관에 방문목욕 병행 가능 여부 문의 후 이용계획서에 포함하면 됩니다.</div>
+<ul class="sl">
+<li class="si">
+<div class="sico" style="background:var(--TL)">①</div>
+<div class="sb">
+<div class="sh2">재가기관 통해 신청</div>
+<div class="sd">longtermcare.or.kr → 장기요양기관 찾기 → 안성시 → "방문목욕" 선택<br/>방문요양 기관과 동일 통합기관에서 함께 신청 가능</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- D: 재택의료 + 병원동행 -->
+<div class="card">
+<div class="chead" onclick="tog('a3')">
+<div class="tbadge" style="background:var(--CL);border-right-color:var(--C)">
+<div class="tday" style="color:var(--C)">등급 후</div>
+<div class="tstatus" style="background:var(--T);color:#fff">등급필요</div>
+<div class="tico">🩺</div>
+</div>
+<div class="ccol">
+<div class="cmeta"><span style="color:var(--C);font-weight:800">확정 즉시 · 방문진료 30%→15%</span><span class="cmeta-sep">·</span><span>병원동행 연 50만원(2026 신설)</span></div>
+<div class="ctitle">재택의료센터 + 병원동행 서비스(2026 신설)</div>
+<div class="csub">안성시 내 참여기관은  확인 필요</div>
+<div class="cbadges"><span class="b bc">본인부담 15%</span><span class="b bg">병원동행 연 50만원</span><span class="b bt">장기요양과 중복 가능</span></div>
+</div>
+<div class="tico-right">🩺</div><div class="chv" id="hv-a3">⌄</div>
+</div>
+<div class="cbody" id="bd-a3">
+<div class="itabs">
+<button class="it ac" onclick="tab('a3',0)">재택의료센터</button>
+<button class="it" onclick="tab('a3',1)">병원동행 서비스</button>
+<button class="it" onclick="tab('a3',2)">안성시 신청 방법</button>
+</div>
+<div class="ip ac" id="ip-a3-0">
+<table class="tbl">
+<tr><th>서비스</th><th>내용</th><th>비용</th></tr>
+<tr><td>의사 방문진료</td><td>전신 평가, 처방, NG tube·Foley 검토, 욕창 평가</td><td>1회 약 5,000~1.5만원 (15%)</td></tr>
+<tr><td>간호사 방문간호</td><td>처치, 활력징후, 약물 관리 (장기요양 방문간호와 별도 횟수)</td><td>별도 적용</td></tr>
+<tr><td>사회복지사 연계</td><td>추가 지역사회 서비스 연결</td><td>무료</td></tr>
+</table>
+<div class="cblk">
+<div class="cr"><span class="crl">등급 없을 때 방문진료</span><span class="crv wn">30% — 약 1~3만원/회</span></div>
+<div class="cr"><span class="crl">1·2등급 와상 (등급 후)</span><span class="crv em">15% — 약 5,000~1.5만원/회</span></div>
+<div class="cr"><span class="crl">장기요양 방문간호와 중복</span><span class="crv em">가능 — 별도 횟수</span></div>
+</div>
+</div>
+<div class="ip" id="ip-a3-1">
+<div class="hl"><strong>장기요양 병원동행 시범사업 (2026년 신설)</strong><br/>출발지부터 병원 접수·진료·검사·처방약 수령·귀가까지 전 과정 동행. 가족이 매번 병원에 따라가야 했던 부담을 국가가 분담합니다.</div>
+<table class="tbl">
+<tr><th>항목</th><th>내용</th></tr>
+<tr><td>대상</td><td>통합재가기관 이용 장기요양 1~5등급 수급자</td></tr>
+<tr><td>지원 한도</td><td><span class="em2">연간 50만원</span> 이내</td></tr>
+<tr><td>동행 내용</td><td>출발지 → 이동 → 접수·수납 → 진료 이동 → 검사 대기 → 처방약 수령 → 귀가</td></tr>
+<tr><td>본인부담</td><td>장기요양 급여 본인부담률 적용 (일반 15%)</td></tr>
+<tr><td>신청</td><td>통합재가기관 통해 신청 / <a aria-label="1577-1000 전화 걸기" class="phone-link" href="tel:15771000">1577-1000</a> 참여기관 확인</td></tr>
+</table>
+<div class="al">⚠️ NG tube + Foley 환자 병원 이동 시 의료적 처치가 필요할 수 있으므로, 동행 인력의 경험 수준을 계약 전 반드시 확인하세요.</div>
+</div>
+<div class="ip" id="ip-a3-2">
+<ul class="sl">
+<li class="si">
+<div class="sico" style="background:var(--CL)">①</div>
+<div class="sb">
+<div class="sh2">안성시 재택의료센터 참여기관 확인</div>
+<div class="sd"> (공단) → "안성시 장기요양 재택의료센터 참여기관 있는지 확인"</div>
+<span class="wtip">⚠️ 안성시 내 참여기관 지정 여부는 공단에 직접 확인 필요</span>
+</div>
+</li>
+<li class="si">
+<div class="sico" style="background:var(--BL)">②</div>
+<div class="sb">
+<div class="sh2">경기도의료원 안성병원 문의</div>
+<div class="sd"> → "장기요양 수급자 재택의료 또는 방문진료 가능 여부"<br/>등급 인정서·수급자 확인서 지참</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- E: 복지용구 -->
+<div class="card">
+<div class="chead" onclick="tog('a4')">
+<div class="tbadge" style="background:var(--GL);border-right-color:var(--G)">
+<div class="tday" style="color:var(--G)">등급 후</div>
+<div class="tstatus" style="background:var(--T);color:#fff">등급필요</div>
+<div class="tico">🛏</div>
+</div>
+<div class="ccol">
+<div class="cmeta"><span style="color:var(--R);font-weight:800">⚠ 선 구입 시 급여 불가</span><span class="cmeta-sep">·</span><span>연 160만원 · 약 24만원/년(15%)</span></div>
+<div class="ctitle">복지용구 — 전동침대 · 욕창방지매트리스</div>
+<div class="csub">반드시 급여 신청 후 지정 업체 통해 구입·대여</div>
+<div class="cbadges"><span class="b bg">연간 160만원</span><span class="b bg">본인부담 약 24만원/년</span><span class="b br">선 구입 시 급여 불가</span></div>
+</div>
+<div class="tico-right">🛏</div><div class="chv" id="hv-a4">⌄</div>
+</div>
+<div class="cbody" id="bd-a4">
+<div class="itabs">
+<button class="it ac" onclick="tab('a4',0)">비용·자격·품목</button>
+<button class="it" onclick="tab('a4',1)">기관·신청방법</button>
+</div>
+<div class="ip ac" id="ip-a4-0">
+<div class="ig">
+<div class="ic"><div class="il">수급 자격</div><div class="iv">1~5등급 수급자</div></div>
+<div class="ic"><div class="il">연간 급여 한도</div><div class="iv em">160만원</div><div class="is">매년 갱신</div></div>
+</div>
+<div class="cblk">
+<div class="cr"><span class="crl">일반 본인부담 (15%) 연간</span><span class="crv">연 약 24만원</span></div>
+<div class="cr"><span class="crl">감경 6% 시</span><span class="crv em">연 약 10만원</span></div>
+<div class="cr"><span class="crl">기초수급자</span><span class="crv em">0원</span></div>
+</div>
+<table class="tbl">
+<tr><th>품목</th><th>구분</th><th>본인부담 예시</th></tr>
+<tr><td><strong>전동침대</strong></td><td>대여</td><td>월 약 1~2만원 (15%)</td></tr>
+<tr><td><strong>욕창예방 매트리스(에어매트)</strong></td><td>대여</td><td>완전 와상 필수 — 월 약 1~2만원</td></tr>
+<tr><td><strong>휠체어</strong></td><td>대여</td><td>이동·외출 시</td></tr>
+</table>
+<div class="al">⚠️ 반드시 급여 신청 후 공단 지정 업체를 통해 구입·대여해야 급여 적용. 개인 먼저 구입 시 소급 불가.</div>
+</div>
+<div class="ip" id="ip-a4-1">
+<ul class="sl">
+<li class="si">
+<div class="sico" style="background:var(--TL)">①</div>
+<div class="sb">
+<div class="sh2">공단 지정 복지용구 업체 통해 신청</div>
+<div class="sd">longtermcare.or.kr → 복지용구 → 지정 업체 확인 후 신청<br/>또는 재가기관에 요청하면 연계 가능</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- F: 가족휴가제 -->
+<div class="card">
+<div class="chead" onclick="tog('a5')">
+<div class="tbadge" style="background:var(--GL);border-right-color:var(--G)">
+<div class="tday" style="color:var(--G)">등급 후</div>
+<div class="tstatus" style="background:var(--T);color:#fff">등급필요</div>
+<div class="tico">🏖</div>
+</div>
+<div class="ccol">
+<div class="cmeta"><span style="color:var(--G);font-weight:800">월 한도액 외 별도 · 2026 확대</span><span class="cmeta-sep">·</span><span>보호자 휴식 전용</span></div>
+<div class="ctitle">장기요양 가족휴가제 (2026년 대폭 확대)</div>
+<div class="csub">연 12일 단기보호 + 연 24회 종일방문요양 / 평소 월 한도액과 완전 별도</div>
+<div class="cbadges"><span class="b bg">월 한도액 외 별도</span><span class="b bg">연 12일 단기보호</span><span class="b bg">연 24회 종일방문</span></div>
+</div>
+<div class="tico-right">🏖</div><div class="chv" id="hv-a5">⌄</div>
+</div>
+<div class="cbody" id="bd-a5">
+<div class="itabs">
+<button class="it ac" onclick="tab('a5',0)">비용·횟수·자격</button>
+<button class="it" onclick="tab('a5',1)">기관·신청방법</button>
+</div>
+<div class="ip ac" id="ip-a5-0">
+<div class="ig">
+<div class="ic"><div class="il">수급 자격</div><div class="iv">1~5등급 수급자</div><div class="is">월 한도액 외 별도 산정</div></div>
+<div class="ic"><div class="il">2026년 확대</div><div class="iv em">전년比 확대</div><div class="is">단기보호 11→12일 / 종일 22→24회</div></div>
+</div>
+<div class="cblk">
+<div class="cr"><span class="crl">단기보호 (시설 입소)</span><span class="crv em">연간 최대 12일 · 1일 약 7,000~1만원</span></div>
+<div class="cr"><span class="crl">종일방문요양 (12시간 이상)</span><span class="crv em">연간 최대 24회 · 1회 약 3~5만원</span></div>
+<div class="cr"><span class="crl">월 한도액과의 관계</span><span class="crv em">완전 별도 — 한도 관계없이 추가 사용</span></div>
+<div class="cr"><span class="crl">감경 9%·6% 적용 여부</span><span class="crv">등급 본인부담률 동일 적용</span></div>
+</div>
+<div class="al">⚠️ NG tube + Foley 환자는 단기보호시설 거부 가능. 종일방문요양(12시간) 형태가 현실적. "12시간 연속 가능한 요양보호사 배정" 사전 요청.</div>
+</div>
+<div class="ip" id="ip-a5-1">
+<ul class="sl">
+<li class="si">
+<div class="sico" style="background:var(--TL)">①</div>
+<div class="sb">
+<div class="sh2"> 또는 재가기관 통해 신청</div>
+<div class="sd">이용 전 재가기관에 "가족휴가제 이용 신청" 요청<br/>시설 단기보호: NG tube·Foley 수용 가능 여부 사전 확인 필수</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- G: 보호자 지원 + 감경 -->
+<div class="card">
+<div class="chead" onclick="tog('a6')">
+<div class="tbadge" style="background:var(--PL);border-right-color:var(--P)">
+<div class="tday" style="color:var(--P)">등급 후</div>
+<div class="tstatus" style="background:var(--T);color:#fff">등급필요</div>
+<div class="tico">💰</div>
+</div>
+<div class="ccol">
+<div class="cmeta"><span style="color:var(--P);font-weight:800">확정 즉시 병행 신청</span><span class="cmeta-sep">·</span><span>15%→6~9% 또는 면제 · 특별현금급여 월 240,450원</span></div>
+<div class="ctitle">본인부담 감경 + 특별현금급여</div>
+<div class="csub">소득·재산 기준 충족 시 월 최대 20만원 절감 / 읍면동 주민센터 신청</div>
+<div class="cbadges"><span class="b bp">최대 면제</span><span class="b bp">월 240,450원</span><span class="b bgr">읍면동 주민센터</span></div>
+</div>
+<div class="tico-right">💰</div><div class="chv" id="hv-a6">⌄</div>
+</div>
+<div class="cbody" id="bd-a6">
+<div class="itabs">
+<button class="it ac" onclick="tab('a6',0)">본인부담 감경</button>
+<button class="it" onclick="tab('a6',1)">특별현금급여</button>
+</div>
+<div class="ip ac" id="ip-a6-0">
+<table class="tbl">
+<tr><th>대상</th><th>본인부담률</th><th>재가 200만원 기준 월 부담</th></tr>
+<tr><td>일반</td><td>15%</td><td>30만원</td></tr>
+<tr><td>감경 (9%)</td><td class="wn2">9%</td><td class="em2">18만원</td></tr>
+<tr><td>감경 (6%)</td><td class="em2">6%</td><td class="em2">12만원</td></tr>
+<tr><td>기초수급·의료급여</td><td class="em2">0%</td><td class="em2">0원</td></tr>
+</table>
+<ul class="sl">
+<li class="si">
+<div class="sico" style="background:var(--PL)">📍</div>
+<div class="sb">
+<div class="sh2">주소지 읍면동 주민센터 방문 신청</div>
+<div class="sd">장기요양 본인부담금 감경 신청서 + 금융·부동산 정보 동의서 제출<br/>심사 후 약 2~4주 내 통보</div>
+<span class="stip">서비스는 먼저 시작하세요 — 감경 결정 전에도 이용 가능</span>
+</div>
+</li>
+</ul>
+</div>
+<div class="ip" id="ip-a6-1">
+<div class="wn3"><strong>특별현금급여(가족요양비)</strong> — 요양보호사 자격 없이도 수령 가능. 단, 아래 특수 사유 중 하나에 해당해야 합니다.</div>
+<table class="tbl">
+<tr><th>지급 요건 (하나 이상 해당)</th></tr>
+<tr><td>도서·벽지 거주로 장기요양기관 이용이 매우 어려운 경우</td></tr>
+<tr><td>감염병 환자로 타인 접촉이 제한된 경우</td></tr>
+<tr><td>성격·신체 결함으로 타인 도움 받기 매우 어려운 경우</td></tr>
+<tr><td>기타 공단이 인정하는 사유</td></tr>
+</table>
+<div class="cblk">
+<div class="cr"><span class="crl">2026년 월 지급액</span><span class="crv em">240,450원</span></div>
+<div class="cr"><span class="crl">신청처</span><span class="crv"> 공단 지사</span></div>
+</div>
+</div>
+</div>
+</div>
+<!-- 월 비용 요약 -->
+<div class="sh">🏦 세금 혜택 · 자금 · 자산 관리</div>
+<!-- 세금 혜택 카드 -->
+<div class="card">
+<div class="chead" onclick="tog('t0')">
+<div class="tbadge" style="background:var(--PL);border-right-color:var(--P)">
+<div class="tday" style="color:var(--P)">연중</div>
+<div class="tstatus" style="background:var(--R);color:#fff">등급무관</div>
+</div>
+<div class="ccol">
+<div class="cmeta"><span style="color:var(--P);font-weight:800">연말정산·세금 감면</span><span class="cmeta-sep">·</span><span>가족 부양 시 적용 가능</span></div>
+<div class="ctitle">세금 혜택 — 연말정산·재산세·기초연금</div>
+<div class="csub">의료비 세액공제 · 부양가족 인적공제 · 재산세 감면 · 비과세 종합저축 · 기초연금</div>
+<div class="cbadges"><span class="b bp">연말정산</span><span class="b bp">재산세 감면</span><span class="b bt">기초연금</span></div>
+</div>
+<div class="tico-right">🏦</div>
+<div class="chv" id="hv-t0">⌄</div>
+</div>
+<div class="cbody" id="bd-t0">
+<div class="itabs">
+<button class="it ac" onclick="tab('t0',0)">의료비·부양가족 공제</button>
+<button class="it" onclick="tab('t0',1)">재산세 감면·비과세저축</button>
+<button class="it" onclick="tab('t0',2)">기초연금</button>
+<button class="it" onclick="tab('t0',3)">기관·신청방법</button>
+</div>
+<div class="ip ac" id="ip-t0-0">
+<div class="hl">📌 간병인 비용 자체는 의료비 세액공제 대상이 아닙니다. 단, 의료기관에 지출한 진료비·약값·방문진료비·장기요양 본인부담금 등은 공제 가능합니다.</div>
+<table class="tbl">
+<tr><th>항목</th><th>공제 내용</th><th>한도·비율</th></tr>
+<tr><td><strong>의료비 세액공제</strong><br/>(65세 이상 부양가족)</td><td>부양가족이 65세 이상이면 한도 없이 전액 공제 대상<br/>진료비, 처방약값, 방문진료비, 보조기구 구입비 등 포함<br/><span class="rd2">간병인 비용, 진단서 발급비는 제외</span></td><td>지출액의 <strong>15%</strong><br/>한도 없음 (65세 이상)</td></tr>
+<tr><td><strong>부양가족 인적공제</strong></td><td>함께 생계를 유지하는 부양가족 1인당 공제<br/>소득금액 100만원 이하 시 연령 무관 적용<br/>85세 완전 와상 치매 환자는 대부분 해당</td><td>1인당 <strong>150만원</strong> 소득공제</td></tr>
+<tr><td><strong>장애인 추가공제</strong></td><td>항시 치료를 요하는 중증환자, 65세 이상 경로우대 해당 시<br/>장기요양 1·2등급 등 중증 상태 적용 검토</td><td>경로우대 100만원<br/>장애인 200만원 추가</td></tr>
+<tr><td><strong>장기요양 본인부담금</strong></td><td>방문요양·방문간호 등 본인부담금은 의료비 공제 포함 여부 세무사 확인 권장</td><td>의료기관 여부 따라 다름</td></tr>
+</table>
+<div class="wn3">⚠️ 연말정산 시 장기요양기관의 의료비 자료가 국세청에 늦게 제출되거나 누락되는 경우가 있습니다. 1월 이후 홈택스 "의료비 신고센터"에서 직접 등록하거나, 영수증을 직접 제출해야 할 수 있습니다.</div>
+</div>
+<div class="ip" id="ip-t0-1">
+<table class="tbl">
+<tr><th>항목</th><th>내용</th><th>공제 규모</th></tr>
+<tr><td><strong>재산세 세액공제</strong><br/>(만 60세 이상 1세대 1주택)</td><td>1세대 1주택자이고 만 60세 이상인 경우 연령에 따라 재산세 공제<br/>5년 이상 장기보유 추가 공제 적용 시 최대 80%까지 절감 가능<br/>신청: 주소지 관할 안성시청 세무과</td><td>연령별 20~40%<br/>최대 80% (장기보유 합산)</td></tr>
+<tr><td><strong>비과세 종합저축</strong><br/>(만 65세 이상)</td><td>만 65세 이상이면 이자·배당소득에 대해 비과세 적용<br/>한도 5,000만원까지 세금 없이 이자 수령 가능<br/>은행·증권사 등에서 가입</td><td>이자소득세 15.4% 면제<br/>한도 5,000만원</td></tr>
+<tr><td><strong>지방세 감면</strong><br/>(기초수급자 등)</td><td>기초생활수급자·차상위계층 해당 시 자동차세, 취득세 등 지방세 감면<br/>안성시청 세무과에 문의</td><td>개인 상황별 상이</td></tr>
+</table>
+</div>
+<div class="ip" id="ip-t0-2">
+<div class="hl"><strong>기초연금</strong> — 2026년 소득인정액 기준 단독가구 월 247만원 이하이면 수급 가능. 85세 환자 본인이 수령 대상인지 확인 필수.</div>
+<div class="ig">
+<div class="ic"><div class="il">2026년 수급 자격</div><div class="iv">만 65세 이상</div><div class="is">소득인정액 단독 월 247만원 이하<br/>부부 월 395.2만원 이하</div></div>
+<div class="ic"><div class="il">최대 수령액</div><div class="iv em">단독 약 34만원/월</div><div class="is">소득인정액에 따라 차등 지급<br/>국민연금 수령 시 연계 감액 가능</div></div>
+</div>
+<div class="cblk">
+<div class="cr"><span class="crl">신청 시점</span><span class="crv">만 65세 생일 1개월 전부터 신청 가능</span></div>
+<div class="cr"><span class="crl">소급 지급</span><span class="crv rd">없음 — 늦게 신청하면 지나간 달은 못 받음</span></div>
+<div class="cr"><span class="crl">거동 불편자 신청</span><span class="crv em">국민연금공단 직원이 자택 방문 신청 지원 가능</span></div>
+</div>
+</div>
+<div class="ip" id="ip-t0-3">
+<table class="tbl">
+<tr><th>항목</th><th>기관</th><th>연락처</th></tr>
+<tr><td>의료비 세액공제 문의</td><td>국세청 세금 상담</td><td></td></tr>
+<tr><td>연말정산 의료비 누락 신고</td><td>국세청 홈택스 의료비 신고센터</td><td>hometax.go.kr</td></tr>
+<tr><td>재산세 세액공제 신청</td><td>안성시청 세무과</td><td></td></tr>
+<tr><td>비과세 종합저축 가입</td><td>시중 은행·증권사</td><td>직접 방문</td></tr>
+<tr><td>기초연금 신청</td><td>읍면동 주민센터 또는 국민연금공단</td><td> (국민연금)</td></tr>
+<tr><td>기초연금 모의계산</td><td>복지로 홈페이지</td><td>bokjiro.go.kr</td></tr>
+</table>
+</div>
+</div>
+</div>
+<!-- 자금·자산 관리 카드 -->
+<div class="card">
+<div class="chead" onclick="tog('t1')">
+<div class="tbadge" style="background:var(--GL);border-right-color:var(--G)">
+<div class="tday" style="color:var(--G)">상시</div>
+<div class="tstatus" style="background:var(--T);color:#fff">등급필요</div>
+</div>
+<div class="ccol">
+<div class="cmeta"><span style="color:var(--G);font-weight:800">자금·자산 관리</span><span class="cmeta-sep">·</span><span>고비용 장기 간병 대비 필수</span></div>
+<div class="ctitle">자금·자산 관리 — 장기 간병 대비</div>
+<div class="csub">법률구조 무료 상담 · 성년후견 · 복지로 모의계산 · 에너지바우처 · 통신비 감면</div>
+<div class="cbadges"><span class="b bg">무료 법률 상담</span><span class="b bg">성년후견</span><span class="b bt">에너지바우처</span><span class="b bgr">통신비 감면</span></div>
+</div>
+<div class="tico-right">💼</div>
+<div class="chv" id="hv-t1">⌄</div>
+</div>
+<div class="cbody" id="bd-t1">
+<div class="itabs">
+<button class="it ac" onclick="tab('t1',0)">지원 내용·비용</button>
+<button class="it" onclick="tab('t1',1)">기관·신청방법</button>
+</div>
+<div class="ip ac" id="ip-t1-0">
+<table class="tbl">
+<tr><th>항목</th><th>내용</th><th>비용·한도</th></tr>
+<tr><td><strong>무료 법률 상담</strong><br/>(대한법률구조공단)</td><td>장기 간병 관련 재산 관리, 상속, 증여, 계약 등 법률 문제 무료 상담<br/>저소득층은 소송·법률 대리까지 무료 지원</td><td>상담 무료<br/>소송 지원: 소득 기준 충족 시 무료</td></tr>
+<tr><td><strong>성년후견제도</strong></td><td>치매로 의사 결정 능력이 없는 경우 법원이 후견인 지정<br/>재산 보호, 계약 대리, 요양시설 입소 동의 등에 활용<br/>후견인: 가족 또는 공공후견인</td><td>법원 신청비 약 5~20만원<br/>감정비 별도 / 기초수급자 면제</td></tr>
+<tr><td><strong>에너지바우처</strong><br/>(기초수급자·차상위)</td><td>기초수급자 또는 차상위계층 중 65세 이상 노인 포함 가구<br/>전기·도시가스·등유 등 에너지 요금 지원 바우처 지급</td><td>연간 약 20~30만원 수준<br/>매년 신청 필요</td></tr>
+<tr><td><strong>통신비 감면</strong><br/>(기초수급자·차상위)</td><td>기초생활수급자·차상위계층 해당 시 이동통신 요금 월 최대 26,000원 감면<br/>통신사에 수급자 증명 제출</td><td>월 최대 26,000원 감면</td></tr>
+<tr><td><strong>복지로 통합 급여 모의계산</strong></td><td>현재 받을 수 있는 모든 복지급여 한 번에 확인<br/>소득·재산 입력 → 기초연금·의료급여·장기요양 본인부담 감경 대상 여부 확인</td><td>무료 · 온라인</td></tr>
+<tr><td><strong>금융 취약계층 지원</strong><br/>(서민금융진흥원)</td><td>간병비·의료비로 긴급 자금이 필요한 경우 소액 긴급 대출 또는 채무 조정 상담</td><td>저금리 대출 or 상담 무료</td></tr>
+</table>
+</div>
+<div class="ip" id="ip-t1-1">
+<table class="tbl">
+<tr><th>항목</th><th>기관</th><th>연락처</th></tr>
+<tr><td>무료 법률 상담</td><td>대한법률구조공단</td><td></td></tr>
+<tr><td>성년후견 신청</td><td>안성시청 관할 가정법원 (수원가정법원)</td><td></td></tr>
+<tr><td>에너지바우처 신청</td><td>주소지 읍면동 주민센터</td><td> (에너지바우처 콜센터)</td></tr>
+<tr><td>통신비 감면 신청</td><td>이용 중인 통신사 고객센터</td><td>수급자 증명서 제출</td></tr>
+<tr><td>복지 급여 모의계산</td><td>복지로 홈페이지</td><td>bokjiro.go.kr</td></tr>
+<tr><td>금융·긴급 자금 상담</td><td>서민금융진흥원</td><td></td></tr>
+<tr><td>안성시청 복지 문의</td><td>안성시청 사회복지과</td><td></td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sh">💰 예상 월 비용 (1등급 · 방문요양+방문간호+방문목욕 기준)</div>
+<div class="cblk">
+<div class="cr"><span class="crl">방문요양 (주5회×3시간 · 월 20회)</span><span class="crv">급여 약 114만원 → 본인부담 약 17만원</span></div>
+<div class="cr"><span class="crl">방문간호 (월 4회 · 최초 3회 무료 적용)</span><span class="crv">본인부담 약 5,000~8,000원</span></div>
+<div class="cr"><span class="crl">방문목욕 (월 2회)</span><span class="crv">본인부담 약 2,000~4,000원</span></div>
+<div class="cr"><span class="crl">재택의료 방문진료 (월 1회)</span><span class="crv">약 5,000~1.5만원 (별도)</span></div>
+<div class="cr" style="background:var(--AL)"><span class="crl" style="font-weight:900">합계 (일반 15%)</span><span class="crv wn">월 약 18~20만원</span></div>
+<div class="cr" style="background:var(--TL)"><span class="crl" style="font-weight:900">감경 6% 적용 시</span><span class="crv em">월 약 7~8만원</span></div>
+<div class="cr"><span class="crl">기초수급자</span><span class="crv em">거의 0원</span></div>
+</div>
+<div class="sh">📞 등급 확정 후 핵심 연락처</div>
+<div class="pg">
+<div class="pc"><div class="pn">장기요양 전반</div><div class="pp"><a aria-label="1577-1000 전화 걸기" class="phone-link" href="tel:15771000">1577-1000</a></div><div class="pa">국민건강보험공단</div><div class="pnt">방문간호·방문요양·재가기관 문의</div></div>
+<div class="pc"><div class="pn">치매안심센터</div><div class="pp"><a aria-label="031-678-3003 전화 걸기" class="phone-link" href="tel:0316783003">031-678-3003</a></div><div class="pa"><span class="address-action">강변로74번길 18<span class="map-actions"><a class="map-link naver" href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%95%88%EC%84%B1%EC%8B%9C%20%EA%B0%95%EB%B3%80%EB%A1%9C74%EB%B2%88%EA%B8%B8%2018" rel="noopener" target="_blank">네이버</a><a class="map-link google" href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%95%88%EC%84%B1%EC%8B%9C%20%EA%B0%95%EB%B3%80%EB%A1%9C74%EB%B2%88%EA%B8%B8%2018" rel="noopener" target="_blank">구글</a></span></span> (도기동)</div><div class="pnt">가족휴가제·조호물품·치매치료비</div></div>
+<div class="pc"><div class="pn">방문간호지시서 · 방문진료</div><div class="pp"><a aria-label="031-8046-5000 전화 걸기" class="phone-link" href="tel:03180465000">031-8046-5000</a></div><div class="pa">경기도의료원 안성병원</div><div class="pnt"><span class="address-action">남파로 95<span class="map-actions"><a class="map-link naver" href="https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%95%88%EC%84%B1%EC%8B%9C%20%EB%82%A8%ED%8C%8C%EB%A1%9C%2095" rel="noopener" target="_blank">네이버</a><a class="map-link google" href="https://www.google.com/maps/search/?api=1&amp;query=%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%95%88%EC%84%B1%EC%8B%9C%20%EB%82%A8%ED%8C%8C%EB%A1%9C%2095" rel="noopener" target="_blank">구글</a></span></span> (당왕동)</div></div>
+<div class="pc"><div class="pn">본인부담 감경 신청</div><div class="pp">읍면동 주민센터</div><div class="pa">주소지 관할 주민센터 방문</div><div class="pnt">감경 신청서 + 동의서 제출</div></div>
+</div>
+</div><!-- /ps-after -->
+<!-- ══════ CALCULATOR ══════ -->
+<div class="ps" id="ps-calc">
+<div class="hl" style="margin-bottom:16px">🧮 <strong>장기요양보험 계산기</strong> — 재가급여 월 한도와 복지용구 연간 한도를 별도로 계산합니다.</div>
+<div class="sh">💡 장기요양 급여 지원 구조 — 먼저 이해하세요</div>
+<style>
+  .ltc-guide{background:#fff;border:2px solid var(--T);border-radius:14px;padding:16px 14px;margin-bottom:16px}
+  .ltc-guide-title{font-size:16px;font-weight:900;line-height:1.55;color:var(--T);letter-spacing:-.02em;margin-bottom:10px;word-break:keep-all}
+  .ltc-guide-text{font-size:14px;line-height:1.75;color:var(--t2);letter-spacing:-.015em;margin-bottom:14px;word-break:keep-all}
+  .ltc-guide-text strong{color:var(--tx);font-weight:850}
+  .ltc-compare{width:100%;border:1px solid var(--bd);border-radius:11px;overflow:hidden;background:#fff}
+  .ltc-compare-row{display:grid;grid-template-columns:1.12fr 1fr 1fr;align-items:stretch;border-bottom:1px solid var(--bd)}
+  .ltc-compare-row:last-child{border-bottom:none}
+  .ltc-compare-cell{min-width:0;padding:10px 8px;font-size:12px;line-height:1.35;text-align:center;display:flex;align-items:center;justify-content:center;word-break:keep-all}
+  .ltc-compare-cell+ .ltc-compare-cell{border-left:1px solid var(--bd)}
+  .ltc-compare-head .ltc-compare-cell{font-weight:900;background:var(--s1);color:var(--tx)}
+  .ltc-compare-head .g1{background:var(--TL);color:var(--T)}
+  .ltc-compare-head .g2{background:var(--AL);color:var(--A)}
+  .ltc-compare-label{justify-content:flex-start;text-align:left;font-weight:800;color:var(--t2);background:#faf9f7}
+  .ltc-compare-value{font-size:13px;font-weight:900;white-space:nowrap}
+  .ltc-compare-value.g1{color:var(--T)}
+  .ltc-compare-value.g2{color:var(--A)}
+  .ltc-compare-row.primary .ltc-compare-cell{padding-top:12px;padding-bottom:12px}
+  .ltc-compare-row.primary .ltc-compare-value{font-size:16px}
+  @media(max-width:370px){
+    .ltc-guide{padding:14px 12px}
+    .ltc-guide-title{font-size:15px}
+    .ltc-guide-text{font-size:13px}
+    .ltc-compare-cell{padding:9px 5px;font-size:11px}
+    .ltc-compare-row.primary .ltc-compare-value{font-size:14px}
+    .ltc-compare-value{font-size:12px}
+  }
+
+/* ===== v5 mobile typography + stable availability layout ===== */
+.h1{font-size:clamp(20px,5.1vw,22px) !important}
+.h2{font-size:clamp(13.5px,3.45vw,15px) !important}
+.ht{
+  font-size:clamp(14px,3.7vw,16px) !important;
+  line-height:1.28 !important;
+  padding:12px 3px !important;
+  letter-spacing:-.025em;
+}
+.ht span{
+  font-size:clamp(11px,2.9vw,12.5px) !important;
+  line-height:1.25 !important;
+}
+
+.availability-box{
+  background:#fff;
+  border:1.5px solid var(--bd);
+  border-radius:12px;
+  padding:14px clamp(10px,3vw,16px);
+  margin-bottom:16px;
+}
+.availability-title{
+  font-size:clamp(15px,4vw,17px);
+  line-height:1.35;
+  font-weight:900;
+  color:var(--tx);
+  margin-bottom:10px;
+}
+.availability-row{
+  display:grid;
+  grid-template-columns:minmax(72px,24%) minmax(0,1fr);
+  column-gap:clamp(5px,1.8vw,9px);
+  align-items:start;
+  margin-bottom:8px;
+}
+.availability-row:last-of-type{margin-bottom:0}
+.availability-label{
+  font-size:clamp(11px,3vw,13px);
+  line-height:1.45;
+  font-weight:800;
+  color:var(--t3);
+  padding-top:3px;
+  white-space:normal;
+  word-break:keep-all;
+}
+.availability-items{
+  min-width:0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:clamp(4px,1.3vw,6px);
+}
+.availability-items .b{
+  font-size:clamp(11px,3vw,13px) !important;
+  line-height:1.3;
+  padding:clamp(3px,.9vw,5px) clamp(6px,1.8vw,9px);
+  white-space:normal;
+  word-break:keep-all;
+  max-width:100%;
+}
+.availability-note{
+  font-size:clamp(11px,2.9vw,12.5px);
+  line-height:1.5;
+  color:var(--t3);
+  margin-top:10px;
+  padding-top:9px;
+  border-top:1px solid var(--bd);
+  word-break:keep-all;
+}
+@media(max-width:360px){
+  .ht{font-size:clamp(13px,3.8vw,14px) !important;padding:11px 2px !important}
+  .ht span{font-size:10.5px !important}
+  .availability-row{grid-template-columns:minmax(66px,23%) minmax(0,1fr)}
+}
+</style>
+<div class="ltc-guide">
+<div class="ltc-guide-title">장기요양은 “총 얼마를 지원받는지”보다, 서비스별 수가를 월 한도 안에서 조합해 이용하는 구조입니다.</div>
+<div class="ltc-guide-text">
+    국가가 <strong>방문요양·방문간호·방문목욕 등 각 서비스의 수가</strong>를 정하고, 등급별로 <strong>한 달에 이용할 수 있는 급여비용의 총 한도액</strong>을 정합니다. 이용자는 그 한도 안에서 필요한 서비스를 재가기관과 협의해 조합합니다.
+  </div>
+<div aria-label="1등급과 2등급 월 한도 비교" class="ltc-compare">
+<div class="ltc-compare-row ltc-compare-head">
+<div class="ltc-compare-cell">구분</div>
+<div class="ltc-compare-cell g1">1등급</div>
+<div class="ltc-compare-cell g2">2등급</div>
+</div>
+<div class="ltc-compare-row primary">
+<div class="ltc-compare-cell ltc-compare-label">월 한도액</div>
+<div class="ltc-compare-cell ltc-compare-value g1">2,512,900원</div>
+<div class="ltc-compare-cell ltc-compare-value g2">2,331,200원</div>
+</div>
+<div class="ltc-compare-row">
+<div class="ltc-compare-cell ltc-compare-label">공단 부담<br/><span style="font-size:10px;font-weight:700">일반 85%</span></div>
+<div class="ltc-compare-cell ltc-compare-value g1">2,135,965원</div>
+<div class="ltc-compare-cell ltc-compare-value g2">1,981,520원</div>
+</div>
+<div class="ltc-compare-row">
+<div class="ltc-compare-cell ltc-compare-label">본인부담<br/><span style="font-size:10px;font-weight:700">일반 15%</span></div>
+<div class="ltc-compare-cell ltc-compare-value g1">376,935원</div>
+<div class="ltc-compare-cell ltc-compare-value g2">349,680원</div>
+</div>
+</div>
+</div><!-- /장기요양 급여 지원 구조 안내 박스 -->
+<!-- 조합 예시 → 계산기로 대체됨 -->
+<div style="font-size:14px;font-weight:900;color:var(--tx);margin:4px 0 8px">📐 직접 조합해보기 — 아래 계산기에서 횟수를 조정하세요</div>
+<div id="ltc-calc" style="background:#fff;border:2px solid var(--T);border-radius:14px;padding:18px;margin-bottom:16px">
+<div style="font-size:15px;font-weight:900;color:var(--T);margin-bottom:4px">🧮 월 재가급여 조합 계산기</div>
+<div style="font-size:12px;color:var(--t3);margin-bottom:14px">※ 2026년 장기요양 수가 기준 참고값 · 실제 금액은 재가기관 급여계획 작성 시 확정</div>
+<!-- 등급 -->
+<div style="display:flex;gap:8px;margin-bottom:14px">
+<button id="g1" onclick="ltcG(1)" style="flex:1;padding:10px;border-radius:8px;border:2px solid var(--T);background:var(--T);color:#fff;font-size:14px;font-weight:800;cursor:pointer">1등급 한도 2,512,900원</button>
+<button id="g2" onclick="ltcG(2)" style="flex:1;padding:10px;border-radius:8px;border:2px solid var(--bd2);background:#fff;color:var(--t3);font-size:14px;font-weight:800;cursor:pointer">2등급 한도 2,331,200원</button>
+</div>
+<div aria-live="polite" class="ltc-compact-summary">
+<div class="limit-primary">
+<div>
+<div class="ltc-sum-label">월 한도액 <span id="ltc-sum-grade">(1등급)</span></div>
+<div class="limit-primary-value" id="ltc-sum-limit">2,512,900원</div>
+</div>
+<div class="limit-remaining">
+<span>남은 한도</span>
+<strong id="ltc-sum-remain">2,512,900원</strong>
+</div>
+</div>
+<div class="usage-row">
+<div><span>현재 사용</span><strong id="ltc-sum-total">0원</strong></div>
+<div><span>예상 본인부담</span><strong id="ltc-sum-own">0원</strong></div>
+</div>
+<div class="ltc-sum-limit usage-meta">
+<div>월 한도 사용률</div><div id="ltc-sum-pct">0%</div>
+</div>
+<div class="ltc-sum-track"><div id="ltc-sum-bar"></div></div>
+</div>
+<!-- 모드 전환 -->
+<div style="display:flex;justify-content:flex-end;margin-bottom:10px">
+<button id="ltc-mbtn" onclick="ltcT()" style="font-size:12px;padding:5px 12px;border-radius:6px;border:1.5px solid var(--T);background:#fff;color:var(--T);cursor:pointer;font-weight:700">🔬 상세 계산 ▼</button>
+</div>
+<!-- 간편: 모바일 3구역 카드 구조 -->
+<div class="m-service-list" id="ltc-s">
+<section class="m-service-card">
+<div class="m-service-headline">
+<strong>방문요양</strong><span class="m-badge m-badge-green">3시간</span><span class="m-inline-desc">요양보호사 신체 돌봄</span>
+</div>
+<div class="m-service-zones">
+<div class="m-zone m-zone-counter">
+<div class="m-counter"><button onclick="ltcA('vy',-1)" type="button">−</button><span id="vy-n">20</span><button onclick="ltcA('vy',1)" type="button">+</button></div>
+</div>
+<div class="m-zone m-zone-fee">
+<div class="m-rate">(57,020원/회)</div>
+<strong id="vy-f">1,140,400원</strong>
+</div>
+<div class="m-zone m-zone-own">
+<div>본인부담 (15%)</div>
+<strong id="vy-o">171,060원</strong>
+</div>
+</div>
+<div class="service-rule">ℹ️ 30~180분: 1일 최대 3회 · 방문 간 2시간 이상 간격 / 210분 이상: 별도 산정기준 적용</div>
+<div class="service-detail-accordion" id="vy-detail" style="display:none">
+<div class="detail-inline-title">시간별 횟수</div>
+<div class="detail-rows" id="vy-dr"></div>
+<div class="detail-subtotal">방문요양 소계 <b id="vy-ds">0원</b></div>
+</div>
+</section>
+<section class="m-service-card">
+<div class="m-service-headline">
+<strong>방문간호</strong><span class="m-badge m-badge-blue">30분</span><span class="m-inline-desc m-free">✓ 최초 3회 본인부담 면제</span>
+</div>
+<div class="m-service-zones">
+<div class="m-zone m-zone-counter">
+<div class="m-counter"><button onclick="ltcA('vn',-1)" type="button">−</button><span id="vn-n">8</span><button onclick="ltcA('vn',1)" type="button">+</button></div>
+</div>
+<div class="m-zone m-zone-fee">
+<div class="m-rate">(49,730원/회)</div>
+<strong id="vn-f">397,840원</strong>
+</div>
+<div class="m-zone m-zone-own">
+<div>본인부담</div>
+<strong id="vn-o">37,298원</strong>
+</div>
+</div>
+<div class="service-rule">ℹ️ 방문간호지시서 필요 · 1·2등급 최초 이용 시 3회까지 본인부담 면제 가능</div>
+<div class="service-detail-accordion" id="vn-detail" style="display:none">
+<div class="detail-inline-title">시간별 횟수 <span>✓ 최초 3회 본인부담 면제</span></div>
+<div class="detail-rows" id="vn-dr"></div>
+<div class="detail-subtotal">방문간호 소계 <b id="vn-ds">0원</b></div>
+</div>
+</section>
+<section class="m-service-card">
+<div class="m-service-headline">
+<strong>방문목욕</strong><span class="m-badge m-badge-olive">차량 내 목욕</span><span class="m-inline-desc">이동식 욕조 자택 방문</span>
+</div>
+<div class="m-service-zones">
+<div class="m-zone m-zone-counter">
+<div class="m-counter"><button onclick="ltcA('vb',-1)" type="button">−</button><span id="vb-n">2</span><button onclick="ltcA('vb',1)" type="button">+</button></div>
+</div>
+<div class="m-zone m-zone-fee">
+<div class="m-rate">(88,990원/회)</div>
+<strong id="vb-f">177,980원</strong>
+</div>
+<div class="m-zone m-zone-own">
+<div>본인부담 (15%)</div>
+<strong id="vb-o">26,697원</strong>
+</div>
+</div>
+<div class="service-rule">ℹ️ 원칙적으로 주 1회 산정 · 피부 건강유지·관리 필요 시 예외 가능</div>
+<div class="service-detail-accordion" id="vb-detail" style="display:none">
+<div class="detail-inline-title">종류별 횟수</div>
+<div class="detail-rows" id="vb-dr"></div>
+<div class="detail-subtotal">방문목욕 소계 <b id="vb-ds">0원</b></div>
+</div>
+</section>
+</div>
+<!-- 하단 중복 게이지는 계산 로직 호환용으로만 유지 -->
+<div style="display:none">
+<div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px">
+<span style="font-weight:700">월 한도 사용률</span>
+<span id="ltc-pct" style="font-weight:900;color:var(--T)">0%</span>
+</div>
+<div style="background:var(--s2);border-radius:8px;height:14px;overflow:hidden;position:relative">
+<div id="ltc-bar" style="height:100%;background:var(--T);border-radius:8px;transition:width .3s;width:0%"></div>
+</div>
+<div style="display:flex;justify-content:space-between;font-size:11px;color:var(--t3);margin-top:3px"><span>0원</span><span id="ltc-ll">한도 2,512,900원</span></div>
+</div>
+<!-- 결과 -->
+<div id="ltc-r" style="margin-top:14px"></div>
+<div style="margin-top:6px;font-size:11px;color:var(--t3)">※ 수가는 2026년 고시 기준 참고값. 야간·공휴일·중증 가산 시 달라질 수 있음. 최종 금액은 기관 급여계획 작성 시 확정.</div>
+</div>
+<!-- 복지용구 계산기: 재가급여와 별도 한도 -->
+<div id="wc-calc" style="margin-top:12px;background:#fff;border:2px solid var(--G);border-radius:12px;padding:16px 18px">
+<div style="font-size:14px;font-weight:900;color:var(--G);margin-bottom:4px">🛒 복지용구 계산기</div>
+<div style="font-size:12px;color:var(--t3);margin-bottom:12px">연간 한도 1,600,000원 · 본인부담 15% · 선구입 시 급여 불가 · 공단 지정업체 통해서만 신청</div>
+<div aria-live="polite" class="wc-summary">
+<div class="wc-limit-main"><span>연간 한도</span><strong>1,600,000원</strong></div>
+<div class="wc-summary-sub"><div><span>현재 사용</span><strong id="wc-sum-used">0원</strong></div><div><span>예상 본인부담</span><strong id="wc-sum-own">0원</strong></div></div>
+</div>
+<!-- 품목: 한 줄형 모바일 3구역 구조 -->
+<div class="m-welfare-list compact-welfare">
+<section class="m-welfare-card compact-welfare-card">
+<div class="m-welfare-line"><strong>전동침대</strong><span class="m-badge m-badge-green">대여</span><span class="m-inline-desc">등받이·다리 각도 조절</span></div>
+<div class="m-welfare-zones"><div class="m-zone m-zone-counter"><div class="m-counter"><button onclick="wcAdj('wb',-1)" type="button">−</button><span id="wb-n">12</span><button onclick="wcAdj('wb',1)" type="button">+</button></div></div><div class="m-zone m-zone-fee"><div class="m-rate">(62,000원/월)</div><strong id="wb-total">744,000원</strong></div><div class="m-zone m-zone-own"><div>본인부담 (15%)</div><strong id="wb-own">111,600원</strong></div></div>
+</section>
+<section class="m-welfare-card compact-welfare-card">
+<div class="m-welfare-line"><strong>욕창예방 매트리스</strong><span class="m-badge m-badge-green">대여</span><span class="m-inline-desc">에어매트</span></div>
+<div class="m-welfare-zones"><div class="m-zone m-zone-counter"><div class="m-counter"><button onclick="wcAdj('wm',-1)" type="button">−</button><span id="wm-n">9</span><button onclick="wcAdj('wm',1)" type="button">+</button></div></div><div class="m-zone m-zone-fee"><div class="m-rate">(88,000원/월)</div><strong id="wm-total">792,000원</strong></div><div class="m-zone m-zone-own"><div>본인부담 (15%)</div><strong id="wm-own">118,800원</strong></div></div>
+</section>
+<section class="m-welfare-card compact-welfare-card">
+<div class="m-welfare-line"><strong>휠체어</strong><span class="m-badge m-badge-green">대여</span><span class="m-inline-desc">이동·외출용</span></div>
+<div class="m-welfare-zones"><div class="m-zone m-zone-counter"><div class="m-counter"><button onclick="wcAdj('ww',-1)" type="button">−</button><span id="ww-n">0</span><button onclick="wcAdj('ww',1)" type="button">+</button></div></div><div class="m-zone m-zone-fee"><div class="m-rate">(24,000원/월)</div><strong id="ww-total">0원</strong></div><div class="m-zone m-zone-own"><div>본인부담 (15%)</div><strong id="ww-own">0원</strong></div></div>
+</section>
+<section class="m-welfare-card compact-welfare-card">
+<div class="m-welfare-line"><strong>이동변기</strong><span class="m-badge m-badge-olive">구입</span><span class="m-inline-desc">침상 옆 배변 보조</span></div>
+<div class="m-welfare-zones"><div class="m-zone m-zone-counter"><div class="m-counter"><button onclick="wcAdj('wt',-1)" type="button">−</button><span id="wt-n">0</span><button onclick="wcAdj('wt',1)" type="button">+</button></div></div><div class="m-zone m-zone-fee"><div class="m-rate">(130,000원/개)</div><strong id="wt-total">0원</strong></div><div class="m-zone m-zone-own"><div>본인부담 (15%)</div><strong id="wt-own">0원</strong></div></div>
+</section>
+<section class="m-welfare-card compact-welfare-card">
+<div class="m-welfare-line"><strong>욕창예방 방석</strong><span class="m-badge m-badge-olive">구입</span><span class="m-inline-desc">휠체어·의자 사용 시</span></div>
+<div class="m-welfare-zones"><div class="m-zone m-zone-counter"><div class="m-counter"><button onclick="wcAdj('wp',-1)" type="button">−</button><span id="wp-n">0</span><button onclick="wcAdj('wp',1)" type="button">+</button></div></div><div class="m-zone m-zone-fee"><div class="m-rate">(150,000원/개)</div><strong id="wp-total">0원</strong></div><div class="m-zone m-zone-own"><div>본인부담 (15%)</div><strong id="wp-own">0원</strong></div></div>
+</section>
+</div>
+<!-- 연간 한도 게이지 -->
+<div style="margin-top:12px">
+<div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px">
+<span style="font-weight:700">연간 한도 사용률</span>
+<span id="wc-pct" style="font-weight:900;color:var(--G)">0%</span>
+</div>
+<div style="background:var(--s2);border-radius:8px;height:14px;overflow:hidden">
+<div id="wc-bar" style="height:100%;background:var(--G);border-radius:8px;transition:width .3s;width:0%"></div>
+</div>
+<div style="display:flex;justify-content:space-between;font-size:11px;color:var(--t3);margin-top:3px">
+<span>0원</span><span>연간 한도 1,600,000원</span>
+</div>
+</div>
+<!-- 결과 -->
+<div id="wc-result" style="margin-top:12px;border:1.5px solid var(--bd);border-radius:10px;overflow:hidden"></div>
+<div style="margin-top:8px;font-size:11px;color:var(--t3)">
+      ※ 수가는 2026년 참고값. 실제 금액은 공단 지정업체 확인 필요. 한도 초과분은 100% 본인부담. 대여 품목은 사망·시설 입소 시 반납.
+    </div>
+</div>
+<script>
+(function(){
+  const WC_LIMIT = 1600000;
+  const items = {
+    wb: {rate:62000, type:'대여'},
+    wm: {rate:88000, type:'대여'},
+    ww: {rate:24000, type:'대여'},
+    wt: {rate:130000, type:'구입'},
+    wp: {rate:150000, type:'구입'},
+  };
+  const counts = {wb:12, wm:9, ww:0, wt:0, wp:0};
+
+  const f = n => Math.round(n).toLocaleString('ko-KR') + '원';
+
+  function wcAdj(k, d) {
+    const max = items[k].type === '대여' ? 24 : 5;
+    counts[k] = Math.max(0, Math.min(max, counts[k] + d));
+    document.getElementById(k+'-n').textContent = counts[k];
+    wcCalc();
+  }
+  window.wcAdj = wcAdj;
+
+  function wcCalc() {
+    let totalFee = 0;
+    const svcFees = {};
+
+    Object.keys(items).forEach(k => {
+      const fee = items[k].rate * counts[k];
+      svcFees[k] = fee;
+      totalFee += fee;
+    });
+
+    const inFee = Math.min(totalFee, WC_LIMIT);
+    const overFee = Math.max(0, totalFee - WC_LIMIT);
+    const ratio = totalFee > 0 ? overFee / totalFee : 0;
+
+    // 각 품목별 업데이트
+    Object.keys(items).forEach(k => {
+      const fee = svcFees[k];
+      const ov = Math.round(fee * ratio);
+      const inc = fee - ov;
+      const own = Math.round(inc * 0.15) + ov;
+      const totalEl = document.getElementById(k+'-total');
+      const ownEl = document.getElementById(k+'-own');
+      if (fee === 0) {
+        totalEl.textContent = '0원'; totalEl.style.color = 'var(--t3)';
+        ownEl.textContent = '0원'; ownEl.style.color = 'var(--t3)';
+      } else {
+        totalEl.textContent = f(fee); totalEl.style.color = 'var(--tx)';
+        ownEl.textContent = f(own) + (ov > 0 ? ' ⚠' : '');
+        ownEl.style.color = ov > 0 ? 'var(--R)' : 'var(--C)';
+        ownEl.style.fontWeight = '700';
+      }
+    });
+
+    // 게이지
+    const pct = Math.min(100, totalFee / WC_LIMIT * 100);
+    document.getElementById('wc-pct').textContent = pct.toFixed(1) + '%';
+    document.getElementById('wc-pct').style.color = overFee > 0 ? 'var(--R)' : pct > 85 ? 'var(--A)' : 'var(--G)';
+    document.getElementById('wc-bar').style.width = Math.min(100, pct) + '%';
+    document.getElementById('wc-bar').style.background = overFee > 0 ? 'var(--R)' : pct > 85 ? 'var(--A)' : 'var(--G)';
+
+    // 결과
+    const rb = document.getElementById('wc-result');
+    if (totalFee === 0) {
+      rb.innerHTML = '<div style="padding:12px 14px;color:var(--t3);font-size:13px">품목을 선택하면 결과가 표시됩니다.</div>';
+      return;
+    }
+
+    const govAmt = Math.round(inFee * 0.85);
+    const own15 = Math.round(inFee * 0.15);
+    const totalOwn = own15 + overFee;
+    const wcSumUsed=document.getElementById('wc-sum-used');
+    const wcSumOwn=document.getElementById('wc-sum-own');
+    if(wcSumUsed) wcSumUsed.textContent=f(totalFee);
+    if(wcSumOwn) wcSumOwn.textContent=f(totalOwn);
+    const isOver = overFee > 0;
+    const accentC = isOver ? 'var(--R)' : 'var(--G)';
+
+    let H = '';
+    // 납부 금액
+    H += '<div style="background:' + (isOver ? '#fff0f0' : 'var(--GL)') + ';padding:14px 16px;border-bottom:1px solid var(--bd)">';
+    H += '<div style="font-size:12px;font-weight:700;color:' + accentC + ';margin-bottom:4px">💳 연간 총 본인부담</div>';
+    H += '<div style="font-size:26px;font-weight:900;color:' + accentC + '">' + f(totalOwn) + '</div>';
+    H += '</div>';
+
+    // 수식
+    H += '<table style="width:100%;border-collapse:collapse;font-size:13px">';
+    H += '<tr><td style="padding:7px 14px;border-bottom:1px solid var(--bd)">연간 수가 합계</td><td style="padding:7px 14px;text-align:right;font-weight:700;border-bottom:1px solid var(--bd)">' + f(totalFee) + '</td></tr>';
+    H += '<tr><td style="padding:7px 14px;border-bottom:1px solid var(--bd);color:var(--B)">　− 공단 지원금 (한도 내 수가의 85%)</td><td style="padding:7px 14px;text-align:right;font-weight:700;color:var(--B);border-bottom:1px solid var(--bd)">− ' + f(govAmt) + '</td></tr>';
+    H += '<tr><td style="padding:7px 14px;border-bottom:' + (isOver ? '1px solid var(--bd)' : 'none') + ';color:var(--C)">　+ 본인부담 15% (한도 내)</td><td style="padding:7px 14px;text-align:right;font-weight:700;color:var(--C);border-bottom:' + (isOver ? '1px solid var(--bd)' : 'none') + '">+ ' + f(own15) + '</td></tr>';
+    if (isOver) {
+      H += '<tr style="background:#fff5f5"><td style="padding:7px 14px;color:var(--R)">　+ ⚠ 한도 초과 자부담 100% (공단 지원 없음)</td><td style="padding:7px 14px;text-align:right;font-weight:700;color:var(--R)">+ ' + f(overFee) + '</td></tr>';
+    }
+    H += '</table>';
+
+    // 월 환산
+    H += '<div style="padding:10px 14px;background:var(--s1);font-size:12px;color:var(--t3)">';
+    H += '월 환산 본인부담: <strong style="color:' + accentC + '">' + f(Math.round(totalOwn / 12)) + '/월</strong>';
+    H += (isOver ? ' <span style="color:var(--R)">⚠ 연간 한도 ' + f(WC_LIMIT) + ' 초과</span>' : ' (12개월 기준)');
+    H += '</div>';
+
+    rb.innerHTML = H;
+  }
+  wcCalc();
+})();
+</script>
+<script>
+(function(){
+  const LIM={1:2512900,2:2331200};
+  const RATES={
+    vy:[{l:'30~60분',r:15570},{l:'60~90분',r:22620},{l:'90~120분',r:29180},{l:'120~150분',r:35750},{l:'150~180분',r:43780},{l:'180~210분★',r:57020},{l:'210~240분',r:64160},{l:'240분~',r:71260}],
+    vn:[{l:'30분 미만',r:39490},{l:'30~60분★',r:49730},{l:'60분 이상',r:67040}],
+    vb:[{l:'차량 내 목욕★',r:88990},{l:'차량이용·가정 내',r:80230},{l:'차량 미이용',r:50100}]
+  };
+  let grade=1, dm=false;
+  // 간편/상세 계산이 같은 값을 공유한다.
+  // 간편모드의 +/-는 ★ 기본 시간대의 횟수만 조절하고, 상세모드에서는 모든 시간대를 조절한다.
+  const PREF={vy:5,vn:1,vb:0};
+  const MAX={vy:99,vn:99,vb:20};
+  const dn={vy:RATES.vy.map((_,i)=>i===PREF.vy?20:0),vn:RATES.vn.map((_,i)=>i===PREF.vn?8:0),vb:RATES.vb.map((_,i)=>i===PREF.vb?2:0)};
+  const acc={vy:false,vn:false,vb:false};
+
+  const f=n=>Math.round(n).toLocaleString('ko-KR')+'원';
+
+  window.ltcG=function(g){
+    grade=g;
+    ['g1','g2'].forEach((id,i)=>{
+      const el=document.getElementById(id),a=i+1===g;
+      el.style.background=a?'var(--T)':'#fff';
+      el.style.color=a?'#fff':'var(--t3)';
+      el.style.borderColor=a?'var(--T)':'var(--bd2)';
+    });
+    ltcC();
+  };
+
+  window.ltcT=function(){
+    dm=!dm;
+    const list=document.getElementById('ltc-s');
+    if(list) list.classList.toggle('detail-mode',dm);
+    ['vy','vn','vb'].forEach(k=>{
+      const panel=document.getElementById(k+'-detail');
+      if(panel) panel.style.display=dm?'block':'none';
+    });
+    document.getElementById('ltc-mbtn').textContent=dm?'⚡ 간편 계산으로 돌아가기 ▲':'🔬 상세 계산 ▼';
+    ltcC();
+  };
+
+  window.ltcA=function(k,d){
+    const i=PREF[k];
+    const currentTotal=dn[k].reduce((a,b)=>a+b,0);
+    // 간편모드의 +는 기본(★) 시간대에 추가한다.
+    // -는 먼저 기본 시간대에서 줄이고, 기본 시간대가 0이면 다른 시간대의 마지막 사용분부터 줄인다.
+    if(d>0){
+      if(currentTotal<MAX[k]) dn[k][i]+=1;
+    } else if(d<0 && currentTotal>0){
+      if(dn[k][i]>0) dn[k][i]-=1;
+      else {
+        for(let j=dn[k].length-1;j>=0;j--){
+          if(dn[k][j]>0){dn[k][j]-=1;break;}
+        }
+      }
+    }
+    dn[k].forEach((n,j)=>{const el=document.getElementById('dd_'+k+'_'+j);if(el)el.textContent=n;});
+    ltcC();
+  };
+
+  function buildDRows(){
+    ['vy','vn','vb'].forEach(k=>{
+      const c=document.getElementById(k+'-dr');
+      c.innerHTML='';
+      RATES[k].forEach((it,i)=>{
+        const row=document.createElement('div');
+        const preferred=it.l.includes('★');
+        row.className='detail-row'+(preferred?' preferred-row':'');
+        row.innerHTML='<div class="detail-label">'+it.l.replace('★','')+(preferred?' <span class="preferred-mark">★</span>':'')+'</div>'
+          +'<div class="detail-rate">'+it.r.toLocaleString()+'원/회</div>'
+          +'<div class="detail-stepper">'
+            +'<button type="button" aria-label="횟수 줄이기" onclick="ltcDA(\''+k+'\','+i+',-1)">−</button>'
+            +'<span id="dd_'+k+'_'+i+'">'+dn[k][i]+'</span>'
+            +'<button type="button" aria-label="횟수 늘리기" onclick="ltcDA(\''+k+'\','+i+',1)">+</button>'
+          +'</div>';
+        c.appendChild(row);
+      });
+    });
+  }
+
+  window.ltcDA=function(k,i,d){
+    dn[k][i]=Math.max(0,dn[k][i]+d);
+    document.getElementById('dd_'+k+'_'+i).textContent=dn[k][i];
+    ltcC();
+  };
+
+  function ltcC(){
+    const lim=LIM[grade];
+    let vyF=0,vnF=0,vbF=0,vnN=0,vyN=0,vbN=0;
+    let vyIt=[],vnIt=[],vbIt=[];
+
+    // 표시 모드와 무관하게 항상 상세 배열(dn)을 기준으로 계산한다.
+    // 따라서 간편 ↔ 상세 전환은 값에 영향을 주지 않는다.
+    RATES.vy.forEach((it,i)=>{if(dn.vy[i]>0){vyF+=it.r*dn.vy[i];vyN+=dn.vy[i];vyIt.push({...it,n:dn.vy[i]});}});
+    RATES.vn.forEach((it,i)=>{if(dn.vn[i]>0){vnF+=it.r*dn.vn[i];vnN+=dn.vn[i];vnIt.push({...it,n:dn.vn[i]});}});
+    RATES.vb.forEach((it,i)=>{if(dn.vb[i]>0){vbF+=it.r*dn.vb[i];vbN+=dn.vb[i];vbIt.push({...it,n:dn.vb[i]});}});
+    document.getElementById('vy-ds').textContent=f(vyF);
+    document.getElementById('vn-ds').textContent=f(vnF);
+    document.getElementById('vb-ds').textContent=f(vbF);
+
+    const totalF=vyF+vnF+vbF;
+    const overF=Math.max(0,totalF-lim);
+    const inF=Math.min(totalF,lim);
+    const ratio=totalF>0?overF/totalF:0;
+
+    function sp(fee){
+      const ov=Math.round(fee*ratio); return {inc:fee-ov,ov};
+    }
+    const vy=sp(vyF),vn=sp(vnF),vb=sp(vbF);
+
+    // 방문간호 면제 (한도 내에서만)
+    const fN=Math.min(vnN,3);
+    let freeLeft=fN, rawFreeAmt=0;
+    // 상세 시간대가 섞여 있어도 현재 입력값을 그대로 유지해 면제액을 산출한다.
+    // 기본 선택(★)을 먼저 적용하고, 나머지는 화면 순서대로 반영한다.
+    const vnOrder=[PREF.vn,...RATES.vn.map((_,i)=>i).filter(i=>i!==PREF.vn)];
+    vnOrder.forEach(i=>{
+      if(freeLeft<=0)return;
+      const take=Math.min(freeLeft,dn.vn[i]);
+      rawFreeAmt+=take*RATES.vn[i].r;
+      freeLeft-=take;
+    });
+    const fAmt=Math.min(rawFreeAmt,vn.inc);
+    const vnAF=vn.inc-fAmt; // 면제 후 남은 한도 내 수가
+
+    // 서비스별 공단/본인
+    const vyG=Math.round(vy.inc*0.85), vyP=Math.round(vy.inc*0.15), vyOv=vy.ov;
+    const vnG=Math.round(vnAF*0.85), vnP=Math.round(vnAF*0.15), vnOv=vn.ov;
+    const vbG=Math.round(vb.inc*0.85), vbP=Math.round(vb.inc*0.15), vbOv=vb.ov;
+
+    const tGov=vyG+vnG+vbG+(fAmt>0?fAmt:0);
+    const tFree=fAmt;
+    const tP15=vyP+vnP+vbP;
+    const tOv=vyOv+vnOv+vbOv;
+    const tOwn=tP15+tOv;
+
+    // 모바일 상단 요약 카드 업데이트
+    const sumTotal=document.getElementById('ltc-sum-total');
+    const sumOwn=document.getElementById('ltc-sum-own');
+    const sumLimit=document.getElementById('ltc-sum-limit');
+    const sumGrade=document.getElementById('ltc-sum-grade');
+    const sumPct=document.getElementById('ltc-sum-pct');
+    const sumRemain=document.getElementById('ltc-sum-remain');
+    const sumBar=document.getElementById('ltc-sum-bar');
+    const rawPct=lim>0?totalF/lim*100:0;
+    const compactPct=Math.min(100,rawPct);
+    if(sumTotal) sumTotal.textContent=f(totalF);
+    if(sumOwn) sumOwn.textContent=f(tOwn);
+    if(sumLimit) sumLimit.textContent=f(lim);
+    if(sumRemain) sumRemain.textContent=overF>0?'0원':f(lim-totalF);
+    if(sumGrade) sumGrade.textContent='('+grade+'등급)';
+    if(sumPct){
+      sumPct.textContent=rawPct.toFixed(1)+'%';
+      sumPct.style.color=tOv>0?'var(--R)':rawPct>85?'var(--A)':'var(--T)';
+    }
+    if(sumBar){
+      sumBar.style.width=compactPct+'%';
+      sumBar.style.background=tOv>0?'var(--R)':rawPct>85?'var(--A)':'var(--T)';
+    }
+
+    // 서비스 카드: 간편/상세 모두 같은 요약 레이아웃을 사용
+    document.getElementById('vy-f').textContent=f(vyF);
+    document.getElementById('vy-o').textContent=f(vyP+vyOv)+(vyOv>0?' ⚠':'');
+    document.getElementById('vn-f').textContent=f(vnF);
+    document.getElementById('vn-o').textContent=f(vnP+vnOv)+(fN>0?' ('+fN+'회 면제)':'')+(vnOv>0?' ⚠':'');
+    document.getElementById('vb-f').textContent=f(vbF);
+    document.getElementById('vb-o').textContent=f(vbP+vbOv)+(vbOv>0?' ⚠':'');
+    document.getElementById('vy-n').textContent=vyN;
+    document.getElementById('vn-n').textContent=vnN;
+    document.getElementById('vb-n').textContent=vbN;
+
+    // 게이지
+    const pct=Math.min(100,totalF/lim*100);
+    document.getElementById('ltc-pct').textContent=pct.toFixed(1)+'%';
+    document.getElementById('ltc-pct').style.color=overF>0?'var(--R)':pct>85?'var(--A)':'var(--T)';
+    const bar=document.getElementById('ltc-bar');
+    bar.style.width=Math.min(100,pct)+'%';
+    bar.style.background=overF>0?'var(--R)':pct>85?'var(--A)':'var(--T)';
+    document.getElementById('ltc-ll').textContent='한도 '+lim.toLocaleString()+'원';
+
+    // ── 결과 렌더링 ──
+    const rb=document.getElementById('ltc-r');
+    if(totalF===0){rb.innerHTML='<div style="padding:14px;color:var(--t3);font-size:13px">서비스를 선택하면 결과가 표시됩니다.</div>';return;}
+
+    const isOver=tOv>0;
+    const accentC=isOver?'var(--R)':'var(--T)';
+    const accentBG=isOver?'#fff0f0':'var(--TL)';
+    const accentBd=isOver?'var(--R)':'var(--T)';
+
+    // ── 메인 결과 박스 ──
+    let H='<div style="background:'+accentBG+';border:2px solid '+accentBd+';border-radius:12px;padding:16px 18px">';
+
+    // 납부 금액 (최상단, 크게)
+    H+='<div style="font-size:13px;font-weight:700;color:'+accentC+';margin-bottom:6px">💳 이달 실제 납부할 금액</div>';
+    H+='<div style="font-size:32px;font-weight:900;color:'+accentC+';margin-bottom:14px;letter-spacing:-.5px">'+f(tOwn)+'</div>';
+
+    // 구분선
+    H+='<div style="border-top:1.5px solid '+accentBd+';opacity:.25;margin-bottom:12px"></div>';
+
+    // 계산 수식 (납부 금액이 어떻게 산출됐는지)
+    function fRow(label,sign,val,color,bg){
+      return '<tr'+(bg?' style="background:'+bg+'"':'')+'>'
+        +'<td style="padding:6px 0;font-size:13px;color:'+(color||'var(--t2)')+'">'+label+'</td>'
+        +'<td style="padding:6px 0;text-align:right;font-weight:800;font-size:13px;color:'+(color||'var(--t2)')+';white-space:nowrap">'
+        +(sign==='-'?'− ':sign==='+'?'+ ':'')+f(val)+'</td></tr>';
+    }
+
+    H+='<table style="width:100%;border-collapse:collapse">';
+    H+=fRow('총 서비스 수가 (공단+본인 합산)','',totalF,'var(--tx)');
+    H+=fRow('　− 공단 지원금 (한도 내 수가 × 85%)','-',vyG+vnG+vbG,'var(--B)');
+    if(tFree>0) H+=fRow('　− 방문간호 최초 '+fN+'회 본인부담 면제 <span style="font-size:11px;color:var(--T);font-weight:400">(최초 3회 한정 · 매월 갱신 안 됨 · 본인부담분만 면제)</span>','-',tFree,'var(--T)');
+    H+=fRow('　+ 본인부담 15% (한도 내)','+',tP15,'var(--C)');
+    if(tOv>0) H+=fRow('　+ 본인부담 100% (한도 초과분)','+',tOv,'var(--R)');
+    if(!isOver) H+='<tr><td colspan="2" style="padding:4px 0;font-size:11px;color:var(--G)">잔여 월 한도 '+f(lim-totalF)+' — 추가 이용 가능</td></tr>';
+    H+='</table></div>';
+
+    // ── 서비스별 아코디언 ──
+    H+='<div style="font-size:12px;color:var(--t3);margin:12px 0 6px;font-weight:700">▼ 서비스별 상세 내역 클릭하여 확인</div>';
+
+    function mkAcc(k,icon,label,fee,incF,ovF,govA,freeA,p15,items,fN){
+      if(fee===0) return '';
+      const own=p15+ovF;
+      const isOv=ovF>0;
+      const itemLabel=items.map(it=>it.l+' '+it.n+'회 × '+it.r.toLocaleString()+'원 = '+f(it.r*it.n)+(isOv?'':'')).join(' / ');
+      const ovNote=isOv?' <span style="color:var(--R);font-size:11px">(한도초과 '+f(ovF)+')</span>':'';
+
+      let body='<div style="padding:12px 14px;background:#fafaf8;border-top:1px solid var(--bd)">';
+      // 계산식 라인
+      body+='<div style="font-size:12px;color:var(--t3);margin-bottom:8px">'+itemLabel+ovNote+'</div>';
+      body+='<table style="width:100%;border-collapse:collapse;font-size:13px">';
+
+      // 총 산정 수가
+      body+='<tr style="background:var(--s1)"><td style="padding:7px 12px;border-bottom:1px solid var(--bd);font-weight:700">총 산정 수가 ('+items.map(it=>it.l+' '+it.n+'회').join(', ')+')</td><td style="padding:7px 12px;text-align:right;font-weight:800;border-bottom:1px solid var(--bd)">'+f(fee)+'</td></tr>';
+
+      if(freeA>0){
+        body+='<tr style="background:var(--TL)"><td style="padding:7px 12px;border-bottom:1px solid var(--bd);color:var(--T)">　− 최초 '+fN+'회 본인부담 면제 <span style="font-size:11px;font-weight:400">(최초 3회 한정)</span></td><td style="padding:7px 12px;text-align:right;font-weight:700;color:var(--T);border-bottom:1px solid var(--bd)">− '+f(freeA)+'</td></tr>';
+      }
+      body+='<tr><td style="padding:7px 12px;border-bottom:1px solid var(--bd);color:var(--B)">　− 공단 지원금 차감 (한도 내 수가의 85%)</td><td style="padding:7px 12px;text-align:right;font-weight:700;color:var(--B);border-bottom:1px solid var(--bd)">− '+f(govA)+'</td></tr>';
+      body+='<tr><td style="padding:7px 12px;border-bottom:'+(isOv?'1px solid var(--bd)':'none')+';color:var(--C)">　+ 본인부담 15% (한도 내 수가 × 15%)</td><td style="padding:7px 12px;text-align:right;font-weight:700;color:var(--C);border-bottom:'+(isOv?'1px solid var(--bd)':'none')+'">+ '+f(p15)+'</td></tr>';
+      if(isOv) body+='<tr style="background:#fff5f5"><td style="padding:7px 12px;color:var(--R)">　+ ⚠ 한도 초과 자부담 100% (공단 지원 없음)</td><td style="padding:7px 12px;text-align:right;font-weight:700;color:var(--R)">+ '+f(ovF)+'</td></tr>';
+      body+='</table>';
+      body+='</div>';
+
+      return '<div style="border:1.5px solid var(--bd);border-radius:10px;overflow:hidden;margin-bottom:8px">'
+        +'<div onclick="ltcAcc(\''+k+'\')" style="display:flex;justify-content:space-between;align-items:center;padding:11px 14px;cursor:pointer;background:#fff;user-select:none">'
+          +'<div style="font-size:14px;font-weight:800">'+icon+' '+label+'<span style="font-size:11px;color:var(--t3);font-weight:400;margin-left:8px">수가 '+f(fee)+'</span></div>'
+          +'<div style="display:flex;align-items:center;gap:10px">'
+            +'<span style="font-size:14px;font-weight:900;color:'+(isOv?'var(--R)':'var(--C)')+'">본인부담 '+f(own)+'</span>'
+            +'<span id="aa-'+k+'" style="font-size:12px;color:var(--t3)">'+(acc[k]?'▲':'▼')+'</span>'
+          +'</div>'
+        +'</div>'
+        +'<div id="ab-'+k+'" style="display:'+(acc[k]?'block':'none')+'">'+body+'</div>'
+      +'</div>';
+    }
+
+    if(vyF>0) H+=mkAcc('vy','🤲','방문요양',vyF,vy.inc,vyOv,vyG,0,vyP,vyIt,0);
+    if(vnF>0) H+=mkAcc('vn','💉','방문간호',vnF,vn.inc,vnOv,vnG,fAmt,vnP,vnIt,fN);
+    if(vbF>0) H+=mkAcc('vb','🛁','방문목욕',vbF,vb.inc,vbOv,vbG,0,vbP,vbIt,0);
+
+    rb.innerHTML=H;
+  }
+  window.ltcC=ltcC;
+  window.ltcAcc=function(k){
+    acc[k]=!acc[k];
+    const b=document.getElementById('ab-'+k),a=document.getElementById('aa-'+k);
+    if(b) b.style.display=acc[k]?'block':'none';
+    if(a) a.textContent=acc[k]?'▲':'▼';
+    ltcC();
+  };
+
+  buildDRows();
+  ltcC();
+})();
+</script>
+</div><!-- /ps-calc -->
+</div><!-- /main -->
+<script>
+function showP(p){
+  ['before','after','calc'].forEach(n=>{
+    const el=document.getElementById('ps-'+n);
+    if(el) el.classList.toggle('vis',n===p);
+  });
+  document.querySelectorAll('.ht').forEach((b,i)=>{
+    b.classList.remove('aba','abt');
+    if((p==='before'&&i===0)||(p==='calc'&&i===2)) b.classList.add('aba');
+    if(p==='after'&&i===1) b.classList.add('abt');
+  });
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function tog(id){
+  const b=document.getElementById('bd-'+id);
+  const h=document.getElementById('hv-'+id);
+  const o=b.classList.toggle('op');
+  h.classList.toggle('op',o);
+}
+function tab(cid,idx){
+  const b=document.getElementById('bd-'+cid);
+  b.querySelectorAll('.ip').forEach((p,i)=>p.classList.toggle('ac',i===idx));
+  b.querySelectorAll('.it').forEach((t,i)=>t.classList.toggle('ac',i===idx));
+}
+</script>
+<script>
+(function resetAllAccordionsOnLoad(){
+  document.querySelectorAll('.cbody').forEach(function(el){ el.classList.remove('op'); });
+  document.querySelectorAll('.chv').forEach(function(el){ el.classList.remove('op'); });
+  document.querySelectorAll('.service-detail-accordion').forEach(function(el){ el.style.display='none'; });
+})();
+</script>
+
+<script>
+if("serviceWorker" in navigator){
+  window.addEventListener("load",function(){
+    navigator.serviceWorker.register("sw.js").catch(function(){});
+  });
+}
+</script>
+</body>
+</html>
