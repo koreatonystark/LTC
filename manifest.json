@@ -1,7 +1,7 @@
 {
-  "name": "안성 장기요양 가이드 2026",
-  "short_name": "안성 장기요양",
-  "description": "경기도 안성시 장기요양 완전 지원 가이드",
+  "name": "안성 장기요양 지원 가이드 2026",
+  "short_name": "장기요양지원",
+  "description": "장기요양 지원 가이드",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f4f2ee",
